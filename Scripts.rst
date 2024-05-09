@@ -23,8 +23,8 @@ Por ejemplo:
 
 ``var=mundo;`` 
 
-''echo "hola, $var"`` muestra hola, mundo 
+''echo "hola, $var"`` muestra hola, mundo.
 
-``echo 'hola, $var'`` muestra hola, $var 
+``echo 'hola, $var'`` muestra hola, $var.
 
 ``echo `ls``` muestra el contenido del directorio actual.
