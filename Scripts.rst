@@ -37,5 +37,6 @@ EVALUACIÓN DE EXPRESIONES
 Si queremos que bash evalúe el contenido de una expresión aritmética y devuelva su resultado usaremos la sintaxis ``$((expresion))`` o ``((expresión))`` (también se puede usar la sentencia ``let`` expresión, por ejemplo ``let x=2+3``).
 
 .. code-block:: sh
+
   p = $((p+3)) #suma 3 a variable p
 
