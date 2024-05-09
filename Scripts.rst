@@ -40,3 +40,9 @@ Si queremos que bash evalúe el contenido de una expresión aritmética y devuel
 
   p = $((p+3)) #suma 3 a variable p
 
+..
+
+La sintaxis para evaluar expresiones lógicas o condicionales (que devuelven 1 o 0) es ``[[ expresión ]]``en donde la expresión puede ser:
+* Comparación: ``=, !=, <, <=, >, >=``
+* Negación: ``!expresión``
+• ``and`` o ``or`` de varias expresiones (deben encerrarse entre paréntesis): ``expresión1 && expresión2``, ``expresión1 || expresión2``
