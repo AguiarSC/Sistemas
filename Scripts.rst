@@ -54,12 +54,11 @@ La sintaxis para evaluar expresiones lógicas o condicionales (que devuelven 1 o
 El comando ``expr`` toma los argumentos como expresiones, los evalúa e imprime el resultado sobre la salida estándar. Cada término de la expresión debe ir separado por espacios en blanco. Puede sumar, restar, multiplicar y dividir números enteros (limitación) utilizando los operadores ``+,-,*,/ y %`` (resto de la división entera). Puesto que ``* es el comodín del shell``, debe ir precedido de la barra invertida para que el shell lo interprete.
 
 Ejemplos:
+
 .. code-block:: sh
 
   i=`expr $i \* 1`
-
   suma=`expr $1 + $2`
-
   operacion=`expr \( 2 + 3 \) \* 4`
 
 ..
