@@ -57,8 +57,10 @@ Ejemplos:
 .. code-block:: sh
 
   i=`expr $i \* 1`
-  suma=`expr $1 + $2` (donde 1 y 2 son parámetros que recibe el script)
-  operacion=`expr \( 2 + 3 \) \* 4` (tenemos que escapar los paréntesis también)
+
+  suma=`expr $1 + $2`
+
+  operacion=`expr \( 2 + 3 \) \* 4`
 
 ..
 
