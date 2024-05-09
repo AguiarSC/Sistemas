@@ -49,3 +49,25 @@ La sintaxis para evaluar expresiones lógicas o condicionales (que devuelven 1 o
 * Negación: ``!expresión``
 
 • ``and`` o ``or`` de varias expresiones (deben encerrarse entre paréntesis): ``expresión1 && expresión2``, ``expresión1 || expresión2``
+
+
+El comando ``expr`` toma los argumentos como expresiones, los evalúa e imprime el resultado sobre la salida estándar. Cada término de la expresión debe ir separado por espacios en blanco. Puede sumar, restar, multiplicar y dividir números enteros (limitación) utilizando los operadores ``+,-,*,/ y %`` (resto de la división entera). Puesto que ``* es el comodín del shell``, debe ir precedido de la barra invertida para que el shell lo interprete.
+
+Ejemplos:
+.. code-block:: sh
+
+  i=`expr $i \* 1`
+  suma=`expr $1 + $2` (donde 1 y 2 son parámetros que recibe el script)
+  operacion=`expr \( 2 + 3 \) \* 4` (tenemos que escapar los paréntesis también)
+
+..
+
+Y ya si queremos hacer cosas más complicadas tendremos que recurrir al comando ``bc`` (basic calculator), que es una calculadora por línea de comandos.
+
+Ejemplo:
+
+.. code-block:: sh
+
+  echo "scale=2; 10 / 3" | bc (muestra el resultado de la división con dos decimales)
+
+.. 
