@@ -1,2 +1,1 @@
-# sistemas
-Apuntes para la recuperación de Sistemas
+Apuntes para la recuperación de Sistemas.
