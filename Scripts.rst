@@ -27,4 +27,4 @@ Por ejemplo:
 
 ``echo 'hola, $var'`` muestra hola, $var.
 
-``echo `ls``` muestra el contenido del directorio actual.
+``echo `ls` `` muestra el contenido del directorio actual.
