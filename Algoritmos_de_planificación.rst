@@ -5,7 +5,7 @@ ALGORITMO DE PLANIFICACIÓN FCFS
 El primer proceso que entra será el primero en salir.
 
 .. list-table:: FCFS
-   :widths:25 25 50
+   :widths: 25 25 50
    :header-rows: 1
 
    * - Heading row 1, column 1
