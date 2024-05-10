@@ -9,10 +9,10 @@ El primer proceso que entra será el primero en salir.
    * - FCFS
      - Tiempo de llegada
      - Tiempo CPU (t)
-     - Heading row 1, column 4
-     - Heading row 1, column 5
-     - Heading row 1, column 6
-     - Heading row 1, column 7
+     - Inicio
+     - Fin
+     - T = Fin - Tiempo de llagada
+     - E = T - Tiempo CPU (t)
    * - Row 1, column 1
      - Row 1, column 2
      - Row 1, column 3
