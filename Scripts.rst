@@ -266,6 +266,70 @@ Pueden incluirse en los scripts sentencias de control de flujo (condicionales o 
     esac
 
 
+El operador ``&&`` se utiliza para ejecutar el segundo comando solo si el primer comando tiene éxito; es decir, si su código de salida es 0. Por otro lado, ``||`` ejecuta el segundo comando solo si el primero no tiene éxito; es decir, si su código de salida es distinto de 0.
+
+* El bucle ``for`` en su forma básica tiene la siguiente sintaxis:
+
+  .. code-block:: shell
+  
+      for variable in lista-de-valores
+      do
+          Instrucciones a ejecutar
+      done
+
+  Por ejemplo, podemos utilizar un bucle ``for`` para iterar sobre una lista de nombres:
+  
+  .. code-block:: shell
+  
+      for nombre in Juan Pedro María Ana
+      do
+          echo "Hola, $nombre"
+      done
+  
+  Este bucle imprimirá "Hola, Juan", "Hola, Pedro", "Hola, María" y "Hola, Ana" en la salida estándar. Donde la lista de valores puede ser un conjunto de valores separados por espacio, el resultado de un comando entre comillas inversas (\``), o el conjunto de parámetros del script (\``$@\``).
+  
+  También se admite una forma alternativa del bucle ``for`` utilizando la sintaxis:
+  
+  .. code-block:: shell
+  
+      for (( expr1; expr2; expr3 )) ; do
+          comandos
+      done
+  
+  Por ejemplo, podemos utilizar un bucle ``for`` para imprimir los números del 1 al 5:
+  
+  .. code-block:: shell
+  
+      for ((contador=1; contador<=5; contador++)); do
+          echo -n "$contador "
+      done
+  
+  Este bucle imprimirá los números del 1 al 5 en la salida estándar, separados por un espacio.
+
+* Los bucles ``while`` y ``until`` tienen una sintaxis similar. En el bucle ``while``, las instrucciones dentro de ``do`` se ejecutan mientras la condición sea verdadera (es decir, su código de salida sea 0). En el bucle ``until``, las instrucciones dentro de ``do`` se ejecutan hasta que la condición sea verdadera (es decir, su código de salida no sea 0).
+
+  .. code-block:: shell
+  
+      # Inicializamos una variable contador
+      contador=1
+      
+      # Mientras el contador sea menor o igual a 5, imprimimos el valor del contador y lo incrementamos en 1
+      while [ $contador -le 5 ]
+      do
+          echo $contador
+          contador=$((contador+1))
+      done
+  
+  Este bucle imprimirá los números del 1 al 5 en la salida estándar.
+
+* Las sentencias ``break`` y ``continue`` se utilizan en bucles para controlar la ejecución. ``break`` termina el bucle actual y ``continue`` salta a la siguiente iteración del bucle.
+
+* La sentencia ``exit`` se utiliza para salir del script de shell.
+
+* El comando ``sleep`` hace una pausa del número de segundos indicado.
+
+
+
 
 
 
