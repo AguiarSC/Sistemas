@@ -152,22 +152,22 @@ CONTROL DE FLUJO
 
 Pueden incluirse en los scripts sentencias de control de flujo (condicionales o iterativas). También puede utilizarse, en lugar de ``else if``, ``elif`` para eliminar el ``fi``
 
-* ''if ... then .. fi`` para bifurcar la ejecución de un script.
+* ``if ... then .. fi`` para bifurcar la ejecución de un script.
 
   .. code-block:: sh
   
-    **if** [condición1]; **then** acción1
-    **else if**[condición2]; **then** acción2
+    if [condición1]; then acción1
+    else if[condición2]; then acción2
       else acción
-      **fi**
+      fi
     fi
   
   .. 
 
   .. code-block:: sh
   
-    **if** [condición1]; **then** acción1
-    **elif** [condición2]; **then** acción2
+    if [condición1]; then acción1
+    elif [condición2]; then acción2
       else acción
     fi
   
