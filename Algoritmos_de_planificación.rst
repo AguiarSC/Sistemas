@@ -34,27 +34,23 @@ El primer proceso que entra será el primero en salir.
      - 13
      - 10
      - 6
-   * - Row 4, column 1
-     - Row 4, column 2
-     - Row 4, column 3
-     - Row 4, column 4
-     - Row 4, column 5
-     - Row 4, column 6
-     - Row 4, column 7
-   * - Row 5, column 1
-     - Row 5, column 2
-     - Row 5, column 3
-     - Row 5, column 4
-     - Row 5, column 5
-     - Row 5, column 6
-     - Row 5, column 7
-   * - Row 6, column 1
-     - Row 6, column 2
-     - Row 6, column 3
-     - Row 6, column 4
-     - Row 6, column 5
-     - Row 6, column 6
-     - Row 6, column 7
+   * - D
+     - 5
+     - 5
+     - 16
+     - 21
+     - 16
+     - 11
+   * - E
+     - 4
+     - 3
+     - 13
+     - 16
+     - 12
+     - 9
+   * - Promedio
+     - 9,8
+     - 5,6
 
 
 
