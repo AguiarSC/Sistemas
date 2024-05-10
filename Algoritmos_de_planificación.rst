@@ -13,9 +13,9 @@ El primer proceso que entra será el primero en salir.
      - Fin
      - T = Fin - Tiempo de llagada
      - E = T - Tiempo CPU (t)
-   * - Row 1, column 1
-     - Row 1, column 2
-     - Row 1, column 3
+   * - A
+     - 0
+     - 3
      - Row 1, column 4
      - Row 1, column 5
      - Row 1, column 6
