@@ -88,19 +88,19 @@ Las variables utilizadas en un script son solo accesibles en él. Mediante ``exp
 
 El sistema tiene predefinidas una serie de variables de entorno manipulables mediante scripts:
 
-* ``PS1``: mensaje del prompt
+* ``PS1``: mensaje del prompt.
 
-* ``HOME``: ruta del directorio home del user
+* ``HOME``: ruta del directorio home del user.
 
-* ``PATH``: lista de rutas en las que se buscan los comandos, separadas por ``:``
+* ``PATH``: lista de rutas en las que se buscan los comandos, separadas por ``:``.
 
-* ``SHELL``: ruta del shell utilizado
+* ``SHELL``: ruta del shell utilizado.
 
-* ``DISPLAY``: consola por la que se rdirige la salida
+* ``DISPLAY``: consola por la que se rdirige la salida.
 
-* ``LONGNAME`` o ``USER``: nombre del user
+* ``LONGNAME`` o ``USER``: nombre del user.
 
-* ``IFS``: separador de campos internos
+* ``IFS``: separador de campos internos.
 
 
 --------------------
@@ -109,47 +109,69 @@ PASO DE PARÁMETROS
 
 Interesa que el script pueda recibir parámetros en la consola y acceder a ellos en el script, para lo que se utilizará:
 
-* ``$#`` devuelve el número de parámetros
+* ``$#`` devuelve el número de parámetros.
 
-* ``$@`` o ``$*`` devuelve todos los parámetros
+* ``$@`` o ``$*`` devuelve todos los parámetros.
 
-* ``$0`` devuelve el nombre del script
+* ``$0`` devuelve el nombre del script.
 
-* ``$n`` devuelve el valor del parámetro ``n``
+* ``$n`` devuelve el valor del parámetro ``n``.
 
-* ``$!`` devuelve el número de proceso del último proceso ejecutado
+* ``$!`` devuelve el número de proceso del último proceso ejecutado.
 
-* ``$?`` devuelve el código de retorno del último comando ejecutado. Puede devolver ``0`` si se ejecutó correctamente o ``1`` en caso contrario
+* ``$?`` devuelve el código de retorno del último comando ejecutado. Puede devolver ``0`` si se ejecutó correctamente o ``1`` en caso contrario.
 
-* ``Shift (n)`` desplaza a la izquierda y renombra todos los parámetros. Se puede indicar el número de posiciones que nos queremos desplazar. Siempre se pierde el valor ``$1``
+* ``Shift (n)`` desplaza a la izquierda y renombra todos los parámetros. Se puede indicar el número de posiciones que nos queremos desplazar. Siempre se pierde el valor ``$1``.
 
-* ``READ`` inserta la entrada del user (teclado) en el script, asignándole una o más variables. Si no se porporciona un nombre a la variable del shell se utiliza ``REPLY`` por defecto
+* ``READ`` inserta la entrada del user (teclado) en el script, asignándole una o más variables. Si no se porporciona un nombre a la variable del shell se utiliza ``REPLY`` por defecto.
 
 * ``ECHO`` escribe sus argumentos sobre la salida estándar (pantalla). Entiende las siguientes secuencias:
 
-  * ``\b`` BACKSPACE
+  * ``\b`` BACKSPACE.
 
-  * ``\C`` print sin salto de línea
+  * ``\C`` print sin salto de línea.
 
-  * ``\f`` siguiente página
+  * ``\f`` siguiente página.
 
-  * ``\n`` NEWLINE
+  * ``\n`` NEWLINE.
 
-  * ``\r`` RETURN
+  * ``\r`` RETURN.
 
-  * ``\t`` TAB
+  * ``\t`` TAB.
 
-  * ``\v`` TAB vertical
+  * ``\v`` TAB vertical.
 
-  * ``\\`` barra invertida ``\``
+  * ``\\`` barra invertida ``\``.
 
-  * ``\On`` ASCII en octal de cualquier carácter
-
-
+  * ``\On`` ASCII en octal de cualquier carácter.
 
 
+----------------
+CONTROL DE FLUJO
+----------------
 
+Pueden incluirse en los scripts sentencias de control de flujo (condicionales o iterativas). También puede utilizarse, en lugar de ``else if``, ``elif`` para eliminar el ``fi``
 
+* ''if ... then .. fi`` para bifurcar la ejecución de un script.
+
+  .. code-block:: sh
+  
+    **if** [condición1]; **then** acción1
+    **else if**[condición2]; **then** acción2
+      else acción
+      **fi**
+    fi
+  
+  .. 
+
+  .. code-block:: sh
+  
+    **if** [condición1]; **then** acción1
+    **elif** [condición2]; **then** acción2
+      else acción
+    fi
+  
+  .. 
 
 
 
