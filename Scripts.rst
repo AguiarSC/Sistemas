@@ -127,15 +127,15 @@ Interesa que el script pueda recibir parámetros en la consola y acceder a ellos
 
 * ``ECHO`` escribe sus argumentos sobre la salida estándar (pantalla). Entiende las siguientes secuencias:
 
-  a. ``\b`` BACKSPACE
+  * ``\b`` BACKSPACE
 
-  b. ``\C`` print sin salto de línea
+  * ``\C`` print sin salto de línea
 
-  c. ``\f`` siguiente página
+  * ``\f`` siguiente página
 
   d. ``\n`` NEWLINE
 
-  e. ``ºr`` RETURN
+  e. ``\r`` RETURN
 
   f. ``\t`` TAB
 
