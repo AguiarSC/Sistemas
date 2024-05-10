@@ -328,7 +328,7 @@ Pueden incluirse en los scripts sentencias de control de flujo (condicionales o 
 * El comando ``sleep`` hace una pausa del número de segundos indicado.
 
 
-----------------------
+-----------------------
 Definición de Funciones
 -----------------------
 
