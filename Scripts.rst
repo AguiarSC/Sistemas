@@ -231,37 +231,33 @@ Pueden incluirse en los scripts sentencias de control de flujo (condicionales o 
   * Un conjunto de valores constantes, separados por ``|``.
   * Un rango de valores, separando el mínimo y el máximo por ``-``.
 
-Se puede definir un patrón por defecto utilizando ``*)``, el cual se ejecutará si ningún otro patrón coincide con la variable. Cada cláusula debe terminarse con ``;;`` o ``;&``:
+  Se puede definir un patrón por defecto utilizando ``*)``, el cual se ejecutará si ningún otro patrón coincide con la variable. Cada cláusula debe terminarse con ``;;`` o ``;&``:
+  
+    * Si termina en ``;;``, el shell no intentará coincidencias posteriores después de la primera coincidencia.
+  
+    * Si termina en ``;&``, el shell probará los patrones de las siguientes cláusulas.
+  
+  
+  La estructura general es la siguiente:
+  
+   .. code-block:: sh
+  
+    case variable in
+      patrón1] "comandos a ejecutar si la variable coincide con patrón1";;
+      patrón2] "comandos a ejecutar si variable coincide con patrón2";;
+      ...
+      *) "comandos a ejecutar si variable coincide con patrón2"";
+    esac  
+  
+   .. code-block:: sh
+  
+    case $variable in
+      1) echo "La variable es igual a 1" ;;
+      2|3|4) echo "La variable es 2, 3 o 4" ;;
+      5-10) echo "La variable está en el rango de 5 a 10" ;;
+      *) echo "La variable no coincide con ningún patrón conocido" ;;
+    esac
 
-  * Si termina en ``;;``, el shell no intentará coincidencias posteriores después de la primera coincidencia.
-
-  * Si termina en ``;&``, el shell probará los patrones de las siguientes cláusulas.
-
-
-La estructura general es la siguiente:
-
- .. code-block:: sh
-
-  case variable in
-    patrón1] "comandos a ejecutar si la variable coincide con patrón1";;
-    patrón2] "comandos a ejecutar si variable coincide con patrón2";;
-    ...
-    *) "comandos a ejecutar si variable coincide con patrón2"";
-  esac
-
-.. 
-
-
- .. code-block:: sh
-
-  case $variable in
-    1) echo "La variable es igual a 1" ;;
-    2|3|4) echo "La variable es 2, 3 o 4" ;;
-    5-10) echo "La variable está en el rango de 5 a 10" ;;
-    *) echo "La variable no coincide con ningún patrón conocido" ;;
-  esac
-
-.. 
 
 
 
