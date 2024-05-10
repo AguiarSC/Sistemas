@@ -59,8 +59,6 @@ El primer proceso que entra será el primero en salir.
 
 
 .. list-table:: SCHEMA2
-   :widths: 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-   :header-rows: 1
 
    * - Placeholder 1
      - Placeholder 2
