@@ -1,11 +1,11 @@
---------------------------------------------------------
-ALGORITMO DE PLANIFICACIÓN FCFS (First Come First Serve)
---------------------------------------------------------
+-------------------------------
+ALGORITMO DE PLANIFICACIÓN FCFS
+-------------------------------
 
 El primer proceso que entra será el primero en salir.
 
-.. list-table:: Title
-   :widths: 25 25 50
+.. list-table:: FCFS
+   :widths:25 25 50
    :header-rows: 1
 
    * - Heading row 1, column 1
