@@ -133,17 +133,17 @@ Interesa que el script pueda recibir parámetros en la consola y acceder a ellos
 
   * ``\f`` siguiente página
 
-  d. ``\n`` NEWLINE
+  * ``\n`` NEWLINE
 
-  e. ``\r`` RETURN
+  * ``\r`` RETURN
 
-  f. ``\t`` TAB
+  * ``\t`` TAB
 
-  g. ``\v`` TAB vertical
+  * ``\v`` TAB vertical
 
-  h. ``\\`` barra invertida ``\``
+  * ``\\`` barra invertida ``\``
 
-  i. ``\On`` ASCII en octal de cualquier carácter
+  * ``\On`` ASCII en octal de cualquier carácter
 
 
 
