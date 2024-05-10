@@ -226,6 +226,8 @@ Pueden incluirse en los scripts sentencias de control de flujo (condicionales o 
   * ``\( e \)`` Los paréntesis se usan para agrupar expresiones y cambiar el orden de evaluación.
 
 
+
+
 * ``case ... in ... esac`` es una estructura de control en el scripting de shell que permite ejecutar diferentes bloques de código según el valor de una variable. Cada patrón posible del ``case`` puede ser:
   * Un valor constante, numérico o de cadena.
   * Un conjunto de valores constantes, separados por ``|``.
