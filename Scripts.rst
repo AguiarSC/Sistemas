@@ -107,7 +107,43 @@ El sistema tiene predefinidas una serie de variables de entorno manipulables med
 PASO DE PARÁMETROS
 --------------------
 
+Interesa que el script pueda recibir parámetros en la consola y acceder a ellos en el script, para lo que se utilizará:
 
+* ``$#`` devuelve el número de parámetros
+
+* ``$@`` o ``$*`` devuelve todos los parámetros
+
+* ``$0`` devuelve el nombre del script
+
+* ``$n`` devuelve el valor del parámetro ``n``
+
+* ``$!`` devuelve el número de proceso del último proceso ejecutado
+
+* ``$?`` devuelve el código de retorno del último comando ejecutado. Puede devolver ``0`` si se ejecutó correctamente o ``1`` en caso contrario
+
+* ``Shift (n)`` desplaza a la izquierda y renombra todos los parámetros. Se puede indicar el número de posiciones que nos queremos desplazar. Siempre se pierde el valor ``$1``
+
+* ``READ`` inserta la entrada del user (teclado) en el script, asignándole una o más variables. Si no se porporciona un nombre a la variable del shell se utiliza ``REPLY`` por defecto
+
+* ``ECHO`` escribe sus argumentos sobre la salida estándar (pantalla). Entiende las siguientes secuencias:
+
+  a. ``\b`` BACKSPACE
+
+  b. ``\C`` print sin salto de línea
+
+  c. ``\f`` siguiente página
+
+  d. ``\n`` NEWLINE
+
+  e. ``ºr`` RETURN
+
+  f. ``\t`` TAB
+
+  g. ``\v`` TAB vertical
+
+  h. ``\\`` barra invertida ``\``
+
+  i. ``\On`` ASCII en octal de cualquier carácter
 
 
 
