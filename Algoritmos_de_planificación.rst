@@ -20,20 +20,20 @@ El primer proceso que entra será el primero en salir.
      - 3
      - 3
      - 0
-   * - Row 2, column 1
-     - Row 2, column 2
-     - Row 2, column 3
-     - Row 2, column 4
-     - Row 2, column 5
-     - Row 2, column 6
-     - Row 2, column 7
-   * - Row 3, column 1
-     - Row 3, column 2
-     - Row 3, column 3
-     - Row 3, column 4
-     - Row 3, column 5
-     - Row 3, column 6
-     - Row 3, column 7
+   * - B
+     - 1
+     - 6
+     - 3
+     - 9
+     - 8
+     - 2
+   * - C
+     - 3
+     - 4
+     - 9
+     - 13
+     - 10
+     - 6
    * - Row 4, column 1
      - Row 4, column 2
      - Row 4, column 3
