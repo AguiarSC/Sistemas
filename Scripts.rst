@@ -150,30 +150,23 @@ Interesa que el script pueda recibir parámetros en la consola y acceder a ellos
 CONTROL DE FLUJO
 ----------------
 
-Pueden incluirse en los scripts sentencias de control de flujo (condicionales o iterativas). También puede utilizarse, en lugar de ``else if``, ``elif`` para eliminar el ``fi``
+Pueden incluirse en los scripts sentencias de control de flujo (condicionales o iterativas). También puede utilizarse, en lugar de ``else if``, ``elif`` para eliminar el ``fi``.
 
-* ``if ... then .. fi`` para bifurcar la ejecución de un script.
+* ``if ... then ... fi`` para bifurcar la ejecución de un script.
 
   .. code-block:: sh
   
-    if [condición1]; then acción1
-    else if[condición2]; then acción2
-      else acción
-      fi
+    if [condición1]; then 
+        acción1
+    elif [condición2]; then 
+        acción2
+    else 
+        acción
     fi
   
   .. 
 
-  .. code-block:: sh
-  
-    if [condición1]; then acción1
-    elif [condición2]; then acción2
-      else acción
-    fi
-  
-  .. 
-
-* ``TEST`` que permite evaluar una expresión y ver si es verdadera (= 0) o falsa (!= 0). Su expresión es ``test expresión`` o ``[expresión]``. Son utilizados con frecuencia en las condiciones del ``if``. Esta expresión puede tener cualquiera de los formatos siguientes:
+* ``TEST`` permite evaluar una expresión y ver si es verdadera (= 0) o falsa (!= 0). Su expresión es ``test expresión`` o ``[expresión]``. Son utilizados con frecuencia en las condiciones del ``if``. Esta expresión puede tener cualquiera de los formatos siguientes:
 
   * ``-e fichero`` si el fichero existe.
   
@@ -195,7 +188,7 @@ Pueden incluirse en los scripts sentencias de control de flujo (condicionales o 
   
   * ``-s fichero`` si el fichero tiene un tamaño mayor que 0.
   
-  * ``z s1`` La longitud de la cadena s1 es cero.
+  * ``-z s1`` La longitud de la cadena s1 es cero.
   
   * ``-n s1`` La longitud de la cadena s1 no es cero (no es vacía).
   
@@ -203,19 +196,19 @@ Pueden incluirse en los scripts sentencias de control de flujo (condicionales o 
   
   * ``s1 != s2`` Las dos cadenas son distintas.
   
-  * ``s1`` La cadena s1 existe.
+  * ``-n s1`` La cadena s1 existe.
   
-  * ``n1 –eq n2`` n1 e n2 tienen el mismo valor numérico.
+  * ``n1 -eq n2`` n1 e n2 tienen el mismo valor numérico.
   
-  * ``n1 –ne n2`` n1 e n2 tienen distinto valor numérico.
+  * ``n1 -ne n2`` n1 e n2 tienen distinto valor numérico.
   
-  * ``n1 –gt n2`` n1 tiene un valor mayor que n2 (mayor estricto).
+  * ``n1 -gt n2`` n1 tiene un valor mayor que n2 (mayor estricto).
   
-  * ``n1 –lt n2`` n1 tiene un valor menor que n2 (menor estricto).
+  * ``n1 -lt n2`` n1 tiene un valor menor que n2 (menor estricto).
   
-  * ``n1 –ge n2`` n1 tiene un valor mayor o igual que n2.
+  * ``n1 -ge n2`` n1 tiene un valor mayor o igual que n2.
   
-  * ``n1 –le n2`` n1 tiene un valor menor o igual que n2.
+  * ``n1 -le n2`` n1 tiene un valor menor o igual que n2.
   
   * ``! e`` Negación de la expresión (es cierta si la expresión es falsa).
   
@@ -226,16 +219,9 @@ Pueden incluirse en los scripts sentencias de control de flujo (condicionales o 
   * ``\( e \)`` Los paréntesis se usan para agrupar expresiones y cambiar el orden de evaluación.
 
 
-.. code-block:: sh
-
-    ...
-
-..
-
-
 * ``case ... in ... esac`` es una estructura de control en el scripting de shell que permite ejecutar diferentes bloques de código según el valor de una variable. Cada patrón posible del ``case`` puede ser:
   * Un valor constante, numérico o de cadena.
-  * Un conjunto de valores constantes, separados por ``|``.
+  * Un conjunto de valores constantes, separados por espacios.
   * Un rango de valores, separando el mínimo y el máximo por ``-``.
 
   Se puede definir un patrón por defecto utilizando ``*)``, el cual se ejecutará si ningún otro patrón coincide con la variable. Cada cláusula debe terminarse con ``;;`` o ``;&``:
@@ -250,21 +236,12 @@ Pueden incluirse en los scripts sentencias de control de flujo (condicionales o 
    .. code-block:: sh
   
     case variable in
-      patrón1] "comandos a ejecutar si la variable coincide con patrón1";;
-      patrón2] "comandos a ejecutar si variable coincide con patrón2";;
+      patrón1) "comandos a ejecutar si la variable coincide con patrón1";;
+      patrón2) "comandos a ejecutar si variable coincide con patrón2";;
       ...
-      *) "comandos a ejecutar si variable coincide con patrón2"";
+      *) "comandos a ejecutar si variable no coincide con ningún patrón conocido" ;;
     esac  
   
-   .. code-block:: sh
-  
-    case $variable in
-      1) echo "La variable es igual a 1" ;;
-      2|3|4) echo "La variable es 2, 3 o 4" ;;
-      5-10) echo "La variable está en el rango de 5 a 10" ;;
-      *) echo "La variable no coincide con ningún patrón conocido" ;;
-    esac
-
 * El bucle ``for`` en su forma básica tiene la siguiente sintaxis:
 
   .. code-block:: shell
@@ -326,6 +303,7 @@ Pueden incluirse en los scripts sentencias de control de flujo (condicionales o 
 * La sentencia ``exit`` se utiliza para salir del script de shell.
 
 * El comando ``sleep`` hace una pausa del número de segundos indicado.
+
 
 
 -----------------------
