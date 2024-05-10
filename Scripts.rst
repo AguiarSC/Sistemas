@@ -265,9 +265,6 @@ Pueden incluirse en los scripts sentencias de control de flujo (condicionales o 
       *) echo "La variable no coincide con ningún patrón conocido" ;;
     esac
 
-
-El operador ``&&`` se utiliza para ejecutar el segundo comando solo si el primer comando tiene éxito; es decir, si su código de salida es 0. Por otro lado, ``||`` ejecuta el segundo comando solo si el primero no tiene éxito; es decir, si su código de salida es distinto de 0.
-
 * El bucle ``for`` en su forma básica tiene la siguiente sintaxis:
 
   .. code-block:: shell
@@ -321,6 +318,8 @@ El operador ``&&`` se utiliza para ejecutar el segundo comando solo si el primer
       done
   
   Este bucle imprimirá los números del 1 al 5 en la salida estándar.
+
+* El operador ``&&`` se utiliza para ejecutar el segundo comando solo si el primer comando tiene éxito; es decir, si su código de salida es 0. Por otro lado, ``||`` ejecuta el segundo comando solo si el primero no tiene éxito; es decir, si su código de salida es distinto de 0.
 
 * Las sentencias ``break`` y ``continue`` se utilizan en bucles para controlar la ejecución. ``break`` termina el bucle actual y ``continue`` salta a la siguiente iteración del bucle.
 
