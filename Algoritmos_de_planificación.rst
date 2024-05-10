@@ -49,6 +49,10 @@ El primer proceso que entra será el primero en salir.
      - 12
      - 9
    * - Promedio
+     - 
+     - 
+     - 
+     - 
      - 9,8
      - 5,6
 
