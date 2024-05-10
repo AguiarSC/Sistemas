@@ -72,3 +72,60 @@ Ejemplo:
   echo "scale=2; 10 / 3" | bc (muestra el resultado de la división con dos decimales)
 
 .. 
+
+
+--------------------
+VARIABLES DE ENTORNO
+--------------------
+
+Las variables utilizadas en un script son solo accesibles en él. Mediante ``export`` podemos exportarla al entorno del sistema, siendo almacenada en la sesión y accesible en cualquier proceso.
+
+.. code-block:: sh
+
+  export var2 = mundo2 #
+
+..
+
+El sistema tiene predefinidas una serie de variables de entorno manipulables mediante scripts:
+
+* ``PS1``: mensaje del prompt
+
+* ``HOME``: ruta del directorio home del user
+
+* ``PATH``: lista de rutas en las que se buscan los comandos, separadas por ``:``
+
+* ``SHELL``: ruta del shell utilizado
+
+* ``DISPLAY``: consola por la que se rdirige la salida
+
+* ``LONGNAME`` o ``USER``: nombre del user
+
+* ``IFS``: separador de campos internos
+
+
+--------------------
+PASO DE PARÁMETROS
+--------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
