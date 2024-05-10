@@ -16,11 +16,10 @@ El primer proceso que entra será el primero en salir.
    * - A
      - 0
      - 3
-     - Row 1, column 4
-     - Row 1, column 5
-     - Row 1, column 6
-     - Row 1, column 7
-     - Row 1, column 3
+     - 0
+     - 3
+     - 3
+     - 0
    * - Row 2, column 1
      - Row 2, column 2
      - Row 2, column 3
