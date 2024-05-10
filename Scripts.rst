@@ -328,6 +328,39 @@ Pueden incluirse en los scripts sentencias de control de flujo (condicionales o 
 * El comando ``sleep`` hace una pausa del número de segundos indicado.
 
 
+----------------------
+Definición de Funciones
+-----------------------
+
+Una función nos permite englobar un conjunto de comandos bajo un nombre que podemos invocar desde el script. El cuerpo de la función suele ser una lista de comandos encerrados entre llaves y separados por espacios del mismo (las llaves son palabras reservadas). La lista de comandos a ejecutar debe terminar en punto y coma. Su sintaxis es la siguiente:
+
+.. code-block:: shell
+
+    function nombre ()
+    {
+        comandos a ejecutar;
+    }
+
+Por ejemplo, supongamos que queremos definir una función llamada "saludar" que imprima un saludo personalizado:
+
+.. code-block:: shell
+
+    function saludar ()
+    {
+        echo "Hola, $1"
+    }
+
+La sentencia ``return`` (opcional) permite salir de la función devolviendo un valor. Podemos indicar opcionalmente el valor de retorno de la función. Las funciones pueden ser recursivas.
+
+Para invocar una función, simplemente introduciremos su nombre seguido de los posibles parámetros, que se recogerán en la función de la misma forma que se recogen en el script, como ``$1``, ``$2``, etc.
+
+Por ejemplo, después de definir la función ``saludar``, podemos invocarla de la siguiente manera:
+
+.. code-block:: shell
+
+    saludar "Juan"
+
+Este comando imprimirá "Hola, Juan" en la salida estándar.
 
 
 
