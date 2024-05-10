@@ -236,7 +236,9 @@ Cada cláusula debe terminarse con `;;` o `;&`:
   * Si termina en `;;`, el shell no intentará coincidencias posteriores después de la primera coincidencia.
   * Si termina en `;&`, el shell probará los patrones de las siguientes cláusulas.
 
+
 La estructura general es la siguiente:
+
 
    .. code-block:: sh
   
@@ -248,6 +250,7 @@ La estructura general es la siguiente:
     esac
   
   .. 
+
 
    .. code-block:: sh
   
