@@ -38,17 +38,17 @@ Si queremos que bash evalúe el contenido de una expresión aritmética y devuel
 
 .. code-block:: sh
 
-  p = $((p+3)) #suma 3 a variable p
+  p=$((p+3)) #suma 3 a variable p
 
 ..
 
-La sintaxis para evaluar expresiones lógicas o condicionales (que devuelven 1 o 0) es ``[[ expresión ]]``en donde la expresión puede ser:
+La sintaxis para evaluar expresiones lógicas o condicionales (que devuelven 1 o 0) es ``[[ expresión ]]`` en donde la expresión puede ser:
 
 * Comparación: ``=, !=, <, <=, >, >=``
 
 * Negación: ``!expresión``
 
-• ``and`` o ``or`` de varias expresiones (deben encerrarse entre paréntesis): ``expresión1 && expresión2``, ``expresión1 || expresión2``
+* ``and`` o ``or`` de varias expresiones (deben encerrarse entre paréntesis): ``expresión1 && expresión2``, ``expresión1 || expresión2``
 
 
 El comando ``expr`` toma los argumentos como expresiones, los evalúa e imprime el resultado sobre la salida estándar. Cada término de la expresión debe ir separado por espacios en blanco. Puede sumar, restar, multiplicar y dividir números enteros (limitación) utilizando los operadores ``+,-,*,/ y %`` (resto de la división entera). Puesto que ``* es el comodín del shell``, debe ir precedido de la barra invertida para que el shell lo interprete.
@@ -82,7 +82,7 @@ Las variables utilizadas en un script son solo accesibles en él. Mediante ``exp
 
 .. code-block:: sh
 
-  export var2 = mundo2 #
+  export var2=mundo2 #
 
 ..
 
@@ -123,7 +123,7 @@ Interesa que el script pueda recibir parámetros en la consola y acceder a ellos
 
 * ``Shift (n)`` desplaza a la izquierda y renombra todos los parámetros. Se puede indicar el número de posiciones que nos queremos desplazar. Siempre se pierde el valor ``$1``.
 
-* ``READ`` inserta la entrada del user (teclado) en el script, asignándole una o más variables. Si no se porporciona un nombre a la variable del shell se utiliza ``REPLY`` por defecto.
+* ``READ`` inserta la entrada del user (teclado) en el script, asignándole una o más variables. Si no se proporciona un nombre a la variable del shell se utiliza ``REPLY`` por defecto.
 
 * ``ECHO`` escribe sus argumentos sobre la salida estándar (pantalla). Entiende las siguientes secuencias:
 
@@ -528,12 +528,3 @@ EJEMPLOS DE SCRIPTS
         fi
     }
     inicio
-
-
-
-
-
-
-
-
-
