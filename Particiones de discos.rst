@@ -406,7 +406,7 @@ Obtener información de configuración y construcción de un multidispositivo
    mdadm --detail /dev/mdX --scan
 
 Examinar el estado de un dispositivo asociado a un RAID
-------------------------------------------------------
+-------------------------------------------------------
 
 .. code-block:: bash
 
