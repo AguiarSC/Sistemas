@@ -334,5 +334,86 @@ Para esto hay dos configuraciones:
 
 Si es un standby spare conlleva un proceso de reconstrucción durante la incorporación del disco spare sustituyendo al disco fallido sin embargo si es un hot spare este tiempo se minimiza. El uso de un disco de reserva no ofrece ninguna ventaja de velocidad pero reduce el tiempo de replicación al sustituir automáticamente el disco defectuoso y empezar la reconstrucción de datos justo cuando se produce el error, simplificando las tarea de mantenimiento.
 
+----------------------
+Administración de RAID
+----------------------
+
+La administración de RAID en Linux se realiza con el paquete mdadm (Multiple Device Administrator), que se instala con sudo apt-get install mdadm. Antes de iniciar, se puede verificar la existencia de dispositivos RAID en el sistema con /proc/mdstat. La creación de RAID puede realizarse en dispositivos o particiones, no necesariamente del mismo tamaño. En caso de diferencias de tamaño, mdadm advertirá y utilizará el tamaño más pequeño. Los comandos comunes para gestionar RAID en Linux incluyen la creación, establecimiento de dispositivos defectuosos, eliminación, adición, y verificación del estado.
+
+1. Creación de RAID
+   ::
+   
+   mdadm --create /dev/mdX --level=Y --raid-devices=Z dispositivos
+
+   donde
+   * ``create /dev/mdX`` indica la creación del multidispositivo, siendo X un número.
+   * ``level=Y`` es el nivel RAID para aplicar, pudiendo ser Y:
+     - ``linear`` para RAID lineal
+     - ``raid0``, ``0`` o ``stripe`` para RAID0
+     - ``raid1``, ``1`` o ``mirror`` para RAID1
+     - ``raid5`` o ``5`` para RAID5
+     - ``raid6`` o ``6`` para RAID6
+     - ``raid10`` o ``10`` para RAID10
+   * ``raid-devices=Z dispositivos``, donde Z indica el número de dispositivos asociados al RAID y cada uno de ellos separado por espacios (``/dev/sdX /dev/sdY…``).
+
+2. Establecer un disco como defectuoso de un RAID:
+   ::
+   
+   mdadm /dev/mdX --fail /dev/sdY
+
+3. Eliminar un disco de un RAID:
+   ::
+   
+   mdadm /dev/mdX --remove /dev/sdY
+
+4. Añadir un disco a un RAID:
+   ::
+   
+   mdadm /dev/mdX --add /dev/sdY
+
+5. Comprobar el estado de todos los multidispositivos:
+   ::
+   
+   cat /proc/mdstat
+
+6. Obtener información de configuración de todos los multidispositivos:
+   ::
+   
+   mdadm --detail --scan
+
+7. Obtener información de configuración y construcción de un multidispositivo:
+   ::
+   
+   mdadm --detail /dev/mdX
+   mdadm --detail /dev/mdX --scan
+
+8. Examinar el estado de un dispositivo asociado a un RAID:
+   ::
+   
+   mdadm --examine /dev/mdX
+
+9. Detener un RAID:
+   ::
+   
+   mdadm --stop /dev/mdX
+
+10. Eliminar el superbloque de un dispositivo (almacena información para manipularlo) sobreescribiendo ceros:
+    ::
+    
+    mdadm --zero-superblock /dev/sdY
+
+Una vez creado un RAID con mdadm lo particionamos empleando los métodos tradicionales como fdisk, cfdisk, parted o gparted, y lo montamos con mount.
+
+Si deseamos eliminar un multidispositivo RAID y así evitar que aparezcan en modo inactivo o que algunos dispositivos no se puedan usar por estar asociados a otros RAID no activos, debemos:
+
+* Desmontar el dispositivo si está en uso.
+* Detener el multidispositivo (ejemplo: ``sudo mdadm --stop /dev/md0``)
+* Borrar el superbloque de cada dispositivo que constituía el RAID (es decir borrar el sector 0 de los discos utilizados) (ejemplo: ``sudo mdadm --zero-superblock /dev/sde1``, ``sudo mdadm --zero-superblock /dev/sdd1`` y ``sudo mdadm --zero-superblock /dev/sdg1``)
+* En caso de que estuviese asociado al arranque del sistema, actualizar ``/etc/fstab`` eliminando la línea asociada y actualizar initramfs (sistema de archivos RAM de inicio en Linux).
+
+Ubuntu modifica el nombre de los multidispositivos cuando reinicia el sistema. Para asignar un nombre multidispositivo a un grupo de discos en RAID, debemos añadir una línea en el archivo de configuración ``/etc/mdadm/mdadm.conf``, mediante el siguiente comando:
+
+
+
 Otra forma de montar un RAID con disco de reserva en modalidad Hot Spare pero sin tener que agregar otro disco adicional es reservar un espacio en los discos del RAID que no se utilizará salvo que se produzca el fallo en uno de ellos, que será el momento en el que la información del disco fallado se replicará en este espacio libre. Esta es la configuración
 utilizada por ejemplo en ``RAID 5E`` y ``RAID 6E``, que reservan este espacio de spare al final de los discos paridad. 
