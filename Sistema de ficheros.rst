@@ -1,6 +1,6 @@
 Sistemas de archivos
 ======================
-¿Que es un sistema de archivos?
+¿Qué es un sistema de archivos?
 --------------------------------
 
 Un sistema de archivos es un método de almacenamiento y organización por segmentación de ficheros para facilitar su búsqueda y acceso,los sistemas operativos tienen su propio sistema de archivos, los cuales suelen ser representados de forma textual o gráfica.
@@ -9,7 +9,7 @@ En un sistema de archivos hay dos tipos fundamentales de objetos: los directorio
 Archivos:
 ~~~~~~~~~~~~~~~
 
-Las reglas para nombrar los archivos varían dependiendo del sistema,algunos diferencian (M de m),utilizan un nº maximo de caracteres...
+Las reglas para nombrar los archivos varían dependiendo del sistema, algunos son case-sensitive, otros utilizan un n.º máximo de caracteres, etc.
 
 Atributos:
     - S: atributo del sistema (uso del sistema operativo, uso interno)
