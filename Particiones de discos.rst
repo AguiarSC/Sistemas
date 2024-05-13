@@ -17,12 +17,15 @@ La cantidad de particiones del disco duro dependerá de la estructura de esa uni
    
 Las operaciones básicas que se pueden realizar sobre particiones son:
 
-- ``Crear partición``
-- ``Formatear partición``
-- ``Eliminar partición``
-- ``Reducir o extender partición``
+* ``Crear partición``
 
-El gran problema que tiene que afrontar el S.O. para gestionar los distintos dispositivos de E/S es la gran cantidad de dispositivos y fabricantes que existen. Linux resuelve este problema tratando todos los dispositivos siguiendo una interface común: la de un fichero, que se puede abrir, escribir, leer y cerrar.
+* ``Formatear partición``
+
+* ``Eliminar partición``
+
+* ``Reducir o extender partición``
+
+En la gestión de E/S, el gran desafío para los sistemas operativos es la diversidad de dispositivos y fabricantes. Linux aborda esto tratando todos los dispositivos mediante una interfaz común: la de un archivo, que se puede abrir, escribir, leer y cerrar.
 
 Por lo tanto, para Linux un dispositivo es un fichero especial (localizado en el directorio ``/dev`` que cuelga del directorio raíz) que en realidad enlaza con el controlador del dispositivo. Así, el fichero ``mem`` representa la memoria, ``hdxx`` los dispositivos IDE, ``lp`` las impresoras por el puerto paralelo, etc. La única diferencia posible entre los dispositivos es que pueden ser de dos tipos: de bloque (ej.: disco duro) o de carácter (ej.: ratón, teclado).
 
@@ -132,13 +135,7 @@ Recordamos la nomenclatura de discos y particiones en LINUX:
 FDISK
 -----
 
-La herramienta fdisk permite listar y modificar la tabla de particiones de un disco.
-
-Para listar todos los discos detectados y sus particiones se ejecuta: ``fdisk -l``
-
-Para listar la tabla de particiones del disco ``/dev/sda`` se ejecuta: ``fdisk -l /dev/sda``
-
-Para ejecutar el comando hay que pasarle como argumento el disco sobre el que se desea trabajar (/dev/sda, /dev/sdb, etc.). El comando a ejecutar es: ``fdisk <disco>``
+La herramienta fdisk permite listar y modificar la tabla de particiones de un disco. Para listar todos los discos detectados y sus particiones se ejecuta: ``fdisk -l``. Para listar la tabla de particiones del disco ``/dev/sda`` se ejecuta: ``fdisk -l /dev/sda``. Para ejecutar el comando hay que pasarle como argumento el disco sobre el que se desea trabajar (/dev/sda, /dev/sdb, etc.). El comando a ejecutar es: ``fdisk <disco>``
 
 Funciona como un intérprete de comandos, en modo interactivo, en el que los subcomandos más importantes son:
 
@@ -156,8 +153,6 @@ Funciona como un intérprete de comandos, en modo interactivo, en el que los sub
 
 Para crear una nueva partición se elige la letra "n".
 Se le da formato a la partición con el comando ``mkfs (make filesystem)``. Actualmente, en GNU/Linux existe un programa separado por cada tipo de sistema de ficheros: ``mkfs.ext2, mkfs.ext3, mkfs.ext4, mkfs.ntfs, mkfs.xfs, mkfs.msdos, mkfs.fat, mkfs.vfat`` (es un alias de mkfs.fat), etc. De esta forma mkfs es solamente un front-end que ejecuta el programa apropiado dependiendo del tipo de sistema de ficheros especificado; lo cual haremos con la opción ``-t`` de mkfs.
-
-En primer lugar, vamos a ver qué tipos de formatos podemos dar con mkfs. Para ello, escribimos en una consola mkfs y pulsamos tabulador, para que nos muestre las opciones disponibles:
 
 El comando más básico para la creación de un sistema de archivos FAT es ``mkfs.fat``. Con la opción ``-F`` podemos seleccionar el tamaño de la FAT (File Allocation Table), entre ``12``, ``16`` o ``32``, es decir, entre ``FAT12``, ``FAT16`` o ``FAT32``. Si no se especifica, mkfs.fat seleccionará la opción apropiada según el tamaño del sistema de archivos (consultar man mkfs.fat)
 
@@ -211,16 +206,10 @@ Ejemplos:
 
 * Cdrom: ``mount -t iso9660 /dev/sr0 /media/cdrom``
 
+El sistema mantiene una lista actualizada de sistemas de archivos montados a través de ``/proc/self/mounts``, que se actualiza al montar y desmontar sistemas de archivos. Se pueden listar todas las particiones montadas con el comando ``mount``. Para desmontar una partición, se deshace el vínculo entre la partición y la carpeta de acceso utilizando ``umount /dev/sdXY`` o ``umount /mnt``. Es importante desmontar una partición, especialmente si se han escrito datos, para evitar la pérdida de información. Al desmontar el dispositivo, se vuelcan todas las cachés de escritura al dispositivo.
 
-El sistema mantiene actualizada una lista de sistemas de archivos montados a través del archivo ``/proc/self/mounts`` (se actualiza al montar y desmontar sistemas de archivos)
+Las particiones montadas con ``mount`` no se conservan después de reiniciar el sistema. Para montar una partición de forma permanente, se debe agregar una entrada en el archivo ``/etc/fstab``. Durante el arranque, se leen las entradas de este archivo y se montan automáticamente para que estén accesibles a los usuarios.
 
-Se pueden listar todas las particiones montadas ejecutando el comando mount
-
-Para "desmontar" la partición, se deshace el vínculo entre la partición y la carpeta en la que se accede a ella. Se puede utilizar el nombre de la partición o el nombre de la carpeta con el comando: ``umount /dev/sdXY`` o bien ``umount /mnt``
-
-Es importante desmontar una partición, especialmente si se han escrito datos. En el caso de los dispositivos extraíbles, si se saca el dispositivo antes de desmontar la partición es bastante probable que se pierdan datos. Al desmontar el dispositivo, se volcarán todas las cachés de escritura al dispositivo.
-
-Las particiones que se monten con el comando ``mount`` no permanecerán después de reiniciar el sistema. Si se quiere montar una partición de forma permanente habrá que añadir una entrada en el fichero /etc/fstab. Durante el arranque del equipo se leen las entradas de este fichero y se montan automáticamente para que estén accesibles a los usuarios.
 
 ===============================
 Configuración del archivo fstab
@@ -264,13 +253,7 @@ A nivel de RAID ``la información se organiza en porciones de tamaño fijo llama
 ¿Cómo se mejora con RAID la tolerancia a fallos?
 ------------------------------------------------
 
-Algunas configuraciones RAID replican los datos en varios discos, evitando así que haya datos almacenados en un único disco. De esta forma cuando un disco falla siempremtendremos una réplica de sus datos en otros discos. Los sistemas RAID disponen de mecanismos para alertar del error de un disco ofreciendo así un tiempo para reemplazarlo por otro disco nuevo. Una vez instalado el nuevo disco los datos serán replicados en este. Tendremos garantizada la tolerancia a fallos siempre que:
-
-* No se estropee más de un disco a la vez
-
-* Si después del fallo de un disco lo cambiamos y se replican los datos antes de que falle otro disco nuevo.
-
-``La replicación tiene como desventaja que el espacio de almacenamiento efectivo total del RAID será siempre inferior a la suma de las capacidades de todos los discos``. Los sistemas RAID aceleran el rendimiento repartiendo de forma homogénea los datos de cada fichero en dos o más discos. La mejora de rendimiento se consigue paralelizando el trabajo de lectura y escritura entre todos los discos. Recordar que un disco duro mecánico es peor opción que un disco SSD. Un disco que además esté muy fragmentado también incidirá negativamente en el rendimiento.
+Algunas configuraciones RAID replican los datos en varios discos para evitar la pérdida de datos en caso de fallo de un disco. Los sistemas RAID alertan sobre fallos de disco y permiten su reemplazo, replicando los datos en el nuevo disco. ``La tolerancia a fallos está garantizada si no fallan más de un disco a la vez y si se reemplaza y replica un disco antes de que falle otro``. Sin embargo, la replicación reduce el espacio de almacenamiento total del RAID respecto a la suma de las capacidades de los discos. Los sistemas RAID mejoran el rendimiento distribuyendo datos entre discos y acelerando la lectura y escritura. Los discos SSD son preferibles a los discos mecánicos, y la fragmentación puede afectar negativamente al rendimiento.
 
 ----------------------------
 Configuraciones RAID básicas
