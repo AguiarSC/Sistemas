@@ -106,11 +106,11 @@ Gestores de particiones
 El particionado de un disco se realiza con unas utilidades de disco llamadas gestores de particiones.
 
 - En Windows (de servidor o escritorio) disponemos de dos gestores de particiones:
-  - Administración de discos: Gestor de particiones en modo gráfico
-  - Diskpart: Gestor de particiones desde consola
+  - ``Administración de discos``: Gestor de particiones en modo gráfico
+  - ``Diskpart``: Gestor de particiones desde consola
 
 - En Linux disponemos de múltiples herramientas:
-  - fdisk: Un gestor de particiones de consola presente en casi todas las distribuciones Linux
-  - cfdisk: Un gestor de particiones de consola que incorpora las funcionalidades de fdisk pero con una interfaz que facilita
-  - parted y Gparted: Un gestor de particiones de consola que también dispone de un gestor gráfico y que viene preinstalado en múltiples distribuciones
+  - ``fdisk``: Un gestor de particiones de consola presente en casi todas las distribuciones Linux
+  - ``cfdisk``: Un gestor de particiones de consola que incorpora las funcionalidades de fdisk pero con una interfaz que facilita
+  - ``parted`` y ``Gparted``: Un gestor de particiones de consola que también dispone de un gestor gráfico y que viene preinstalado en múltiples distribuciones
 
