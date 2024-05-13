@@ -59,7 +59,7 @@ El primer proceso que entra será el primero en salir.
 
 .. list-table:: (FCFS) CRONOGRAMA DE PROCESOS
 
-    * - COLA
+   * - COLA
      - Placeholder 2
      - Placeholder 3
      - Placeholder 4
@@ -79,7 +79,7 @@ El primer proceso que entra será el primero en salir.
      - Placeholder 18
      - Placeholder 19
      - Placeholder 20
-    * - TIEMPO
+   * - TIEMPO
      - Placeholder 2
      - Placeholder 3
      - Placeholder 4
@@ -99,7 +99,7 @@ El primer proceso que entra será el primero en salir.
      - Placeholder 18
      - Placeholder 19
      - Placeholder 20
-    * - PROCESO A
+   * - PROCESO A
      - Placeholder 2
      - Placeholder 3
      - Placeholder 4
