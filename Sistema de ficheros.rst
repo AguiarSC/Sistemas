@@ -311,7 +311,7 @@ Listados:
 
     * ``s``: Representa sockets, que se utilizan para la comunicación entre procesos en la red. En Linux, todos estos elementos son considerados archivos, pero los directorios son tratados como un tipo de archivo distinto de los archivos normales.
 
-    Además, los siguientes caracteres (de tres en tres) representan los ``permisos del propietario``, ``del grupo`` y de ``otros usuarios`` respectivamente: ``r: lectura``, ``w: escritura``, ``x: ejecución``.
+    * Además, los siguientes caracteres (de tres en tres) representan los ``permisos del propietario``, ``del grupo`` y de ``otros usuarios`` respectivamente: ``r: lectura``, ``w: escritura``, ``x: ejecución``.
 
 * ``Links``: Esta segunda columna indica si el objeto es un archivo y el número de enlaces completos o duros. Si es un archivo, muestra el número de enlaces duros que tiene. Si es un directorio, el número de objetos que cuelgan de él más 2, que incluyen el propio directorio y el directorio padre.
 
