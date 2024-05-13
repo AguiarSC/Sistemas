@@ -337,70 +337,95 @@ Si es un standby spare conlleva un proceso de reconstrucción durante la incorpo
 Otra forma de montar un RAID con disco de reserva en modalidad Hot Spare pero sin tener que agregar otro disco adicional es reservar un espacio en los discos del RAID que no se utilizará salvo que se produzca el fallo en uno de ellos, que será el momento en el que la información del disco fallado se replicará en este espacio libre. Esta es la configuración
 utilizada por ejemplo en ``RAID 5E`` y ``RAID 6E``, que reservan este espacio de spare al final de los discos paridad. 
 
-----------------------
+=====================
 Administración de RAID
-----------------------
+=====================
 
-La administración de RAID en Linux se realiza con el paquete mdadm (Multiple Device Administrator), que se instala con sudo apt-get install mdadm. Antes de iniciar, se puede verificar la existencia de dispositivos RAID en el sistema con /proc/mdstat. La creación de RAID puede realizarse en dispositivos o particiones, no necesariamente del mismo tamaño. En caso de diferencias de tamaño, mdadm advertirá y utilizará el tamaño más pequeño. Los comandos comunes para gestionar RAID en Linux incluyen la creación, establecimiento de dispositivos defectuosos, eliminación, adición, y verificación del estado.
+La administración de RAID en Linux se realiza con el paquete **mdadm** (Multiple Device Administrator), que se instala con ``sudo apt-get install mdadm``. Antes de iniciar, se puede verificar la existencia de dispositivos RAID en el sistema con ``/proc/mdstat``. La creación de RAID puede realizarse en dispositivos o particiones, no necesariamente del mismo tamaño. En caso de diferencias de tamaño, mdadm advertirá y utilizará el tamaño más pequeño. Los comandos comunes para gestionar RAID en Linux incluyen la creación, establecimiento de dispositivos defectuosos, eliminación, adición, y verificación del estado.
 
-1. Creación de RAID
+Creación de RAID
+----------------
 
-   ``mdadm --create /dev/mdX --level=Y --raid-devices=Z dispositivos``
+.. code-block:: bash
 
-   * ``create /dev/mdX`` indica la creación del multidispositivo, siendo X un número.
+   mdadm --create /dev/mdX --level=Y --raid-devices=Z dispositivos
 
-   * ``level=Y`` es el nivel RAID para aplicar, pudiendo ser Y:
+Donde:
 
-     - ``linear`` para RAID lineal
+- ``create /dev/mdX`` indica la creación del multidispositivo, siendo X un número.
+- ``level=Y`` es el nivel RAID para aplicar, pudiendo ser Y:
+  - ``linear`` para RAID lineal
+  - ``raid0``, ``0`` o ``stripe`` para RAID0
+  - ``raid1``, ``1`` o ``mirror`` para RAID1
+  - ``raid5`` o ``5`` para RAID5
+  - ``raid6`` o ``6`` para RAID6
+  - ``raid10`` o ``10`` para RAID10
+- ``raid-devices=Z dispositivos``, donde Z indica el número de dispositivos asociados al RAID y cada uno de ellos separado por espacios (``/dev/sdX /dev/sdY…``).
 
-     - ``raid0``, ``0`` o ``stripe`` para RAID0
+Establecer un disco como defectuoso de un RAID
+----------------------------------------------
 
-     - ``raid1``, ``1`` o ``mirror`` para RAID1
+.. code-block:: bash
 
-     - ``raid5`` o ``5`` para RAID5
+   mdadm /dev/mdX --fail /dev/sdY
 
-     - ``raid6`` o ``6`` para RAID6
+Eliminar un disco de un RAID
+----------------------------
 
-     - ``raid10`` o ``10`` para RAID10
+.. code-block:: bash
 
-   * ``raid-devices=Z dispositivos``, donde Z indica el número de dispositivos asociados al RAID y cada uno de ellos separado por espacios (``/dev/sdX /dev/sdY…``).
+   mdadm /dev/mdX --remove /dev/sdY
 
-2. Establecer un disco como defectuoso de un RAID:
+Añadir un disco a un RAID
+-------------------------
 
-   ``mdadm /dev/mdX --fail /dev/sdY``
+.. code-block:: bash
 
-3. Eliminar un disco de un RAID:
+   mdadm /dev/mdX --add /dev/sdY
 
-   ``mdadm /dev/mdX --remove /dev/sdY``
+Comprobar el estado de todos los multidispositivos
+-------------------------------------------------
 
-4. Añadir un disco a un RAID:
+.. code-block:: bash
 
-   ``mdadm /dev/mdX --add /dev/sdY``
+   cat /proc/mdstat
 
-5. Comprobar el estado de todos los multidispositivos:
+Obtener información de configuración de todos los multidispositivos
+------------------------------------------------------------------
 
-   ``cat /proc/mdstat``
+.. code-block:: bash
 
-6. Obtener información de configuración de todos los multidispositivos:
+   mdadm --detail --scan
 
-   ``mdadm --detail --scan``
+Obtener información de configuración y construcción de un multidispositivo
+-------------------------------------------------------------------------
 
-7. Obtener información de configuración y construcción de un multidispositivo:
+.. code-block:: bash
 
-   ``mdadm --detail /dev/mdX``
-   ``mdadm --detail /dev/mdX --scan``
+   mdadm --detail /dev/mdX
+   mdadm --detail /dev/mdX --scan
 
-8. Examinar el estado de un dispositivo asociado a un RAID:
+Examinar el estado de un dispositivo asociado a un RAID
+------------------------------------------------------
 
-   ``mdadm --examine /dev/mdX``
+.. code-block:: bash
 
-9. Detener un RAID:
+   mdadm --examine /dev/mdX
 
-   ``mdadm --stop /dev/mdX``
+Detener un RAID
+---------------
 
-10. Eliminar el superbloque de un dispositivo (almacena información para manipularlo) sobreescribiendo ceros:
+.. code-block:: bash
 
-    ``mdadm --zero-superblock /dev/sdY``
+   mdadm --stop /dev/mdX
+
+Eliminar el superbloque de un dispositivo (almacena información para manipularlo) sobreescribiendo ceros
+--------------------------------------------------------------------------------------------------------
+
+.. code-block:: bash
+
+   mdadm --zero-superblock /dev/sdY
+
 
 Una vez creado un RAID con ``mdadm`` lo particionamos empleando los métodos tradicionales como ``fdisk``, ``cfdisk``, ``parted`` o ``gparted``, y lo montamos con ``mount``.
 
