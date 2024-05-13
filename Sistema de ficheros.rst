@@ -283,30 +283,37 @@ Duros (o fuertes)
 Listados:
 ------------
 
-.. figure:: /Captura%20de%20pantalla%202024-05-10%20123308.png
-   :align: center
+.. code-block:: bash
 
-La primera columna indica el tipo de archivo: d (directorio):
+    total 0
+    drwxr-xr-x 2 usuario grupo 4096 May 13 2024 directorio
+    -rw-r--r-- 1 usuario grupo   12 May 13 2024 archivo_normal
+    brw-r----- 1 usuario grupo    0 May 13 2024 bloque
+    crw-rw---- 1 usuario grupo    0 May 13 2024 caracter
+    lrwxrwxrwx 1 usuario grupo    7 May 13 2024 enlace_simbolico -> archivo
+    prw-r----- 1 usuario grupo    0 May 13 2024 tuberia
+    srwxrwxrwx 1 usuario grupo    0 May 13 2024 socket
 
-- -(archivo normal o usual), se crea con programas como vi, cp, touch, etc .
 
-- Archivos que permite la comunicación con el hardware y los periféricos:
+* ``Tipo de archivo``: La primera columna indica el tipo de archivo o entrada. 
 
-     b (archivo tipo bloque, entrada/salida en bloques de datos)
+    * ``d``: Indica un directorio.
 
-     c (archivo tipo carácter, entrada/salida byte a byte)
+    * ``-``: Representa un archivo normal o usual, que puede ser creado con programas como vi, cp, touch, etc.
 
-- l (enlace simbólico), apunta a otro fichero. 
+    * ``b``: Es un archivo tipo bloque, utilizado para entrada/salida en bloques de datos.
 
-- p (pipes o tuberías, permiten la comunicación entre procesos, se crean con mknod)
+    * ``c``: Se refiere a un archivo tipo carácter, utilizado para entrada/salida byte a byte.
 
-- s (sockets, comunican procesos en la red)
+    * ``l``: Representa un enlace simbólico, que apunta a otro fichero.
 
-En Linux todos son archivos, por eso, aquí se habla de tipo de archivo. Los directorios son para el sistema un tipo de archivos distinto de los archivos que llamamos normales.
+    * ``p``: Indica pipes o tuberías, que permiten la comunicación entre procesos y se crean con mknod.
 
-• Las tres siguientes columnas se refieren a los permisos en tres bloques: para el propietario, para los usuarios de su grupo y para el resto de los usuarios.
+    * ``s``: Representa sockets, que se utilizan para la comunicación entre procesos en la red. En Linux, todos estos elementos son considerados archivos, pero los directorios son tratados como un tipo de archivo distinto de los archivos normales.
 
-• La columna Links indica si el objeto es un archivo, el número de enlaces completos o duros (si estos no existen aparece un 1). Si se trata de un directorio, es el número de objetos que cuelgan de él más 2, que son el mismo y el directorio padre.
+* ``Permisos``: Las tres siguientes columnas muestran los permisos para el propietario, para los usuarios del grupo y para el resto de los usuarios, respectivamente.
 
-• La siguientes columnas contienen informacion basica como el usuario, la fecha o el tamaño.
+* ``Links``: Esta columna indica si el objeto es un archivo y el número de enlaces completos o duros. Si es un archivo, muestra el número de enlaces duros que tiene. Si es un directorio, el número de objetos que cuelgan de él más 2, que incluyen el propio directorio y el directorio padre.
+
+* ``Información básica``: Las columnas restantes contienen información básica sobre el archivo o directorio, como el nombre de usuario propietario, el grupo al que pertenece, la fecha y hora de la última modificación y el tamaño del archivo en bytes.
 
