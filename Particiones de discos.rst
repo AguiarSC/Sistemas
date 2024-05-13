@@ -243,3 +243,96 @@ Cada línea tiene seis columnas (``<file system> < mount point > <type> <options
 
 * ``pass``: establece el orden en el que se comprobará/chequeará el sistema de archivos en el arranque. Si ponemos 0 no se comprueba en el arranque. El 1 (comprobar en primer lugar) se reserva para el sistema raíz (/), con 2 se comprobaría en segundo lugar. (Utilizado por el comando fsck (file system consistency check) para controlar el orden en el que son comprobadas las particiones).
 
+
+===================
+ALMACENAMIENTO RAID
+===================
+
+RAID (Redundant Array Of Independent Disks) es un término que se refiere a un ``conjunto de discos que se pueden combinar de forma que trabajamos con estos como si fueran un único disco``. Las configuraciones de almacenamiento RAID son más típicas de entornos de servidor, aunque cada vez son más comunes en equipos de escritorio. Dependiendo del modelo de RAID que apliquemos podemos obtener ventajas como:
+
+* Mejorar la integridad de los datos
+
+* Mejorar la tolerancia a fallos y errores en los discos
+
+* Mejorar el rendimiento (velocidad de transferencia)
+
+* Facilitar el aprovechamiento de varios discos (capacidad total de almacenamiento)
+
+A nivel de RAID ``la información se organiza en porciones de tamaño fijo llamadas bandas o stripes``. El tamaño de estas bandas típicamente es de de ``64 Kb`` o ``128 Kb``. Hay distintos tipos de RAID, cada uno con sus características que priman alguno de los aspectos mencionados antes, y que cambian en la forma en la que usan los discos que los forman. 
+
+------------------------------------------------
+¿Cómo se mejora con RAID la tolerancia a fallos?
+------------------------------------------------
+
+Algunas configuraciones RAID replican los datos en varios discos, evitando así que haya datos almacenados en un único disco. De esta forma cuando un disco falla siempremtendremos una réplica de sus datos en otros discos. Los sistemas RAID disponen de mecanismos para alertar del error de un disco ofreciendo así un tiempo para reemplazarlo por otro disco nuevo. Una vez instalado el nuevo disco los datos serán replicados en este. Tendremos garantizada la tolerancia a fallos siempre que:
+
+* No se estropee más de un disco a la vez
+
+* Si después del fallo de un disco lo cambiamos y se replican los datos antes de que falle otro disco nuevo.
+
+``La replicación tiene como desventaja que el espacio de almacenamiento efectivo total del RAID será siempre inferior a la suma de las capacidades de todos los discos``. Los sistemas RAID aceleran el rendimiento repartiendo de forma homogénea los datos de cada fichero en dos o más discos. La mejora de rendimiento se consigue paralelizando el trabajo de lectura y escritura entre todos los discos. Recordar que un disco duro mecánico es peor opción que un disco SSD. Un disco que además esté muy fragmentado también incidirá negativamente en el rendimiento.
+
+----------------------------
+Configuraciones RAID básicas
+----------------------------
+
+Para establecer esta configuración, se puede realiza ``mediante software`` (propio o no del sistema operativo) o ``mediante hardware`` específico para el control del RAID (tarjeta de expansión controladora o chipset de la placa base). ``Esta última es la opción más óptima en cuanto a rendimiento``, y con estas podremos utilizar un RAID para la instalación de un sistema operativo, algo que no es posible con las soluciones RAID por software. Si implementamos RAID por software tenemos varias opciones:
+
+* Herramientas RAID en Windows
+
+   * Administración de discos
+
+   * Diskpart
+
+   * Espacios de almacenamiento
+
+   * Grupos de almacenamiento en Windows Server
+
+* Herramientas RAID en Linux
+
+   * LVM (Logical Volume manager)
+
+   * MDADM (Multi Device Administrator)
+
+La forma de realizar un nivel RAID es distribuyendo o redundando los datos entre varios discos de diferentes maneras. Es frecuente emplear el término ``JBOD`` (Just a Bunch of Disks) o ``RAID lineal`` al método de combinar diferentes discos físicos en un solo lógico. JBOD, por tanto, no presenta redundancia ni mejora el rendimiento del conjunto, sin embargo, el tamaño global es la suma de todos ellos.
+
+-------------
+TIPOS DE RAID
+-------------
+* ``RAID 0`` (Data Stripping)
+   Se encarga de dividir o distribuir los datos entre dos o más discos sin duplicar la información, es decir, no existe redundancia de datos. Es una configuración que prima la velocidad de lectura y escritura por encima de la tolerancia a fallos, no mejora la seguridad de los datos, solo afecta al rendimiento.
+
+* ``RAID 1`` (Data Mirroring) 
+   Emplea un mínimo de dos discos del mismo tamaño o porciones de estos iguales en los que son una copia el uno del otro (aunque aparecen como una única entidad), de ahí el término espejo (mirroring). Esto permite aumentar la fiabilidad de los datos al quedar estos
+   duplicados en tantos discos como se desee. Además aumenta la velocidad de lectura.
+
+* ``RAID 5`` (Stripping con paridad distribuida)
+   Al igual que RAID 0, realiza una distribución de los bloques de datos, y además genera información de paridad (calculada operando con el resto de datos de la misma división) que se distribuye en todos los discos (al menos tres). Los bloques de paridad permiten reconstruir un disco en caso de fallo sin necesidad de duplicar su almacenamiento. Para ello, han de realizar cálculos de los datos, generando dicha paridad, también llamada código de detección de error o CRC. De este modo, no se desaprovecha tanto espacio redundante, como RAID 1, y además mejora la velocidad de lectura, si bien las escrituras son más costosas al tener que generar códigos CRC y sólo soporta el fallo de un único disco. El espacio útil es la suma de las capacidades de todos los discos menos 1.
+
+* RAID 6 (Stripping con paridad distribuida y duplicad
+   Es como el RAID 5 pero añadiendo un disco adicional para mantener la duplicado. En este caso requiere un mínimo de cuatro discos, siendo así el espacio útil la suma de todos los discos menos dos. Como ventaja tiene la recuperación de datos y como desventaja es que es más lento que el RAID 5 al tener que escribir doble paridad.
+
+-------------------------------------------------
+Combinaciones RAID: RAID 1+0, RAID 0+1 Y RAID 5+0
+-------------------------------------------------
+
+También se pueden establecer combinaciones de niveles RAID anidando es aprovechando las ventajas de varias configuraciones. Así, destacamos los siguientes niveles anidados:
+
+* ``RAID 01``. Consiste en crear dos RAID 0 iguales y sobre estos hacer un RAID 1.
+
+* ``RAID 10``, invierte el orden haciendo primero dos o más RAID 1 y, sobre estos, después hacer un RAID 0.
+
+* ``RAID 50``, se crean dos o más configuraciones iguales de RAID 5 que proporcionan la redundancia de datos y por encima de estas se monta el RAID 0 que proporciona el reparto de los datos para mejorar el rendimiento.
+
+En las RAID con redundancia podemos utilizar un disco de reserva o spare que permanecerá sin utilizar hasta que se produzca un fallo en uno de los discos, momento en el que automáticamente ocupará el sitio del disco erróneo y empezará el proceso de reconstrucción.
+
+Para esto hay dos configuraciones:
+
+* ``Hot Spare``: El disco está conectado y preparado (instantáneamente entra a funcionar).
+
+* ``Standby spare``: El disco está en espera (tarda unos instantes al tener que arrancar).
+
+Si es un standby spare conlleva un proceso de reconstrucción durante la incorporación del disco spare sustituyendo al disco fallido sin embargo si es un hot spare este tiempo se minimiza. El uso de un disco de reserva no ofrece ninguna ventaja de velocidad pero reduce el tiempo de replicación al sustituir automáticamente el disco defectuoso y empezar la reconstrucción de datos justo cuando se produce el error, simplificando las tarea de mantenimiento.
+
+Otra forma de montar un RAID con disco de reserva en modalidad Hot Spare pero sin tener que agregar otro disco adicional es reservar un espacio en los discos del RAID que no se utilizará salvo que se produzca el fallo en uno de ellos, que será el momento en el que la información del disco fallado se replicará en este espacio libre. Esta es la configuración
+utilizada por ejemplo en ``RAID 5E`` y ``RAID 6E``, que reservan este espacio de spare al final de los discos paridad. 
