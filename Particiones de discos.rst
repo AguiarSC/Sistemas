@@ -41,6 +41,7 @@ Cada unidad de almacenamiento del ordenador y cada posible partición de esta un
 ``Con la llegada de SATA, en la actualidad se utiliza mayormente ``sda`` en lugar de ``hda`` para referirse a discos duros. Donde ``sd`` quiere decir serial drive.``
 ``Por lo menos una partición será asignada al directorio raíz, y el resto de las particiones y unidades se montarán sobre este sistema de ficheros.``
 
+
 .. _Particiones Linux:
 
 PARTICIONES LINUX
@@ -55,7 +56,8 @@ Para sistemas más avanzados, y por seguridad es recomendable tener varias parti
 
 .. _Tipos de particionado:
 
-Tipos de particionado
+
+TIPOS DE PARTICIONADO
 ---------------------
 
 Antes de poder particionar un disco duro tenemos que elegir el tipo de particionado que va a utilizar: ``MBR`` (Master Boot Record) o ``MSDOS`` y ``GPT`` (GUID Partition Table)
@@ -68,7 +70,8 @@ Una vez seleccionado el tipo, en la creación de una partición debemos indicar:
 
 .. _Sistema de archivos:
 
-Sistema de archivos
+
+SISTEMAS DE ARCHIVOS
 -------------------
 
 El sistema de archivos permite al sistema operativo controlar cómo se lee y escribe la información en los dispositivos de almacenamiento (discos duros, pendrive, tarjetas sd, ...).
@@ -79,7 +82,8 @@ Cada sistema operativo trabaja preferiblemente con unos sistemas de archivos det
 
 .. _Flags de una partición:
 
-Flags de una partición
+
+FLAGS DE UNA PARTICIÓN
 ----------------------
 
 Cada partición además puede tener una serie de ``flags`` (se configuran como activado o desactivado con el gestor de particiones Gparted) con los que se ajustan atributos adicionales con los que se indican usos específicos de las particiones.
@@ -100,7 +104,8 @@ Son varios los flags que podemos encontrar, pero los más típicos son:
 
 .. _Gestores de particiones:
 
-Gestores de particiones
+
+GESTORES DE PARTICIONES
 -----------------------
 
 El particionado de un disco se realiza con unas utilidades de disco llamadas gestores de particiones.
@@ -115,8 +120,8 @@ El particionado de un disco se realiza con unas utilidades de disco llamadas ges
   - ``parted`` y ``Gparted``: Un gestor de particiones de consola que también dispone de un gestor gráfico y que viene preinstalado en múltiples distribuciones
 
 
-Crear partición y dar formato
-=============================
+CREAR Y FORMATEAR PARTICIÓN
+============================
 
 Recordamos la nomenclatura de discos y particiones en LINUX:
 
@@ -130,6 +135,7 @@ Recordamos la nomenclatura de discos y particiones en LINUX:
   - ``/dev/sdb`` → /dev/sdb1, /dev/sdb2, …
 
 - Cada disco y partición además tienen el identificador único ``UUID`` (Universally Unique Identifier) que podemos consultar con el comando ``blkid (/sbin/blkid)``, (podemos ver el nombre de dispositivo de bloque, el UUID, el tipo de sistemas de archivos)
+
 
 FDISK
 -----
@@ -211,7 +217,7 @@ Las particiones montadas con ``mount`` no se conservan después de reiniciar el 
 
 
 ===============================
-Configuración del archivo fstab
+CONFIGURACIÓN DEL ARCHIVO FSTAB
 ===============================
 
 El fichero ``fstab`` (file systems table) se encuentra en el directorio ``/etc`` como parte de la configuración del sistema. Lo más destacado de este fichero es la lista de discos y particiones disponibles. En ella se indica cómo montar cada dispositivo y qué configuración utilizar. Para configurar el archivo fstab es necesario tener permisos administrativos. La información del fichero dependerá del tipo y de la cantidad de dispositivos que existan en el ordenador.
@@ -249,13 +255,13 @@ RAID (Redundant Array Of Independent Disks) es un término que se refiere a un `
 A nivel de RAID ``la información se organiza en porciones de tamaño fijo llamadas bandas o stripes``. El tamaño de estas bandas típicamente es de de ``64 Kb`` o ``128 Kb``. Hay distintos tipos de RAID, cada uno con sus características que priman alguno de los aspectos mencionados antes, y que cambian en la forma en la que usan los discos que los forman. 
 
 ------------------------------------------------
-¿Cómo se mejora con RAID la tolerancia a fallos?
+¿CÓMO SE MEJORA CON RAID LA TOLERANCIA A FALLOS?
 ------------------------------------------------
 
 Algunas configuraciones RAID replican los datos en varios discos para evitar la pérdida de datos en caso de fallo de un disco. Los sistemas RAID alertan sobre fallos de disco y permiten su reemplazo, replicando los datos en el nuevo disco. ``La tolerancia a fallos está garantizada si no fallan más de un disco a la vez y si se reemplaza y replica un disco antes de que falle otro``. Sin embargo, la replicación reduce el espacio de almacenamiento total del RAID respecto a la suma de las capacidades de los discos. Los sistemas RAID mejoran el rendimiento distribuyendo datos entre discos y acelerando la lectura y escritura. Los discos SSD son preferibles a los discos mecánicos, y la fragmentación puede afectar negativamente al rendimiento.
 
 ----------------------------
-Configuraciones RAID básicas
+CONFIGURACIONES RAID BÁSICAS
 ----------------------------
 
 Para establecer esta configuración, se puede realiza ``mediante software`` (propio o no del sistema operativo) o ``mediante hardware`` específico para el control del RAID (tarjeta de expansión controladora o chipset de la placa base). ``Esta última es la opción más óptima en cuanto a rendimiento``, y con estas podremos utilizar un RAID para la instalación de un sistema operativo, algo que no es posible con las soluciones RAID por software. Si implementamos RAID por software tenemos varias opciones:
@@ -295,7 +301,7 @@ TIPOS DE RAID
    Es como el RAID 5 pero añadiendo un disco adicional para mantener la duplicado. En este caso requiere un mínimo de cuatro discos, siendo así el espacio útil la suma de todos los discos menos dos. Como ventaja tiene la recuperación de datos y como desventaja es que es más lento que el RAID 5 al tener que escribir doble paridad.
 
 -------------------------------------------------
-Combinaciones RAID: RAID 1+0, RAID 0+1 Y RAID 5+0
+COMBINACIONES RAID: RAID 1+0, RAID 0+1 Y RAID 5+0
 -------------------------------------------------
 
 También se pueden establecer combinaciones de niveles RAID anidando es aprovechando las ventajas de varias configuraciones. Así, destacamos los siguientes niveles anidados:
@@ -326,7 +332,7 @@ ADMINISTRACIÓN DE RAID
 
 La administración de RAID en Linux se realiza con el paquete **mdadm** (Multiple Device Administrator), que se instala con ``sudo apt-get install mdadm``. Antes de iniciar, se puede verificar la existencia de dispositivos RAID en el sistema con ``/proc/mdstat``. La creación de RAID puede realizarse en dispositivos o particiones, no necesariamente del mismo tamaño. En caso de diferencias de tamaño, mdadm advertirá y utilizará el tamaño más pequeño. Los comandos comunes para gestionar RAID en Linux incluyen la creación, establecimiento de dispositivos defectuosos, eliminación, adición, y verificación del estado.
 
-Creación de RAID
+CREACIÓN DE RAID
 ----------------
 
 .. code-block:: bash
