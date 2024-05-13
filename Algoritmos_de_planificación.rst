@@ -100,7 +100,7 @@ El primer proceso que entra será el primero en salir.
      - 17
      - 18
    * - PROCESO A
-     - Placeholder 2
+     - E
      - Placeholder 3
      - Placeholder 4
      - Placeholder 5
