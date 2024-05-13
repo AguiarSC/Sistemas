@@ -13,9 +13,19 @@ El gestor de arranque es el primer programa que se ejecuta justo después de las
 
 - **GPT (GUID Partition Table)**: En el sistema GPT, las particiones son casi ilimitadas sin importar su relevancia. No hay distinción entre particiones, todas se consideran primarias. En Windows se limita a 128 mientras que GNU/Linux llega a 256. Además, también pueden tener mayor tamaño. Vino a solucionar el problema de las limitaciones de 2 TiB por partición y de 4 TiB por disco del MBR, y tiene mayor seguridad en los datos y arranque más rápido que MBR. Reserva también un espacio al principio del disco donde almacena la tabla de particiones y el gestor de arranque. Este espacio es mayor que en MBR ya que al poder particionar en más trozos necesita más espacio para guarda los datos de todas las particiones. Dentro de este espacio reserva el primer sector (LBA 0) para el también llamado MBR por compatibilidad con equipos con BIOS antiguas.
 
+
 .. note::
 
    En Linux, el gestor de arranque predeterminado es GRUB (Grand Unifier Bootloader) y en Windows, el gestor de arranque es Windows Boot Manager.
+
+..
+
+.. warning::
+    This is warning text. Use a warning for information the user must
+    understand to avoid negative consequences.
+
+    Warnings are formatted in the same way as notes. In the same way,
+    lines must be broken and indented under the warning tag.
 
 
 Las operaciones básicas que se pueden realizar sobre particiones son:
