@@ -223,3 +223,25 @@ Para "desmontar" la partición, se deshace el vínculo entre la partición y la 
 Es importante desmontar una partición, especialmente si se han escrito datos. En el caso de los dispositivos extraíbles, si se saca el dispositivo antes de desmontar la partición es bastante probable que se pierdan datos. Al desmontar el dispositivo, se volcarán todas las cachés de escritura al dispositivo.
 
 Las particiones que se monten con el comando ``mount`` no permanecerán después de reiniciar el sistema. Si se quiere montar una partición de forma permanente habrá que añadir una entrada en el fichero /etc/fstab. Durante el arranque del equipo se leen las entradas de este fichero y se montan automáticamente para que estén accesibles a los usuarios.
+
+===============================
+Configuración del archivo fstab
+===============================
+
+El fichero ``fstab`` (file systems table) se encuentra en el directorio ``/etc`` como parte de la configuración del sistema. Lo más destacado de este fichero es la lista de discos y particiones disponibles. En ella se indica cómo montar cada dispositivo y qué configuración utilizar. Para configurar el archivo fstab es necesario tener permisos administrativos. La información del fichero dependerá del tipo y de la cantidad de dispositivos que existan en el ordenador.
+
+Cada línea tiene seis columnas (``<file system> < mount point > <type> <options> <dump> <pass>``), cuyo significado se detalla a continuación:
+
+
+* ``file system``: lugar donde se encuentra el dispositivo físico a montar. Será una partición del tipo /dev/sdXY pero también puede ser un archivo o un recurso compartido a través de la red. Se puede utilizar el UUID de la partición.
+
+* ``mount point``: punto de montaje donde será montado el dispositivo físico, es decir carpeta en la que va a estar accesible el sistema de ficheros.
+
+* ``type``: tipo de archivo con el que será montado el dispositivo físico, es decir formato del sistema de ficheros: ext2, ext3, ext4, ntfs, vfat ...
+
+* ``options``: opciones de montaje, parámetros adicionales, pasados como una lista separada por comas. Se puede montar para sólo lectura (ro), o en modo lectura y escritura (rw). Permitir a cualquier usuario montar el sistema de ficheros (user) o sólo usuarios del grupo users (users) o sólo el usuario root puede montar el sistema de ficheros (nouser). Si se quiere que no monte automáticamente la partición en el inicio se puede utilizar noauto. Si se desea utilizar las opciones predeterminadas según el sistema de archivos se puede poner defaults (que son rw, suid, dev, exec, auto, nouser, async). Existen algunas opciones comunes, y otras que dependen del sistema de ficheros al que se quiere acceder.
+
+* ``dump``: utilizado por la herramienta dump para realizar copias de seguridad de las distintas particiones. Normalmente no se encuentra instalado, por lo que la opción más común es 0 (deshabilitado). Con valor 1, dump hace una copia de seguridad del sistema de archivos.
+
+* ``pass``: establece el orden en el que se comprobará/chequeará el sistema de archivos en el arranque. Si ponemos 0 no se comprueba en el arranque. El 1 (comprobar en primer lugar) se reserva para el sistema raíz (/), con 2 se comprobaría en segundo lugar. (Utilizado por el comando fsck (file system consistency check) para controlar el orden en el que son comprobadas las particiones).
+
