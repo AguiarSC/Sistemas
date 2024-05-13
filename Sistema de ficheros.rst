@@ -285,7 +285,6 @@ Listados:
 
 .. code-block:: bash
 
-    total 0
     drwxr-xr-x 2 usuario grupo 4096 May 13 2024 directorio
     -rw-r--r-- 1 usuario grupo   12 May 13 2024 archivo_normal
     brw-r----- 1 usuario grupo    0 May 13 2024 bloque
