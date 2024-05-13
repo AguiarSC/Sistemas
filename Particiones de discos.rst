@@ -115,8 +115,8 @@ El particionado de un disco se realiza con unas utilidades de disco llamadas ges
   - ``parted`` y ``Gparted``: Un gestor de particiones de consola que también dispone de un gestor gráfico y que viene preinstalado en múltiples distribuciones
 
 
-Crear partición y dar formato (LINUX)
-=====================================
+Crear partición y dar formato
+=============================
 
 Recordamos la nomenclatura de discos y particiones en LINUX:
 
