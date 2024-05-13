@@ -38,6 +38,3 @@ Cada unidad de almacenamiento del ordenador y cada posible partición de esta un
 **Nota**: Con la llegada de SATA, en la actualidad se utiliza mayormente `sda` en lugar de `hda` para referirse a discos duros. Donde `sd` quiere decir serial drive.
 
 Por lo menos una partición será asignada al directorio raíz, y el resto de las particiones y unidades se montarán sobre este sistema de ficheros.
-
-
-
