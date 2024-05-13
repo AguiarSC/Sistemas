@@ -341,9 +341,11 @@ Administración de RAID
 La administración de RAID en Linux se realiza con el paquete mdadm (Multiple Device Administrator), que se instala con sudo apt-get install mdadm. Antes de iniciar, se puede verificar la existencia de dispositivos RAID en el sistema con /proc/mdstat. La creación de RAID puede realizarse en dispositivos o particiones, no necesariamente del mismo tamaño. En caso de diferencias de tamaño, mdadm advertirá y utilizará el tamaño más pequeño. Los comandos comunes para gestionar RAID en Linux incluyen la creación, establecimiento de dispositivos defectuosos, eliminación, adición, y verificación del estado.
 
 1. Creación de RAID
-   ::
+   .. code-block: sh
    
    mdadm --create /dev/mdX --level=Y --raid-devices=Z dispositivos
+
+   ..
 
    donde
    * ``create /dev/mdX`` indica la creación del multidispositivo, siendo X un número.
