@@ -114,3 +114,112 @@ El particionado de un disco se realiza con unas utilidades de disco llamadas ges
   - ``cfdisk``: Un gestor de particiones de consola que incorpora las funcionalidades de fdisk pero con una interfaz que facilita
   - ``parted`` y ``Gparted``: Un gestor de particiones de consola que también dispone de un gestor gráfico y que viene preinstalado en múltiples distribuciones
 
+
+Crear partición y dar formato (LINUX)
+=====================================
+
+Recordamos la nomenclatura de discos y particiones en LINUX:
+
+- Los discos vienen especificados en nomenclaturas /dev/sda, /dev/sdb, /dev/sdc, … en función de la cantidad de discos que dispongamos.
+  - ``dev`` → es la abreviatura de device
+  - ``sd`` → Es la abreviatura de SCSI mass-storage driver
+  - ``a, b, c, ...`` → Es la parte que nos distingue cada disco (a es el disco 1, b el disco 2, c el disco 3, …)
+
+- Las particiones se identifican para cada disco añadiendo el número de partición al final.
+  - ``/dev/sda`` → /dev/sda1, /dev/sda2, …
+  - ``/dev/sdb`` → /dev/sdb1, /dev/sdb2, …
+
+- Cada disco y partición además tienen el identificador único ``UUID`` (Universally Unique Identifier) que podemos consultar con el comando ``blkid (/sbin/blkid)``, (podemos ver el nombre de dispositivo de bloque, el UUID, el tipo de sistemas de archivos)
+
+FDISK
+-----
+
+La herramienta fdisk permite listar y modificar la tabla de particiones de un disco.
+
+Para listar todos los discos detectados y sus particiones se ejecuta: ``fdisk -l``
+
+Para listar la tabla de particiones del disco ``/dev/sda`` se ejecuta: ``fdisk -l /dev/sda``
+
+Para ejecutar el comando hay que pasarle como argumento el disco sobre el que se desea trabajar (/dev/sda, /dev/sdb, etc.). El comando a ejecutar es: ``fdisk <disco>``
+
+Funciona como un intérprete de comandos, en modo interactivo, en el que los subcomandos más importantes son:
+
+* ``m (man)``: imprime la ayuda.
+
+* ``p (print)``: imprime la tabla de particiones del dispositivo.
+
+* ``d (delete)``: eliminar partición.
+
+* ``n (new)``: crea una nueva partición.
+
+* ``q (quit)``: salir sin guardar los cambios.
+
+* ``w (write)``: escribir los cambios y salir.
+
+Para crear una nueva partición se elige la letra "n".
+Se le da formato a la partición con el comando ``mkfs (make filesystem)``. Actualmente, en GNU/Linux existe un programa separado por cada tipo de sistema de ficheros: ``mkfs.ext2, mkfs.ext3, mkfs.ext4, mkfs.ntfs, mkfs.xfs, mkfs.msdos, mkfs.fat, mkfs.vfat`` (es un alias de mkfs.fat), etc. De esta forma mkfs es solamente un front-end que ejecuta el programa apropiado dependiendo del tipo de sistema de ficheros especificado; lo cual haremos con la opción ``-t`` de mkfs.
+
+En primer lugar, vamos a ver qué tipos de formatos podemos dar con mkfs. Para ello, escribimos en una consola mkfs y pulsamos tabulador, para que nos muestre las opciones disponibles:
+
+El comando más básico para la creación de un sistema de archivos FAT es ``mkfs.fat``. Con la opción ``-F`` podemos seleccionar el tamaño de la FAT (File Allocation Table), entre ``12``, ``16`` o ``32``, es decir, entre ``FAT12``, ``FAT16`` o ``FAT32``. Si no se especifica, mkfs.fat seleccionará la opción apropiada según el tamaño del sistema de archivos (consultar man mkfs.fat)
+
+``sudo mkfs.fat -F 32 /dev/sda1``
+
+Por lo tanto, será necesario indicar el tipo de sistema de ficheros y la partición que se quiere formatear. Para formatear una partición el dispositivo ha de estar desmontado.
+
+``mkfs -t ext4 /dev/sdXY o haciendo mkfs.ext4 /dev/sdXY``
+
+También se podrían indicar otras opciones; como etiquetas, formato rápido, tamaño del clúster, etc. Estas opciones varían según el constructor, al que llama mkfs (ver man para mayor detalle).
+
+Para preparar una partición como área de intercambio de memoria virtual se utiliza el comando mkswap
+
+* Preparar partición: mkswap /dev/sdXY
+
+* Habilitar partición de intercambio: swapon /dev/sdXY
+
+* Deshabilitar partición de intercambio: swapoff /dev/sdXY
+
+* Usarla de forma permanente (fichero /etc/fstab): /dev/sda2 none swap sw 0 0
+
+Para poder usar un dispositivo de almacenamiento es necesario montarlo. Antes de montar la partición es necesario crear la carpeta en donde se va a montar. Generalmente en /media o en /mnt. Se ejecutaría el comando: mkdir /media/<nombre_carpeta>
+
+Para acceder a las particiones se usa el comando mount que permite hacer accesible cualquier sistema de archivos reconocible por el núcleo de Linux en un punto de montaje del sistema. Todos los sistemas de archivos se montan directamente por nosotros o indirectamente durante el arranque del sistema, a excepción del sistema de archivos raíz "/", que se asocia a un punto de montaje compilado en el propio kernel y que monta la partición específica durante la instalación.
+
+La carpeta en la que se enlaza el sistema de ficheros se denomina punto de montaje porque es el punto en el que estará accesible el sistema de ficheros.
+
+El formato del comando será: mount [-avwr][-t <sistema_archivos>] /dev/<partición> <carpeta_montaje> siendo todos los parámetros opcionales:
+
+* ``-a``: monta los sistemas de archivos presentes en /etc/fstab, salvo que se indique el parámetro noauto, que impediría el montaje por esta opción.
+
+* ``-v``: muestra información del proceso de montaje
+
+* ``-w``: monta el sistema de archivos con permisos de lectura y escritura.
+
+* ``-r``: monta el sistema de archivos con permisos de solo escritura
+
+* ``-t <sistema_archivos>``: sistema de archivos de la partición para montar (vfat (FAT16 y FAT32), ntfs (NTFS), ext2, ext3, ext4, iso9660, etc.). ES OPCIONAL
+
+* ``/dev/<partición>``: identificador de la partición a montar (hdXY para un disco IDE o ATA, sdXY disco SATA). Para comprobar las particiones existentes se ejecuta: sudo fdisk -l o ls /dev/sd*
+
+* ``<carpeta_montaje>``: donde se montará la partición, es decir, donde aparecerán los datos de la partición. Generalmente en /media o /mnt, aunque puede estar en cualquier otro lugar.
+
+Ejemplos:
+
+* Acceder a un disco ext4 desde la carpeta /media/disco: ``mount -t ext4 /dev/sdXY /media/disco``
+
+* Otros sistemas: ``mount -t ntfs /dev/sdXY /media/Windows``
+
+* Pendrive: ``mount -t vfat /dev/sdXY /media/usb``
+
+* Cdrom: ``mount -t iso9660 /dev/sr0 /media/cdrom``
+
+
+El sistema mantiene actualizada una lista de sistemas de archivos montados a través del archivo ``/proc/self/mounts`` (se actualiza al montar y desmontar sistemas de archivos)
+
+Se pueden listar todas las particiones montadas ejecutando el comando mount
+
+Para "desmontar" la partición, se deshace el vínculo entre la partición y la carpeta en la que se accede a ella. Se puede utilizar el nombre de la partición o el nombre de la carpeta con el comando: ``umount /dev/sdXY`` o bien ``umount /mnt``
+
+Es importante desmontar una partición, especialmente si se han escrito datos. En el caso de los dispositivos extraíbles, si se saca el dispositivo antes de desmontar la partición es bastante probable que se pierdan datos. Al desmontar el dispositivo, se volcarán todas las cachés de escritura al dispositivo.
+
+Las particiones que se monten con el comando ``mount`` no permanecerán después de reiniciar el sistema. Si se quiere montar una partición de forma permanente habrá que añadir una entrada en el fichero /etc/fstab. Durante el arranque del equipo se leen las entradas de este fichero y se montan automáticamente para que estén accesibles a los usuarios.
