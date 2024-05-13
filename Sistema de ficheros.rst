@@ -1,13 +1,14 @@
-Sistemas de archivos
+SISTEMAS DE ARCHIVOS
 ======================
+
 ¿Qué es un sistema de archivos?
---------------------------------
+-------------------------------
 
 Un sistema de archivos es un método de almacenamiento y organización por segmentación de ficheros para facilitar su búsqueda y acceso,los sistemas operativos tienen su propio sistema de archivos, los cuales suelen ser representados de forma textual o gráfica.
 En un sistema de archivos hay dos tipos fundamentales de objetos: los directorios(carpetas) y los archivos. 
 
 Archivos:
-~~~~~~~~~~~~~~~
+---------
 
 Las reglas para nombrar los archivos varían dependiendo del sistema, algunos son case-sensitive, otros utilizan un n.º máximo de caracteres, etc.
 
@@ -27,7 +28,7 @@ En Linux se utilizan también atributos para indicar la pertenencia del archivo,
 Windows permite indicar si el archivo estará cifrado o comprimido.
 
 Directorios:
-~~~~~~~~~~~~~~~
+------------
 
 Son una división lógica de almacenamiento de archivos u otros subdirectorios.
 
@@ -119,14 +120,13 @@ Sistema de archivo de Windows.
 +-----------------------------------------+---------------------------------------------+
 
 
-
 Implementación:
 --------------------
 
 El aspecto clave de la implementación del almacenamiento de archivos es el registro de los bloques asociados a cada archivo. Un bloque está compuesto por un determinado nº de sectores que se asocian a un único archivo.
 
-
 Tecnicas de asignacion de bloques a archivos:
+---------------------------------------------
 
 - Asignación contigua o adyacente: Se almacenan los archivos mediante bloques adyacentes en el disco. Ventaja: fácil de implementar. Inconveniente: es necesario conocer a priori el número de bloques que ocupará el fichero y genera fragmentación, lo que produce, pérdida de espacio. 
 
@@ -181,7 +181,7 @@ Tipos de usuario y de permisos:
     - Ejecución (x, execute): el fichero puede ser ejecutado. 
 
 Establecer y cambiar permisos:
-===============================
+------------------------------
 En Linux cada archivo queda identificado por diez caracteres.
 
 El primer carácter empezando por la izquierda indica el tipo de archivo. 
@@ -203,7 +203,7 @@ Por letras que indican:
         - permisos: r (lectura), w (escritura), x (ejecución) 
 
 Permisos especiales 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------
 
 - Sticky bit(t)
 
@@ -220,7 +220,7 @@ Permisos especiales
 Si cualquiera de estos permisos salen escritos en mayúsculas significa que para que sea efectivo el permiso debe tener permisos de ejecución.
 
 Permisos de directorio:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
 • En un directorio con permiso de escritura se puede:
 
