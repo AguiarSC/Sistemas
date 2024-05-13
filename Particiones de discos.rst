@@ -5,14 +5,15 @@ Las particiones son divisiones lógicas del disco duro que se pueden crear para 
 
 Desde el punto de vista del usuario, cada partición aparece como un disco distinto con el que trabaja de forma independiente, aunque sean particiones de un mismo disco.
 
-La respuesta sobre cuántas particiones puede tener el disco duro dependerá de la estructura de esa unidad. Para eso necesitarás de un sistema para gestionar particiones. Hay múltiples tipos de particionado, los dos más comunes son:
+La cantidad de particiones del disco duro dependerá de la estructura de esa unidad. Para eso se necesita de un sistema para gestionar particiones, siendo los dos más comunes:
 
 * ``MBR`` (Master Boot Record) o ``MSDOS``: un disco duro puede tener hasta 4 particiones primarias. También puede tener tres primarias y una extendida. La extendida estará compuesta por tantas unidades lógicas como alcance la capacidad del disco (máximo de 32). De las 4 particiones, solo una puede estar definida como activa. Será la que cargue el S.O. cuando se inicie el ordenador. En el primer sector del disco duro se sitúa una tabla de particiones, en una zona llamada MBR (Master Boot Record), ésta incluye toda la configuración de particiones del disco duro; las particiones que hay y su tamaño y un pequeño programa que permite localizar la partición activa, leer su sector de arranque y usarlo para arrancar el sistema informático. Además, el MBR reserva espacio para almacenar las instrucciones del gestor de arranque (boot manager).
 
 * ``GPT`` (GUID Partition Table): En el sistema GPT, las particiones son casi ilimitadas sin importar su relevancia. No hay distinción entre particiones, todas se consideran primarias. En Windows se limita a 128 mientras que GNU/Linux llega a 256. Además, también pueden tener mayor tamaño. Vino a solucionar el problema de las limitaciones de 2 TiB por partición y de 4 TiB por disco del MBR, y tiene mayor seguridad en los datos y arranque más rápido que MBR. Reserva también un espacio al principio del disco donde almacena la tabla de particiones y el gestor de arranque. Este espacio es mayor que en MBR ya que al poder particionar en más trozos necesita más espacio para guarda los datos de todas las particiones. Dentro de este espacio reserva el primer sector (LBA 0) para el también llamado MBR por compatibilidad con equipos con BIOS antiguas.
 
+.. admonition:: Advertencia
 
-``En Linux, el gestor de arranque predeterminado es GRUB (Grand Unifier Bootloader) y en Windows, el gestor de arranque es Windows Boot Manager.``
+   En Linux, el gestor de arranque predeterminado es GRUB (Grand Unifier Bootloader) y en Windows, el gestor de arranque es Windows Boot Manager.
 
    
 Las operaciones básicas que se pueden realizar sobre particiones son:
