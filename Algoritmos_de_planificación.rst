@@ -57,6 +57,149 @@ El primer proceso que entra será el primero en salir.
      - 5,6
 
 
+.. list-table:: (FCFS) CRONOGRAMA DE PROCESOS
+
+   * - PROCESO A
+     - Placeholder 2
+     - Placeholder 3
+     - Placeholder 4
+     - Placeholder 5
+     - Placeholder 6
+     - Placeholder 7
+     - Placeholder 8
+     - Placeholder 9
+     - Placeholder 10
+     - Placeholder 11
+     - Placeholder 12
+     - Placeholder 13
+     - Placeholder 14
+     - Placeholder 15
+     - Placeholder 16
+     - Placeholder 17
+     - Placeholder 18
+     - Placeholder 19
+     - Placeholder 20
+   * - PROCESO B
+     - Placeholder 2
+     - Placeholder 3
+     - Placeholder 4
+     - Placeholder 5
+     - Placeholder 6
+     - Placeholder 7
+     - Placeholder 8
+     - Placeholder 9
+     - Placeholder 10
+     - Placeholder 11
+     - Placeholder 12
+     - Placeholder 13
+     - Placeholder 14
+     - Placeholder 15
+     - Placeholder 16
+     - Placeholder 17
+     - Placeholder 18
+     - Placeholder 19
+     - Placeholder 20
+   * - PROCESO C
+     - Placeholder 2
+     - Placeholder 3
+     - Placeholder 4
+     - Placeholder 5
+     - Placeholder 6
+     - Placeholder 7
+     - Placeholder 8
+     - Placeholder 9
+     - Placeholder 10
+     - Placeholder 11
+     - Placeholder 12
+     - Placeholder 13
+     - Placeholder 14
+     - Placeholder 15
+     - Placeholder 16
+     - Placeholder 17
+     - Placeholder 18
+     - Placeholder 19
+     - Placeholder 20
+   * - PROCESO D
+     - Placeholder 2
+     - Placeholder 3
+     - Placeholder 4
+     - Placeholder 5
+     - Placeholder 6
+     - Placeholder 7
+     - Placeholder 8
+     - Placeholder 9
+     - Placeholder 10
+     - Placeholder 11
+     - Placeholder 12
+     - Placeholder 13
+     - Placeholder 14
+     - Placeholder 15
+     - Placeholder 16
+     - Placeholder 17
+     - Placeholder 18
+     - Placeholder 19
+     - Placeholder 20
+   * - PROCESO E
+     - Placeholder 2
+     - Placeholder 3
+     - Placeholder 4
+     - Placeholder 5
+     - Placeholder 6
+     - Placeholder 7
+     - Placeholder 8
+     - Placeholder 9
+     - Placeholder 10
+     - Placeholder 11
+     - Placeholder 12
+     - Placeholder 13
+     - Placeholder 14
+     - Placeholder 15
+     - Placeholder 16
+     - Placeholder 17
+     - Placeholder 18
+     - Placeholder 19
+     - Placeholder 20
+   * - Placeholder 1
+     - Placeholder 2
+     - Placeholder 3
+     - Placeholder 4
+     - Placeholder 5
+     - Placeholder 6
+     - Placeholder 7
+     - Placeholder 8
+     - Placeholder 9
+     - Placeholder 10
+     - Placeholder 11
+     - Placeholder 12
+     - Placeholder 13
+     - Placeholder 14
+     - Placeholder 15
+     - Placeholder 16
+     - Placeholder 17
+     - Placeholder 18
+     - Placeholder 19
+     - Placeholder 20
+   * - Placeholder 1
+     - Placeholder 2
+     - Placeholder 3
+     - Placeholder 4
+     - Placeholder 5
+     - Placeholder 6
+     - Placeholder 7
+     - Placeholder 8
+     - Placeholder 9
+     - Placeholder 10
+     - Placeholder 11
+     - Placeholder 12
+     - Placeholder 13
+     - Placeholder 14
+     - Placeholder 15
+     - Placeholder 16
+     - Placeholder 17
+     - Placeholder 18
+     - Placeholder 19
+     - Placeholder 20
+
 
 
 
