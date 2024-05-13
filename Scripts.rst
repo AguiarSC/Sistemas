@@ -6,8 +6,11 @@ Los scripts son una secuencia de comandos escritos en un fichero de texto. Sin e
 
 Lo primero que debemos introducir en el script es una línea en la que se indique para qué intérprete de comandos está programado. Hay que tener en cuenta que los distintos shells tienen funciones y estructuras de control distintas. La sintaxis será: 
 
-```bash
+.. code block:: sh
+
 #!/ruta_shell
+
+..
 
 Por ejemplo:
 
