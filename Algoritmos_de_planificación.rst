@@ -99,7 +99,7 @@ El primer proceso que entra será el primero en salir.
      - 16
      - 17
      - 18
-   * - PROCESO A
+   * - P(A)
      - E
      - Placeholder 3
      - Placeholder 4
@@ -119,7 +119,7 @@ El primer proceso que entra será el primero en salir.
      - Placeholder 18
      - Placeholder 19
      - Placeholder 20
-   * - PROCESO B
+   * - P(B)
      - Placeholder 2
      - Placeholder 3
      - Placeholder 4
@@ -139,7 +139,7 @@ El primer proceso que entra será el primero en salir.
      - Placeholder 18
      - Placeholder 19
      - Placeholder 20
-   * - PROCESO C
+   * - P(C)
      - Placeholder 2
      - Placeholder 3
      - Placeholder 4
@@ -159,7 +159,7 @@ El primer proceso que entra será el primero en salir.
      - Placeholder 18
      - Placeholder 19
      - Placeholder 20
-   * - PROCESO D
+   * - P(D)
      - Placeholder 2
      - Placeholder 3
      - Placeholder 4
@@ -179,7 +179,7 @@ El primer proceso que entra será el primero en salir.
      - Placeholder 18
      - Placeholder 19
      - Placeholder 20
-   * - PROCESO E
+   * - P(E)
      - Placeholder 2
      - Placeholder 3
      - Placeholder 4
