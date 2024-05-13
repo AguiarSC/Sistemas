@@ -10,22 +10,22 @@ recursos humanos.
   Compuesto por los elementos físicos, que se pueden tocar. Algunos elementos hardware son la caja, el procesador, la memoria, el disco duro, pantalla, teclado, ratón, etc.
 
   * Procesador (CPU: Central Process Unit)
-  Su función es leer instrucciones y ejecutarlas. Obtiene la primera instrucción de la memoria, la decodifica, la ejecuta y, en algunos casos, almacena el resultado. 
+    Su función es leer instrucciones y ejecutarlas. Obtiene la primera instrucción de la memoria, la decodifica, la ejecuta y, en algunos casos, almacena el resultado. 
 
   * Memoria
-  Almacena los programas en ejecución y los datos que necesitan. Se organiza en niveles: registros - caché - RAM y ROM - discos duros - memoria auxiliar. Cuanto más cercanos al procesador, más pequeños, rápidos y caros.
+    Almacena los programas en ejecución y los datos que necesitan. Se organiza en niveles: registros - caché - RAM y ROM - discos duros - memoria auxiliar. Cuanto más cercanos al procesador, más pequeños, rápidos y caros.
 
   * Dispositivos E/S o periféricos
-  Tienen dos partes: dispositivo controlador y el dispositivo en sí. El controlador es un chip o un conjunto de chips que controlan físicamente el dispositivo. La comunicación entre el controlador y el sistema operativo se realiza mediante un software llamado driver.
+    Tienen dos partes: dispositivo controlador y el dispositivo en sí. El controlador es un chip o un conjunto de chips que controlan físicamente el dispositivo. La comunicación entre el controlador y el sistema operativo se realiza mediante un software llamado driver.
 
 * Software
   Es la parte lógica del sistema e intangible, como los programas y los datos. Está formado por un conjunto de instrucciones que al ejecutarse sirven para realizar alguna tarea. Se puede dividir en 3 tipos por la función o en 2 según su tipo.
 
   * Software de sistema
-  Programas que administran los recursos del ordenador; son los sistemas operativos y los drivers. Ejemplos: Sistemas operativos.
+    Programas que administran los recursos del ordenador; son los sistemas operativos y los drivers. Ejemplos: Sistemas operativos.
 
   * Software de programación 
-  Cualquier software que permita crear nuevos programas y aplicaciones. Ejemplos: NetBeans..
+    Cualquier software que permita crear nuevos programas y aplicaciones. Ejemplos: NetBeans..
 
   * Software de aplicación
     Se utiliza para trabajar con el equipo informático y permiten realizar tareas básicas. Este software se denomina aplicaciones, dentro de las cuales están las de propósito general y las de propósito específico o personalizado
@@ -33,7 +33,7 @@ recursos humanos.
   * Software propietario
     Licencia de pago generalmente, en el que el propietario establece una serie de restricciones sobre él dando lugar a diferentes licencias. Ejemplo: Sistema operativo Windows de Microsoft.
 
-  * Software libre: es un software sujeto a una licencia llamada de software libre. La más extendida es la licencia GPL (Licencia General Pública). Dentro del software libre está el concepto de código abierto u open source, que significa que el software se distribuye con el código fuente. Software libre no quiere decir gratis (éste llamado freeware), puede ser comercializado, pero se considera libre porque el usuario tiene libertad para ejecutarlo, estudiarlo, modificarlo, distribuirlo, mejorarlo y compartirlo.
+  * Software libre: es un software sujeto a una licencia llamada de software libre. La más extendida es la licencia GPL (Licencia General Pública). Dentro del software libre está el concepto de código abierto u open source, que significa que el software se distribuye   con el código fuente. Software libre no quiere decir gratis (éste llamado freeware), puede ser comercializado, pero se considera libre porque el usuario tiene libertad para ejecutarlo, estudiarlo, modificarlo, distribuirlo, mejorarlo y compartirlo.
 
 
 Concepto de sistema operativo
