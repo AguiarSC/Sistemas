@@ -309,7 +309,7 @@ TIPOS DE RAID
 * ``RAID 5`` (Stripping con paridad distribuida)
    Al igual que RAID 0, realiza una distribución de los bloques de datos, y además genera información de paridad (calculada operando con el resto de datos de la misma división) que se distribuye en todos los discos (al menos tres). Los bloques de paridad permiten reconstruir un disco en caso de fallo sin necesidad de duplicar su almacenamiento. Para ello, han de realizar cálculos de los datos, generando dicha paridad, también llamada código de detección de error o CRC. De este modo, no se desaprovecha tanto espacio redundante, como RAID 1, y además mejora la velocidad de lectura, si bien las escrituras son más costosas al tener que generar códigos CRC y sólo soporta el fallo de un único disco. El espacio útil es la suma de las capacidades de todos los discos menos 1.
 
-* RAID 6 (Stripping con paridad distribuida y duplicad
+* ``RAID 6`` (Stripping con paridad distribuida y duplicada)
    Es como el RAID 5 pero añadiendo un disco adicional para mantener la duplicado. En este caso requiere un mínimo de cuatro discos, siendo así el espacio útil la suma de todos los discos menos dos. Como ventaja tiene la recuperación de datos y como desventaja es que es más lento que el RAID 5 al tener que escribir doble paridad.
 
 -------------------------------------------------
