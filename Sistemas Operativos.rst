@@ -137,3 +137,87 @@ Estados de procesos
 * Si necesita algún recurso o se produce un evento que lo interrumpe, pasa al estado bloqueado.
 
 * Los cambios de estado se denominan transiciones.
+
+
+Gestión de la memoria
+---------------------
+
+La gestión eficiente de la memoria principal es crucial para garantizar el rendimiento óptimo del sistema operativo (S.O.) y los procesos que se ejecutan en él. El administrador de memoria se encarga de asignar y liberar la memoria según sea necesario, asegurando un uso eficaz de los recursos disponibles.
+
+En los primeros sistemas operativos, la memoria se dividía en dos partes: una para el sistema operativo y otra para los programas de usuario. Sin embargo, con la evolución actual, el S.O. gestiona múltiples programas asignándoles espacios llamados particiones. Estas particiones pueden ser de tamaño fijo o variable.
+
+* Particionado Fijo: Asigna particiones predefinidas a los procesos, lo que puede resultar en fragmentación interna y desperdicio de memoria.
+
+* Particionado Variable: Permite una asignación más flexible de memoria, pero puede generar fragmentación externa. Se utilizan estrategias como el primer ajuste, el mejor ajuste y el peor ajuste para asignar espacios de memoria.
+
+Además, se emplean técnicas como la paginación y la segmentación para permitir que los programas se ubiquen de manera no contigua en memoria. La paginación divide los programas en páginas del mismo tamaño, mientras que la segmentación los divide en segmentos de tamaño variable. Estas técnicas pueden reducir la fragmentación, aunque también presentan desafíos en la gestión de memoria.
+
+La memoria virtual es otro mecanismo fundamental que permite ejecutar programas que no caben completamente en la memoria principal. Utiliza un sistema de paginación para cargar solo las partes necesarias de un programa en memoria, mientras que el resto reside en un dispositivo de almacenamiento secundario. El intercambio (swapping) es una técnica asociada que consiste en mover procesos entre la memoria principal y el almacenamiento secundario para optimizar el uso de los recursos.
+
+
+Gestión de archivos
+-------------------
+
+Los sistemas operativos manejan la información mediante sistemas de archivos para superar las limitaciones de la memoria, como la capacidad de almacenamiento limitada y la volatilidad de los datos. Estos sistemas facilitan a las aplicaciones y usuarios la manipulación de unidades de almacenamiento para guardar y recuperar datos.
+
+* Cada sistema operativo utiliza su propio sistema de archivos.
+
+* No hay compatibilidad entre los sistemas de archivos de diferentes sistemas operativos.
+
+Los sistemas de archivos actúan como una interfaz entre el S.O. y los dispositivos de almacenamiento, gestionando operaciones como escritura, búsqueda, lectura, almacenamiento y eliminación de archivos y directorios.
+
+* Archivos Normales: Contienen cualquier tipo de información. Los archivos tienen un nombre y una extensión que los identifica.
+
+* Directorios: Almacenan información de otros archivos y pueden contener archivos o subdirectorios. Los directorios pueden representar el directorio actual (".") o el directorio padre (".."). Las rutas de directorios pueden ser absolutas (desde la raíz) o relativas (desde el directorio actual).
+
+
+Sistemas de archivos
+--------------------
+
+* Windows
+
+  * FAT16: Utilizado por Windows 95 y 98, heredado de MS-DOS, nombres de archivos con 8 letras.
+
+  * FAT32: Utilizado por Windows NT, 2000, XP y Vista, admite nombres de archivos con 255 letras.
+
+  * NTFS: Utilizado en versiones modernas de Windows, admite 255 caracteres y Unicode.
+
+  * ReFS: Utilizado a partir de Windows 2012 y Windows 10, con mayor resistencia a la corrupción de datos.
+
+* Linux:
+
+  * ext2: Admite particiones de disco de 4TB y ficheros de hasta 2GB.
+  
+  * ext3: Modificación de ext2 con journaling.
+  
+  * ext4: Actual sistema de archivos de Linux, eficiente y con límites de tamaño ampliados.
+  
+  * swap: Sistema de archivos para la partición de intercambio.
+
+
+Gestión de entrada y salida
+---------------------------
+
+* La E/S implica el movimiento de información entre el sistema informático y el exterior.
+
+* El sistema operativo gestiona la E/S y las direcciones de memoria relacionadas.
+
+* Métodos de gestión de E/S:
+
+  * E/S Programada: El procesador ejecuta un programa para controlar las operaciones de E/S, lo que puede provocar tiempos de espera.
+
+  * E/S Controlada por Interrupciones: Las interrupciones indican al procesador que debe atender a un dispositivo, pero pueden generar conflictos.
+
+  * E/S con DMA (Acceso Directo a Memoria): Un controlador especializado realiza transferencias de datos sin pasar por la CPU, acelerando el proceso y liberando recursos.
+
+
+Técnicas para Mejorar la Velocidad
+----------------------------------
+
+* Caching: Almacena copias de datos frecuentemente utilizados para un acceso más rápido. Es extremadamente rápido ya que los datos se encuentran en la memoria caché del sistema, que es mucho más rápida que la memoria principal o los dispositivos de almacenamiento. Es preferible cuando se necesita un acceso rápido a datos que se utilizan con frecuencia.
+
+* Buffering: Utiliza zonas de memoria (buffers) para almacenar temporalmente datos durante las transferencias entre dispositivos, acoplando velocidades diferentes. Es rápida ya que implica operaciones en la memoria principal del sistema, que es más rápida que los dispositivos de E/S. Se prefiere en situaciones donde se necesita sincronizar el flujo de datos entre dispositivos con velocidades diferentes.
+
+* Spooling: Utiliza un buffer grande en disco para almacenar información de dispositivos de entrada hasta que los dispositivos de salida estén disponibles, evitando cuellos de botella. Es relativamente más lenta debido a que implica operaciones de lectura y escritura en disco, que son más lentas que la memoria principal o la memoria caché. Se prefiere cuando se necesita gestionar grandes cantidades de datos que no pueden procesarse de inmediato y se debe garantizar la disponibilidad constante de los datos de entrada para los dispositivos de salida.
+
+En resumen, el caching es la más rápida, seguida del buffering y el spooling es la menos rápida pero más útil para manejar grandes volúmenes de datos de manera eficiente.
