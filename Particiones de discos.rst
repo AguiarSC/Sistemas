@@ -38,6 +38,72 @@ Cada unidad de almacenamiento del ordenador y cada posible partición de esta un
 - ``/dev/scd*`` (también conocida como ``/dev/sr*``): CD-ROM SCSI o DVD
 - ``/dev/tty*``: consolas o terminales físicos.
 
-.. note:: Con la llegada de SATA, en la actualidad se utiliza mayormente ``sda`` en lugar de ``hda`` para referirse a discos duros. Donde ``sd`` quiere decir serial drive.
+``Con la llegada de SATA, en la actualidad se utiliza mayormente ``sda`` en lugar de ``hda`` para referirse a discos duros. Donde ``sd`` quiere decir serial drive.``
+``Por lo menos una partición será asignada al directorio raíz, y el resto de las particiones y unidades se montarán sobre este sistema de ficheros.``
 
-Por lo menos una partición será asignada al directorio raíz, y el resto de las particiones y unidades se montarán sobre este sistema de ficheros.
+.. _Particiones Linux:
+
+Particiones Linux
+=================
+
+Las particiones que el S.O. Linux instala con las opciones por defecto son:
+
+- **EFI System Partition**: partición del sistema de arranque de tipo FAT32 y con el punto de montaje /boot/efi
+- **Partición del sistema** de tipo ext4 con el punto de montaje /. Si se elige este punto de montaje significa que todo el sistema de archivos se cargará en esta partición.
+
+Para sistemas más avanzados, y por seguridad es recomendable tener varias particiones con diferentes puntos de montaje.
+
+.. _Tipos de particionado:
+
+Tipos de particionado
+---------------------
+
+Antes de poder particionar un disco duro tenemos que elegir el tipo de particionado que va a utilizar: MBR (Master Boot Record) o MSDOS y GPT (GUID Partition Table)
+
+Una vez seleccionado el tipo, en la creación de una partición debemos indicar:
+
+- El tamaño
+- El sistema de archivos de dicha partición
+- Si es la partición activa, que será la partición en la que en el momento del arranque el ordenador buscará un gestor de arranque que permita iniciar un sistema operativo.
+
+.. _Sistema de archivos:
+
+Sistema de archivos
+-------------------
+
+El sistema de archivos permite al sistema operativo controlar cómo se lee y escribe la información en los dispositivos de almacenamiento (discos duros, pendrive, tarjetas sd, ...).
+
+Cada sistema operativo trabaja preferiblemente con unos sistemas de archivos determinados. Linux soporta un gran número de sistemas de ficheros de otros sistemas operativos, gracias al Sistema de Ficheros Virtual (SVF).
+
+.. _Ejemplo de particionado:
+
+Ejemplo de particionado
+-----------------------
+
+En la siguiente captura podemos ver desde una utilidad de particionado (Gparted) un disco particionado con múltiples sistemas de archivos (Filesystems): ntfs, linux-swap y ext3.
+
+La nomenclatura /dev/sdd1 … /dev/sdd4 es propia de los sistemas Linux para la identificación de las particiones (/dev/sdd identifica el disco duro y el número la partición dentro de un mismo disco)
+
+.. _Flags de una partición:
+
+Flags de una partición
+----------------------
+
+Cada partición además puede tener una serie de “flags” (se configuran como activado o desactivado con el gestor de particiones Gparted) con los que se ajustan atributos adicionales con los que se indican usos específicos de las particiones.
+
+.. _Gestores de particiones:
+
+Gestores de particiones
+-----------------------
+
+El particionado de un disco se realiza con unas utilidades de disco llamadas gestores de particiones.
+
+- En Windows (de servidor o escritorio) disponemos de dos gestores de particiones:
+  - Administración de discos: Gestor de particiones en modo gráfico
+  - Diskpart: Gestor de particiones desde consola
+
+- En Linux disponemos de múltiples herramientas:
+  - fdisk: Un gestor de particiones de consola presente en casi todas las distribuciones Linux
+  - cfdisk: Un gestor de particiones de consola que incorpora las funcionalidades de fdisk pero con una interfaz que facilita
+  - parted y Gparted: Un gestor de particiones de consola que también dispone de un gestor gráfico y que viene preinstalado en múltiples distribuciones
+
