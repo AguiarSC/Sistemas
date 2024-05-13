@@ -248,7 +248,7 @@ Enlaces:
 -----------
 
 Simbólicos (o blandos) 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 - Usar rutas absolutas al especificar el origen.
 
@@ -267,7 +267,7 @@ Simbólicos (o blandos)
 - A los enlaces simbólicos se le asignan automáticamente todos los permisos. 
 
 Duros (o fuertes) 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------
 
 - Los enlaces duros no pueden hacerse con directorios.
 
