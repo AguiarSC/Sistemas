@@ -1,4 +1,4 @@
-Herramientas de administración de discos
+HERRAMIENTAS DE ADMINISTRACIÓN DE DISCOS
 ========================================
 
 Las particiones son divisiones lógicas del disco duro que se pueden crear para compartir varios sistemas operativos en un mismo disco duro. Cada partición tendría la estructura lógica correspondiente a su sistema operativo instalado. Podemos optar por crear una o varias particiones, pero el espacio asignado a una partición en un disco debe ser contiguo. El espacio del disco que no pertenezca a ninguna partición será espacio sin asignar.
@@ -41,7 +41,7 @@ Cada unidad de almacenamiento del ordenador y cada posible partición de esta un
 
 .. _Particiones Linux:
 
-Particiones Linux
+PARTICIONES LINUX
 =================
 
 Las particiones que el S.O. Linux instala con las opciones por defecto son:
@@ -337,8 +337,9 @@ Si es un standby spare conlleva un proceso de reconstrucción durante la incorpo
 Otra forma de montar un RAID con disco de reserva en modalidad Hot Spare pero sin tener que agregar otro disco adicional es reservar un espacio en los discos del RAID que no se utilizará salvo que se produzca el fallo en uno de ellos, que será el momento en el que la información del disco fallado se replicará en este espacio libre. Esta es la configuración
 utilizada por ejemplo en ``RAID 5E`` y ``RAID 6E``, que reservan este espacio de spare al final de los discos paridad. 
 
+
 ======================
-Administración de RAID
+ADMINISTRACIÓN DE RAID
 ======================
 
 La administración de RAID en Linux se realiza con el paquete **mdadm** (Multiple Device Administrator), que se instala con ``sudo apt-get install mdadm``. Antes de iniciar, se puede verificar la existencia de dispositivos RAID en el sistema con ``/proc/mdstat``. La creación de RAID puede realizarse en dispositivos o particiones, no necesariamente del mismo tamaño. En caso de diferencias de tamaño, mdadm advertirá y utilizará el tamaño más pequeño. Los comandos comunes para gestionar RAID en Linux incluyen la creación, establecimiento de dispositivos defectuosos, eliminación, adición, y verificación del estado.
