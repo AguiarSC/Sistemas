@@ -26,10 +26,13 @@ Los sistemas GNU/Linux gestionan los usuarios mediante archivos de configuració
 
 Como ya sabemos, /etc/passwd almacena las cuentas de todos los usuarios del sistema. Cada fila se corresponde con un usuario y consta de siete campos delimitados por dos puntos.
 
+.. code-block:: xml
 
 root:x:0:0:root:/root:/bin/bash
 
 daemon:x:1:1:daemon:/usr/sbin:/bin/sh
+
+..
 
 nombre de usuario
 
@@ -72,9 +75,8 @@ Las contraseñas se gestionan gracias al fichero de configuración /etc/shadow, 
 del sistema. Este fichero sólo puede ser leído por el root y la contraseña está encriptada.
 
 .. code-block:: xml
-
 slice: ajhdkash453ad74s3:14324:0:99999:7::
-
+..
 
 valores 
 ---------
