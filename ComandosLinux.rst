@@ -629,8 +629,19 @@ formato comprensible
 ~~~~~~~~~~~~~~~
 Se utiliza si en lugar de una instantánea de los procesos actuales del sistema, necesitamos una actualización continua de la información de los procesos del sistema, esto nos permite visualizar el estado del sistema, mostrando información de los procesos en tiempo real. 
 
-.. figure:: Captura%20de%20pantalla%202024-05-13%20143234.png
-   :align: center
+..code-block:: xml
+
+top  -  12:25:59up  46 min,  1 user,  load average:  0,05,  0,12,  0,17
+
+Tareas:  218 total,  2 ejecutar,  216 hibernar,  0 dtener,  0 zombie
+
+%Cpu(S):  3,1 usuario,  1,7 sist,  0,0 adecuado,  95,2 inact,  0,0 en espera
+
+MiB Men :  1975,8 total,  247,3 libre,  844,3 usado,  884,2 buffer/caché
+
+MiB Intercambio:  1162,4 total,  933,7 libre,  228,7 usado.  947,9 disponible
+
+..
 
 - Línea 1ª: hora actual, tiempo del sistema encendido, número de usuarios y carga media en intervalos de 1, 5 y 15 minutos, respectivamente.
 
