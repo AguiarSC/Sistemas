@@ -129,6 +129,93 @@ Estados de procesos(STAT o S):
 |                   | evitando así el cambio de contexto)                                                       |
 +-------------------+-------------------------------------------------------------------------------------------+
 
+Gestión por interfaz gráfica de Windows
+=========================================
+
+Por defecto, Windows crea varias cuentas administrativas que no se encuentran habilitadas por seguridad, aunque a través de esta ventana podemos activarlas. Como son:
+
+-Administrador: cuenta con los privilegios más altos del sistema, que permite realizar cualquier acción, similar a root en Linux.
+
+-Invitado: cuenta destinada a aquellos usuarios que acceden al sistema esporádicamente, sin apenas privilegios. 
+
+Consola de comandos Windows :
+--------------------------------
+
+A través de la consola de comandos podemos añadir un usuario con el siguiente comando:
+
+.. code-block:: xml
+
+net user [nombredeusuario] [contraseña | * ] opciones /add 
+
+
++-------------------------------+-------------------------------------------------------------------------------+
+| Tipo                          | Descripción                                                                   |
++===============================+===============================================================================+
+| ``"*"``                       | Genera un mensaje que pide la contraseña. La contraseña no se muestra al escribirla.|
++-------------------------------+-------------------------------------------------------------------------------+
+| ``/domain``                   | Permite añadir el usuario al dominio.                                         |
++-------------------------------+-------------------------------------------------------------------------------+
+| ``/active:{yes|no}``          | Activa o desactiva la cuenta de usuario                                       | 
++-------------------+-------------------------------------------------------------------------------------------+
+| ``/comment:"texto"``          | Añade un comentario a la cuenta del usuario                                   | 
++-------------------+-------------------------------------------------------------------------------------------+
+| ``/passwordchg:{yes|no}``     | Si los usuarios pueden cambiar su contraseña.                                 |
++-------------------------------+-------------------------------------------------------------------------------+
+| ``/logonpasswordchg:{yes|no}``| Si el usuario debe cambiar la contraseña en el siguiente inicio.              | 
++-------------------+-------------------------------------------------------------------------------------------+
+| ``/expires:{fecha| NEVER}``   | Hace que la cuenta expire si se establece una fecha                           |
++-------------------------------+-------------------------------------------------------------------------------+
+| ``/fullname:"nombre"``        | Especifica el nombre completo de usuario.                                     |
++-------------------------------+-------------------------------------------------------------------------------+
+| ``/homedir:nombrederuta``     | Ruta del directorio principal del usuario.                                    | 
++-------------------+-------------------------------------------------------------------------------------------+
+| ``/profilepath[:ruta]``       | Establece una ruta para el perfil de inicio de sesión del usuario.            |
++-------------------------------+-------------------------------------------------------------------------------+
+| ``net user [nombredeusuario]``| Eliminar un usuario                                                           |
+| ``[opciones] /delete``        |                                                                               |
++-------------------------------+-------------------------------------------------------------------------------+
+| ``net localgroup``            | Ver los grupos predeterminados                                                |
++-------------------------------+-------------------------------------------------------------------------------+
+|``net localgroup [nomdegrupo]``| Crear un grupo                                                                |
+| ``opciones /add``             |                                                                               |
++-------------------+-------------------------------------------------------------------------------------------+
+| ``net localgroup nombregrupo``| Añadir un usuario al grupo                                                    | 
+| ``/add nombreusuario``        |                                                                               |
++-------------------+-------------------------------------------------------------------------------------------+
+| ``net localgroup nombregrupo``| Comprobar que el usuario se ha agregado                                       |
++-------------------------------+-------------------------------------------------------------------------------+
+|``net localgroup [nomdegrupo]``| Eliminar un grupo                                                             |
+| ``/delete``                   |                                                                               |
++-------------------+-------------------------------------------------------------------------------------------+
+| `` net localgroup nomgrupo``  | Eliminar un usuario de un grupo                                              |
+| ``/delete nombreusuario``     |                                                                               |
++-------------------------------+-------------------------------------------------------------------------------+
+
+Procesos y servicios:
+=======================
+
+Los sistemas operativos como Windows, macOS y Linux, son multitarea y multiusuario, el sistema operativo asigna
+pequeños espacios de tiempo a cada tarea y usuario.
+
+Las instancias de los programas en ejecución, también llamados tareas o procesos, son administrados por el sistema operativo como un recurso más. Dependiendo de los privilegios de los usuarios sobre el sistema, estos podrán modificar la planificación de procesos
+
+El sistema operativo gestiona todos los procesos mediante operaciones de creación, comunicación, compartición y finalización de procesos. El módulo del sistema operativo encargado de realizar estas tareas es el planificador de procesos. Los procesos pueden pasar por distintos estados desde que se crea hasta que muere. El
+planificador de procesos se encarga de establecer el estado de cada proceso y de modificarlo, atendiendo a un algoritmo de planificación. 
+
+El procesador puede ejecutar instrucciones de dos modos: 
+
+  - Modo usuario: normalmente es el empleado por los programas de usuario y las actividades no críticas del sistema operativo. Puede aver varios modos de usuario, diferenciados por privilegios.Si este desea realizar una operación critica debera llamar al kernel y que este la realice.
+  
+  - Modo kernel, núcleo o privilegiado: es el empleado principalmente por el sistema operativo para ejecutar las instrucciones contenidas en él. En este modo se puede obtener el control total del sistema.
+
+Por otro lado, la ejecución de los procesos puede realizarse de varios modos: 
+
+  -Por lotes, de trabajos o batch: se lanza un conjunto de tareas para realizar por el sistema y este ejecuta todas ellas, una detrás de otra, sin intervención del usuario.
+  
+  - Interactivo: a diferencia de los anteriores, estos solicitan constantemente las acciones del usuario para su continuidad. El usuario realiza una acción mediante la ejecución de un comando o acción dentro de un programa y espera a que finalice para realizar otra acción o proceso interactivo.
+
+ - Los procesos llamados servicios (Windows) o demonios (Linux), realizan una función específica y se caracterizan generalmente por comenzar automáticamente cuando se inicia el sistema y ejecutarse en segundo plano. El usuario no espera que finalicen para interactuar con el sistema. 
+
 
  Primer y segundo plano 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
