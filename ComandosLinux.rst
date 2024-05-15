@@ -10,7 +10,7 @@ El intérprete de comandos más utilizado actualmente es el bash  que tiene las 
     - Almacena un historial de los últimos comandos introducidos por el usuario.
     - El comando exit cierra una sesión en modo texto.
     - Los intérpretes de comandos permiten pasarles parámetros a los comandos:
-                • Los parámetros se introducen después del comando con el símbolo - (guión).
+                • Los parámetros se introducen después del comando con el símbolo - (guion).
                 • Se pueden combinar distintos parámetros. Ej: ls -laR.
                 • No importa el orden en el que se introduzcan los distintos parámetros del comando.
 
