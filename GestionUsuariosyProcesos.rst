@@ -76,11 +76,13 @@ Seguridad de cuentas y contraseñas
 Las contraseñas se gestionan gracias al fichero de configuración /etc/shadow, que contiene las cuentas de los usuarios
 del sistema. Este fichero sólo puede ser leído por el root y la contraseña está encriptada.
 
-.. code-block:: xml
-slice: ajhdkash453ad74s3:14324:0:99999:7::
+.. code-block:: sh
+
+  slice: ajhdkash453ad74s3:14324:0:99999:7::
+
 ..
 
-valores 
+Valores 
 ---------
 
  - slice = nombre
@@ -160,9 +162,11 @@ Consola de comandos Windows :
 
 A través de la consola de comandos podemos añadir un usuario con el siguiente comando:
 
-.. code-block:: xml
+.. code-block:: sh
 
-net user [nombredeusuario] [contraseña | * ] opciones /add 
+  net user [nombredeusuario] [contraseña | * ] opciones /add 
+
+..
 
 
 +-------------------------------+-------------------------------------------------------------------------------+
@@ -243,18 +247,26 @@ La forma de ejecutar en 1º plano es la que utilizamos de meter codigo en el ter
 Cuando un proceso es detenido, el sistema nos muestra un mensaje similar al siguiente:
 
 .. code-block:: sh
-[nº_tarea]+ Stopped nombre_proceso
 
+  [nº_tarea]+ Stopped nombre_proceso
 
-.. code-block:: sh
-fg [%][tarea] 
-
-  pasa una tarea a primer plano.
+..
 
 .. code-block:: sh
-bg[%][tarea] 
 
-  pasa una tarea a segundo plano
+  fg [%][tarea]
+
+..
+
+  Pasa una tarea a primer plano.
+
+.. code-block:: sh
+
+  bg[%][tarea] 
+
+..
+
+  Pasa una tarea a segundo plano
 
 
 Prioridad de las órdenes 
@@ -265,12 +277,18 @@ El valor nice de un proceso oscila entre -20 (máxima prioridad) y 19 (menor pri
 Podemos lanzar procesos, modificando su prioridad relativa con nice, siendo su sintaxis:
 
 .. code-block:: sh
-nice -[n] {+|-} numero_nice orden 
+
+  nice -[n] {+|-} numero_nice orden 
+
+..
 
 .. code-block:: sh
-renice prioridad [[-p] PID´s] [[-u] usuarios]
 
-sirve para disminuir su prioridad
+  renice prioridad [[-p] PID´s] [[-u] usuarios]
+
+..
+
+Sirve para disminuir su prioridad
 
 Envío de señales 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -278,7 +296,10 @@ Envío de señales
 Los procesos reciben señales para ser controlados desde el propio sistema operativo y desde el exterior. Un usuario también puede enviar señales a los procesos
 
 .. code-block:: sh
-kill -señal PID 
+
+  kill -señal PID 
+
+..
 
 
   -2 o SIGINT: interrumpe un proceso. Esta señal puede ser manejada por el propio proceso, aunque no es lo habitual, terminando su ejecución.
