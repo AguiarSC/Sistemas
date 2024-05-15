@@ -28,9 +28,9 @@ Como ya sabemos, /etc/passwd almacena las cuentas de todos los usuarios del sist
 
 .. code-block:: sh
 
-root:x:0:0:root:/root:/bin/bash
-
-daemon:x:1:1:daemon:/usr/sbin:/bin/sh
+  root:x:0:0:root:/root:/bin/bash
+  
+  daemon:x:1:1:daemon:/usr/sbin:/bin/sh
 
 ..
 
