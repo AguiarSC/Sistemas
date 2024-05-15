@@ -26,7 +26,7 @@ Los sistemas GNU/Linux gestionan los usuarios mediante archivos de configuració
 
 Como ya sabemos, /etc/passwd almacena las cuentas de todos los usuarios del sistema. Cada fila se corresponde con un usuario y consta de siete campos delimitados por dos puntos.
 
-.. code-block:: xml
+.. code-block:: sh
 
 root:x:0:0:root:/root:/bin/bash
 
