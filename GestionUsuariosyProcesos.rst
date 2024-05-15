@@ -34,6 +34,8 @@ Como ya sabemos, /etc/passwd almacena las cuentas de todos los usuarios del sist
 
 ..
 
+Estructura:
+
   nombre de usuario
   
     contraseña
