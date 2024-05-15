@@ -6,7 +6,7 @@ Los comandos se interpretan a traves de un interprete de comandos o shell.El she
 
 El intérprete de comandos más utilizado actualmente es el bash  que tiene las siguientes caracteristicas.
 
-    - distingue mayusculas y minusculas.
+    - Distingue mayúsculas y minúsculas.
     - Almacena un historial de los últimos comandos introducidos por el usuario.
     - El comando exit cierra una sesión en modo texto.
     - Los intérpretes de comandos permiten pasarles parámetros a los comandos:
