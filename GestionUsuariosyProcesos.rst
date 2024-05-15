@@ -34,19 +34,19 @@ Como ya sabemos, /etc/passwd almacena las cuentas de todos los usuarios del sist
 
 ..
 
-nombre de usuario
-
-  contraseña
-
-    id de usuario
-
-      id de grupo
-
-        info usuario
-
-          carpeta personal
-
-            Shell
+  nombre de usuario
+  
+    contraseña
+  
+      id de usuario
+  
+        id de grupo
+  
+          info usuario
+  
+            carpeta personal
+  
+              Shell
 
 
 
