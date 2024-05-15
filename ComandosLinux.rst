@@ -158,11 +158,14 @@ Comandos (Linux):
 |                                    | ``-v`` Muestra el nombre de cada fichero antes de borrarlo  |
 +------------------------------------+-------------------------------------------------------------+
 | ``chown``                          | Cambiar propietario fich/direct                             |
+|                                    | ..code-block:: sh                                           |
 |                                    |                                                             |
-|                                    |chown [-R] propietario[:grupo] archivo1 | directorio1        |
+|                                    |     chown [-R] propietario[:grupo] archivo1 | directorio1   |
+|                                    |                                                             |
+|                                    | ..                                                          |
 |                                    |[archivo2 |directorio2 ..]                                   |
 |                                    |                                                             |
-|                                    | propietario nombre del usuario que sera propietario         |
+|                                    | Propietario nombre del usuario que sera propietario         |
 |                                    |                                                             |
 |                                    | :grupo nombre del nuevo grupo                               |
 |                                    |                                                             |
