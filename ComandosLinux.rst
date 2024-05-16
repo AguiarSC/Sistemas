@@ -147,9 +147,9 @@ Comandos (Linux):
 |                                    |                                                             |
 |                                    | ``-m`` Permisos.                                            |
 +------------------------------------+-------------------------------------------------------------+
-| ``rm [opciones] fichero``          | Borrar archivos (ficheros)/                                 |
+| ``rm [opciones] fichero``          | Borrar archivos (ficheros)/(directorios)                    |
 |                                    |                                                             |
-| ``rm - r o -R``                    | (directorios)                                               |
+| ``rm - r o -R``                    |                                                             |
 |                                    |                                                             |
 |                                    | ``-f`` Elimina cualquier aviso de confirmación              |
 |                                    |                                                             |
