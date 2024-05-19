@@ -130,7 +130,7 @@ Estados de procesos
 
 * Los procesos pasan por distintos estados: ``creación``, ``listo``, ``ejecución`` y ``bloqueado``.
 
-* Cuando se inicia, el proceso se coloca en una ``cola de trabajos``.
+* Cuando se inicia, el proceso se coloca en una ``cola de trabajos``. Estado ``creado``.
 
 * Si es admitido por el sistema, se coloca en una cola de ``procesos listos, esperando para ejecutarse``.
 
