@@ -257,8 +257,6 @@ Planificación de tareas
 
 Se lleva a cabo mediante el uso de ``cron``, que permite programar la ejecución periódica de comandos o scripts. En un ``archivo crontab``, se especifican las órdenes junto con su frecuencia de ejecución utilizando ``cinco campos separados por espacios``: minutos, hora, día del mes, mes y día de la semana.
 
-  MINUTOS [0..59] HORA [0..23] DIA [1..31] MES [1..12] DIA DE LA SEMANA [0..6] ORDEN
-
 .. code-block:: sh
 
   0 8 * * * /ruta/al/comando - ejecutará el comando todos los días a las 8:00 a.m
