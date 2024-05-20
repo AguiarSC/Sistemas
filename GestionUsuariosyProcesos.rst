@@ -192,19 +192,24 @@ Con el comando ``jobs`` podemos identificar las tareas o trabajos que se hallan 
 
 .. code-block:: sh
 
-  [nº_tarea]+ Stopped nombre_proceso
+  $ jobs
+  [1]+  Stopped                 nombre_proceso1
+  [2]-  Running                 nombre_proceso2 &
 
-Para pasar una tarea a primer plano:
+
+Para pasar una tarea a primer plano (foreground):
 
 .. code-block:: sh
 
   fg [%][tarea]
+  $ fg %1
 
-Para pasar una tarea a segundo plano:
+Para pasar una tarea a segundo plano (background):
 
 .. code-block:: sh
 
   bg[%][tarea]
+  $ bg %2
 
 Prioridad de las órdenes
 ~~~~~~~~~~~~~~~~~~~~~~~~
