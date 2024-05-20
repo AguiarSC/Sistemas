@@ -153,18 +153,15 @@ En los primeros sistemas operativos, la memoria se dividía en dos partes: una p
 
 1. **Primer Ajuste (First Fit)**:
    - Asigna el primer bloque de memoria libre que sea lo suficientemente grande.
-   - Es rápido porque encuentra una solución pronto.
-   - Puede generar fragmentación externa.
+   - Es el más rápido porque encuentra una solución pronto.
 
 2. **Mejor Ajuste (Best Fit)**:
    - Asigna el bloque libre más pequeño que sea suficientemente grande.
    - Minimiza el desperdicio inmediato de memoria.
-   - Es más lento y puede causar fragmentación externa con pequeños fragmentos dispersos.
 
 3. **Peor Ajuste (Worst Fit)**:
    - Asigna el bloque libre más grande disponible.
    - Deja grandes fragmentos para futuras asignaciones.
-   - Es más lento y puede dejar grandes fragmentos subutilizados.
 
 Además, se emplean técnicas como la paginación y la segmentación para permitir que los programas se ubiquen de manera no contigua en memoria. La ``paginación`` divide los programas en páginas del mismo tamaño, mientras que la ``segmentación`` los divide en segmentos de tamaño variable. Estas técnicas pueden reducir la fragmentación, aunque también presentan desafíos en la gestión de memoria.
 
