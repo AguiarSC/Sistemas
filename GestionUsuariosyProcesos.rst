@@ -36,7 +36,7 @@ Como ya sabemos, ``/etc/passwd`` almacena las cuentas de todos los usuarios del 
 
 El ``id`` del usuario sigue un patrón en el cual el ``0`` es el ``root`` o superusuario, de la ``1-99`` son ``usuarios predefinidos del sistema`` y de la ``100-999`` para ``cuentas administrativas`` del sistema. Por tanto, los nuevos usuarios serán asociados a partir del 1000.
 
-El ``prompt``, o línea de petición de órdenes en el intérprete de comandos, varía según el usuario activo en él. En Ubuntu, cuando el superusuario se encuentra activo en el intérprete de comandos a la espera de introducir órdenes, su indicativo de petición en el prompt es el símbolo ``#``, mientras que para el resto de usuarios es ``$``.
+El ``prompt``, o intérprete de comandos, varía según el usuario activo en él. En Ubuntu, cuando el superusuario se encuentra activo en el intérprete de comandos a la espera de introducir órdenes, su indicativo de petición en el prompt es el símbolo ``#``, mientras que para el resto de usuarios es ``$``.
 
 El comando ``su`` permite abrir una sesión del intérprete de comandos con el ID de otro usuario o iniciar una nueva shell con ese identificador. Si se pone ``su`` sin seguir de un usuario se interpretará que se está llamando al usuario root.
 
