@@ -19,7 +19,7 @@ Los sistemas operativos actuales pueden ser utilizados por uno o varios usuarios
 
 - ``Usuario administrador``
 
-  Es aquel que tiene capacidad de gestión en el sistema, sin ser necesariamente el superusuario. Esta capacidad puede ser desarrollada si dispone de privilegios gracias al comando sudo.
+  Es aquel que tiene capacidad de gestión en el sistema, sin ser necesariamente el root. Esta capacidad puede ser desarrollada si dispone de privilegios gracias al comando ``sudo``.
 
 Los sistemas GNU/Linux gestionan los usuarios mediante ``archivos de configuración``. Sobre estos archivos, los usuarios comunes no gozan de privilegios, por lo que son los ``administradores o el usuario root los únicos que pueden editarlos``.
 
