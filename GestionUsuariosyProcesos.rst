@@ -3,21 +3,21 @@ Usuarios
 
 Los sistemas operativos actuales pueden ser utilizados por uno o varios usuarios, en algunos sistemas pueden hacerlo simultáneamente y en otros no ademas estos puedes ser creados de manera local o en red. 
 
-En Linux hay tres tipos de cuentas de usuario: 
+``En Linux hay cuatro tipos de cuentas de usuario``: 
 
-- ROOT
+- ``ROOT``
 
   Tiene acceso total al sistema, a todos los archivos del sistema. Es la primera cuenta que se crea al instalar el sistema operativo. Es aconsejable utilizarla únicamente para la administración del sistema. 
 
-- Estándar o locales
+- ``Estándar`` o locales
 
   Tienen limitaciones en cuanto a las acciones que pueden realizar, salvo en su directorio personal. Son los recomendados para el uso diario del sistema. 
 
-- Del sistema o asociados a servicios
+- ``Del sistema`` o asociados a servicios
 
   Son incorporados por el propio sistema, y se encargan de administrar los demonios del mismo. No pueden iniciar sesiones en el sistema, ni tener un shell donde trabajar.
 
-- Usuario administrador
+- ``Usuario administrador``
 
   Es aquel que tiene capacidad de gestión en el sistema, sin ser necesariamente el superusuario. Esta capacidad puede ser desarrollada si dispone de privilegios gracias al comando sudo.
 
