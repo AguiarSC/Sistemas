@@ -105,7 +105,7 @@ Función del S.O.
 
 * ``Gestión de Archivos``: El sistema operativo se encarga de gestionar el almacenamiento de información en los dispositivos.
 
-* ``Gestión de Entrada y Salida``: El sistema operativo captura interrupciones de los dispositivos y gestiona la entrada y salida de datos.
+* ``Gestión de Entrada y Salida``: El sistema operativo captura interrupciones (señales que indican la necesidad de atención inmediata por parte del sistema) de los dispositivos y gestiona la entrada y salida de datos.
 
 
 Gestión de procesos
