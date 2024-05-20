@@ -58,6 +58,7 @@ Las contraseñas se gestionan en el archivo de configuración ``/etc/shadow``, q
 .. code-block:: sh
 
   name:encryptedpassword
+
   johndoe:$6$othersalt$dlfajsdlfjl349sd:15555:0:99999:7:::
   janedoe:!!:16789:0:99999:7:::
   guest:!:17890:0:99999:7:::
