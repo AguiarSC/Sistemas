@@ -188,7 +188,8 @@ Primer y segundo plano
 
 La ejecución ``en primer plano`` se refiere a introducir un ``comando en el terminal`` y ``esperar a que finalice antes de que el prompt vuelva a estar disponible``. Sin embargo, existe una alternativa que permite al usuario continuar con otras tareas sin esperar a que la primera termine: la ejecución en ``segundo plano`` o background. Para lograr esto, se añade el símbolo ``&`` al final de la línea de comandos en el shell. Así, ``el prompt se devuelve de inmediato``, sin esperar a que la tarea recién iniciada termine.
 
-Con el comando ``jobs`` podemos identificar las tareas o trabajos que se hallan ejecutándose en segundo plano. Cuando un proceso es detenido, el sistema nos muestra un mensaje similar al siguiente:
+Con el comando ``jobs`` podemos identificar las tareas o trabajos que se hallan ejecutándose en segundo plano. Los procesos en primer plano irán acompañados de ``+``, mientras que los que se encuentran en segundo plano irán acompañados de ``-``.
+Cuando un proceso es detenido, el sistema nos muestra un mensaje similar al siguiente:
 
 .. code-block:: sh
 
