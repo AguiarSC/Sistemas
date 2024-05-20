@@ -30,6 +30,10 @@ Como ya sabemos, ``/etc/passwd`` almacena las cuentas de todos los usuarios del 
   root:x:0:0:root:/root:/bin/bash
 
   daemon:x:1:1:daemon:/usr/sbin:/bin/sh
+  bin:x:2:2:bin:/bin:/usr/sbin/nologin
+  sys:x:3:3:sys:/dev:/usr/sbin/nologin
+  sync:x:4:65534:sync:/bin:/bin/sync
+  games:x:5:60:games:/usr/games:/usr/sbin/nologin
 
 Estructura:
 
