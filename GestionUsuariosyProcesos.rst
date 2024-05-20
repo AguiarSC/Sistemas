@@ -262,5 +262,7 @@ Se lleva a cabo mediante el uso de ``cron``, que permite programar la ejecución
   0 8 * * * /ruta/al/comando - ejecutará el comando todos los días a las 8:00 a.m
   */30 * * * * /ruta/al/comando - ejecutará el comando cada 30 minutos, todos los días, todos los meses, etc.
   0 0 1,15 * * /ruta/al/comando - ejecutará el comando a las 12:00 a.m. (medianoche) del primer y decimoquinto día de cada mes
+  0 0 5-10 * * /ruta/al/comando - ejecutar una tarea todos los días entre el 5 y el 10 de cada mes
+  0,1,2 * * * * /ruta/al/comando - ejecutar un comando en los primeros tres minutos de cada hora
 
 ``Si un campo se ignora, se especifica mediante "*"``, indicando cualquier valor válido. Se pueden especificar listas mediante comas y sin espacios, mediante sus valores mínimos y máximos separados por ``-``, y también mediante un valor de inicio y un valor incremental, separados por ``/``.
