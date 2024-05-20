@@ -242,15 +242,15 @@ Los procesos reciben señales para ser controlados desde el propio sistema opera
 
   kill -señal PID
 
-  - ``2 o SIGINT``: interrumpe un proceso. Esta señal puede ser manejada por el propio proceso, aunque no es lo habitual, terminando su ejecución.
+  - ``2 o SIGINT``: interrumpe un proceso. Puede ser manejada por el propio proceso, aunque no es lo habitual.
 
-  - ``9 o SIGKILL``: mata inmediatamente un proceso.
+  - ``9 o SIGKILL``: Esta señal fuerza la terminación inmediata de un proceso.
 
-  - ``15 o SIGTERM``: termina o mata un proceso, aunque esta señal puede ser ignorada en determinados casos.
+  - ``15 o SIGTERM``: Señal para terminar un proceso, permitiendo al proceso realizar tareas de limpieza antes. 
 
-  - ``18 o SIGCONT``: continúa la ejecución de un proceso.
+  - ``18 o SIGCONT``: Continúa la ejecución de un proceso.
 
-  - ``19 o SIGSTOP``: pausa la ejecución de un proceso.
+  - ``19 o SIGSTOP``: Pausa la ejecución de un proceso.
 
 Planificación de tareas
 ~~~~~~~~~~~~~~~~~~~~~~~
