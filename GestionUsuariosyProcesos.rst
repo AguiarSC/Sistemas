@@ -58,6 +58,7 @@ Las contraseñas se gestionan en el archivo de configuración ``/etc/shadow``, q
 .. code-block:: sh
 
   slice: ajhdkash453ad74s3:14324:0:99999:7::
+  johndoe:$6$othersalt$dlfajsdlfjl349sd:15555:0:99999:7:::
 
 Valores:
 
