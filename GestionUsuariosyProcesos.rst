@@ -92,9 +92,7 @@ El superusuario es aquel con potestad para administrar los procesos del sistema.
 
 ``El primer proceso que se crea en el sistema es el proceso denominado init y él no tiene un proceso padre.``
 
-Cuando ejecutamos un programa desde la línea de comandos, es el ``shell`` quien maneja su ejecución:
-
-Si la orden es un comando interno (pwd...), se ejecuta internamente sin generar nuevos procesos; pero si la orden no es interna, entonces el shell crea un proceso hijo que ejecuta esa orden mientras el proceso padre (el shell) espera hasta que el hijo termina su ejecución, momento en que el shell “se despierta” para interpretar la siguiente orden.
+Cuando ejecutamos un programa desde la línea de comandos, el shell maneja su ejecución de la siguiente manera: ``si la orden es un comando interno, como pwd, el shell lo ejecuta internamente sin generar nuevos procesos``. Sin embargo, ``si la orden no es interna, el shell crea un proceso hijo para ejecutar esa orden, mientras que el proceso padre (el shell) espera hasta que el hijo termine su ejecución``. Una vez que el hijo ha terminado, el shell vuelve a estar activo para interpretar la siguiente orden.
 
 Estados de procesos (STAT o S):
 
