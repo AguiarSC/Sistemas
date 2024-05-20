@@ -132,11 +132,13 @@ Por defecto, Windows crea varias cuentas administrativas que no se encuentran ha
 Consola de comandos Windows
 ----------------------------
 
-A través de la consola de comandos podemos añadir un usuario con el siguiente comando:
+A través de la consola de comandos podemos crear un usuario nuevo con el siguiente comando. También, podemos añadir opciones al usuario:
 
 .. code-block:: sh
 
-  net user [nombredeusuario] [contraseña | *] opciones /add
+  net user [nombredeusuario] [contraseña] / add
+
+  net user [nombredeusuario] /opciones
 
 +-------------------------------+-------------------------------------------------------------------------------+
 | Tipo                          | Descripción                                                                   |
