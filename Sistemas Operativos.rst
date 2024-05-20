@@ -15,7 +15,7 @@ Un ``sistema informático`` es un conjunto de elementos que están relacionados 
     Almacena los programas en ejecución y los datos que necesitan. Se organiza en niveles: memoria principal (registros - caché - RAM), memoria secundaria (ROM - discos duros - CD) y memoria auxiliar (nube, hdds y cds de ayuda). Cuanto más cercanos al procesador, más pequeños, rápidos y caros.
 
   * ``Dispositivos E/S o periféricos``
-    Tienen dos partes: dispositivo controlador y el dispositivo en sí. El controlador es un chip o un conjunto de chips que controlan físicamente el dispositivo. La comunicación entre el controlador y el sistema operativo se realiza mediante un software llamado driver.
+    Tienen dos partes: dispositivo ``controlador`` y el dispositivo en sí. El controlador es un chip o un conjunto de chips que controlan físicamente el dispositivo. La comunicación entre el controlador y el sistema operativo se realiza mediante un software llamado driver.
 
 * ``Software``
   Es la parte lógica del sistema e intangible, como los programas y los datos. Está formado por un conjunto de instrucciones que al ejecutarse sirven para realizar alguna tarea. Se puede dividir en 3 tipos por la función o en 2 según su tipo.
