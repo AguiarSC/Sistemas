@@ -21,7 +21,7 @@ Un ``sistema informático`` es un conjunto de elementos que están relacionados 
   Es la parte lógica del sistema e intangible, como los programas y los datos. Está formado por un conjunto de instrucciones que al ejecutarse sirven para realizar alguna tarea. Se puede dividir en 3 tipos por la función o en 2 según su tipo.
 
   * ``Software de sistema``
-    Programas que administran los recursos del ordenador; son los sistemas operativos y los drivers. Ejemplos: Sistemas operativos.
+    Programas que administran los recursos del ordenador; son los sistemas operativos y los drivers.
 
   * ``Software de programación``
     Cualquier software que permita crear nuevos programas y aplicaciones. Ejemplos: NetBeans..
