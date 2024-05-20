@@ -3,8 +3,7 @@ SISTEMAS INFORMÁTICOS
 ======================
   
 La ``informática`` (información + automática) es la ciencia que utiliza ordenadores para el tratamiento de la información. Los ``datos`` son conjuntos de símbolos que se utilizan para representar diferentes valores, por sí solos no aportan información, es necesario procesarlos. El término ``información`` es sinónimo de conocimiento y depende del receptor.
-Un ``sistema informático`` es un conjunto de elementos que están relacionados entre sí y en el que se realizan tareas relacionadas con el tratamiento automático de la información. Está compuesto por ``hardware`` (componentes físicos), ``software`` (componentes lógicos) y
-recursos humanos.
+Un ``sistema informático`` es un conjunto de elementos que están relacionados entre sí y en el que se realizan tareas relacionadas con el tratamiento automático de la información. Está compuesto por ``hardware`` (componentes físicos), ``software`` (componentes lógicos) y ``recursos humanos``.
   
 * ``Hardware``
   Compuesto por los elementos físicos, que se pueden tocar. Algunos elementos hardware son la caja, el procesador, la memoria, el disco duro, pantalla, teclado, ratón, etc.
