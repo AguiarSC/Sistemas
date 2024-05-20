@@ -27,29 +27,12 @@ Como ya sabemos, ``/etc/passwd`` almacena las cuentas de todos los usuarios del 
 
 .. code-block:: sh
 
+  username:password:userid:groupid:userinfo:personalfile:shell
+
   root:x:0:0:root:/root:/bin/bash
-
   daemon:x:1:1:daemon:/usr/sbin:/bin/sh
-  bin:x:2:2:bin:/bin:/usr/sbin/nologin
-  sys:x:3:3:sys:/dev:/usr/sbin/nologin
   john:x:1001:1001:John Doe:/home/john:/bin/bash
-  jane:x:1002:1002:Jane Smith:/home/jane:/bin/bash
 
-Estructura:
-
-  nombre de usuario
-
-    contraseña
-
-      id de usuario
-
-        id de grupo
-
-          info usuario
-
-            carpeta personal
-
-              Shell
 
 El ``id`` del usuario sigue un patrón en el cual el ``0`` es el ``root`` o superusuario, de la ``1-99`` son ``usuarios predefinidos del sistema`` y de la ``100-999`` para ``cuentas administrativas`` del sistema. Por tanto, los nuevos usuarios serán asociados a partir del 1000.
 
