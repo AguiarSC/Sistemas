@@ -217,19 +217,21 @@ Prioridad de las órdenes
 
 El valor ``nice`` de un proceso oscila entre ``-20`` (máxima prioridad) y ``19`` (menor prioridad); por defecto, un usuario solo puede disminuir la prioridad de sus procesos cuando los lanza.
 
-Podemos lanzar procesos, modificando su prioridad relativa con nice, siendo su sintaxis:
+Podemos lanzar procesos, modificando su prioridad relativa con nice:
 
 .. code-block:: sh
 
   nice -[n] {+|-} numero_nice orden
+  nice -n 10 procesoA
 
 Para modificar la prioridad de un proceso ya en ejecución:
 
 .. code-block:: sh
 
-  renice prioridad [[-p] PID´s] [[-u] usuarios]
+  renice prioridad ([[-p] PID´s] o [[-u] usuarios])
+  renice +5 -p PID procesoB
+  renice -5 -u usuario
 
-Sirve para disminuir su prioridad.
 
 Envío de señales
 ~~~~~~~~~~~~~~~~
