@@ -255,10 +255,14 @@ Los procesos reciben señales para ser controlados desde el propio sistema opera
 Planificación de tareas
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-En Linux ``se pueden planificar tareas de manera periódica`` o recurrente gracias a ``cron``, que permite lanzar órdenes o scripts definidos en un archivo ``crontab``.
-
-Los ficheros crontab han de especificar las órdenes y su periodicidad mediante los siguientes valores separados por espacios:
+Se lleva a cabo mediante el uso de ``cron``, que permite programar la ejecución periódica de comandos o scripts. En un ``archivo crontab``, se especifican las órdenes junto con su frecuencia de ejecución utilizando ``cinco campos separados por espacios``: minutos, hora, día del mes, mes y día de la semana.
 
   MINUTOS [0..59] HORA [0..23] DIA [1..31] MES [1..12] DIA DE LA SEMANA [0..6] ORDEN
+
+.. code-block:: sh
+
+  0 8 * * * /ruta/al/comando - ejecutará el comando todos los días a las 8:00 a.m
+  */30 * * * * /ruta/al/comando - ejecutará el comando cada 30 minutos, todos los días, todos los meses, etc.
+  0 0 1,15 * * /ruta/al/comando - ejecutará el comando a las 12:00 a.m. (medianoche) del primer y decimoquinto día de cada mes
 
 ``Si un campo se ignora, se especifica mediante "*"``, indicando cualquier valor válido. Se pueden especificar listas mediante comas y sin espacios, mediante sus valores mínimos y máximos separados por ``-``, y también mediante un valor de inicio y un valor incremental, separados por ``/``.
