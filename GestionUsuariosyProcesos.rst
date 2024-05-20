@@ -99,25 +99,25 @@ Estados de procesos (STAT o S):
 +-------------------+-------------------------------------------------------------------------------------------+
 | Tipo              | Descripción                                                                               |
 +===================+===========================================================================================+
-| ``R`` o ``Running``            | Ejecutándose o listo para ser ejecutado                                                   |
+| ``R``             | Running. Ejecutándose o listo para ser ejecutado                                          |
 +-------------------+-------------------------------------------------------------------------------------------+
-| ``S``             | Bloqueado o durmiendo                                                                     |
+| ``S``             | Sleeping. Bloqueado o durmiendo                                                           |
 +-------------------+-------------------------------------------------------------------------------------------+
-| ``T``             | Parado                                                                                    |
+| ``T``             | Stopped. Parado                                                                           |
 +-------------------+-------------------------------------------------------------------------------------------+
-| ``Z``             | Zombi (proceso muerto pero que su proceso padre no ha reconocido su muerte)               |
+| ``Z``             | Zombie. Proceso muerto pero que su proceso padre no ha reconocido su muerte               |
 +-------------------+-------------------------------------------------------------------------------------------+
 | ``I``             | Inactivo en creación                                                                      |
 +-------------------+-------------------------------------------------------------------------------------------+
-| ``N``             | Con prioridad menor de lo normal                                                          |
+| ``N``             | Idle. Con prioridad menor de lo normal                                                    |
 +-------------------+-------------------------------------------------------------------------------------------+
-| ``<``             | Con prioridad mayor de lo normal                                                          |
+| ``<``             | Low-priority. Con prioridad mayor de lo normal                                            |
 +-------------------+-------------------------------------------------------------------------------------------+
-| ``+``             | Se encuentra en el grupo de procesos del primer plano                                     |
+| ``+``             | High-priority. Se encuentra en el grupo de procesos del primer plano                      |
 +-------------------+-------------------------------------------------------------------------------------------+
-| ``s``             | Proceso líder en sesión                                                                   |
+| ``s``             | Session-leader. Proceso líder en sesión                                                   |
 +-------------------+-------------------------------------------------------------------------------------------+
-| ``l``             | Es un proceso multihilo (mismo proceso con múltiples tareas que se pueden realizar en paralelo evitando así el cambio de contexto) |
+| ``l``             | Es un proceso multihilo (mismo proceso con múltiples tareas paralelas                     |
 +-------------------+-------------------------------------------------------------------------------------------+
 
 Gestión por interfaz gráfica de Windows
