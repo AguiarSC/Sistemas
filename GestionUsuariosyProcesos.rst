@@ -15,7 +15,7 @@ Los sistemas operativos actuales pueden ser utilizados por uno o varios usuarios
 
 - ``Del sistema`` o asociados a servicios
 
-  Son incorporados por el propio sistema y se encargan de administrar los demonios del mismo. No pueden iniciar sesiones en el sistema, ni tener un shell donde trabajar.
+  Son incorporados por el propio sistema y se encargan de administrar los ``demonios`` (procesos) del mismo. No pueden iniciar sesiones en el sistema, ni tener un shell donde trabajar.
 
 - ``Usuario administrador``
 
