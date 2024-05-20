@@ -23,7 +23,7 @@ Los sistemas operativos actuales pueden ser utilizados por uno o varios usuarios
 
 Los sistemas GNU/Linux gestionan los usuarios mediante ``archivos de configuración``. Sobre estos archivos, los usuarios comunes no gozan de privilegios, por lo que son los ``administradores o el usuario root los únicos que pueden editarlos``.
 
-Como ya sabemos, ``/etc/passwd`` almacena las cuentas de todos los usuarios del sistema. Cada fila se corresponde con un usuario y consta de siete campos delimitados por dos puntos.
+Como ya sabemos, el archivo ``/etc/passwd`` almacena las cuentas de todos los usuarios del sistema. Cada línea en este archivo representa un usuario y consta de siete campos delimitados por dos puntos ``:``.
 
 .. code-block:: sh
 
@@ -53,7 +53,7 @@ El comando ``su`` permite abrir una sesión del intérprete de comandos con el I
 Seguridad de cuentas y contraseñas
 ----------------------------------
 
-Las contraseñas se gestionan gracias al fichero de configuración ``/etc/shadow``, que contiene las cuentas de los usuarios del sistema. Este fichero sólo puede ser leído por el root y la ``contraseña está encriptada``.
+Las contraseñas se gestionan en el archivo de configuración ``/etc/shadow``, que contiene las ``contraseñas encriptadas`` de los usuarios del sistema. Este archivo ``sólo puede ser leído por el usuario root``, asegurando así la seguridad de las contraseñas.
 
 .. code-block:: sh
 
