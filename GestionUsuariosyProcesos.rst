@@ -38,7 +38,7 @@ El ``id`` del usuario sigue un patrón en el cual el ``0`` es el ``root`` o supe
 
 El ``prompt``, o intérprete de comandos, varía según el usuario activo en él. En Ubuntu, cuando el superusuario se encuentra activo en el intérprete de comandos a la espera de introducir órdenes, su indicativo de petición en el prompt es el símbolo ``#``, mientras que para el resto de usuarios es ``$``.
 
-El comando ``su`` permite abrir una sesión del intérprete de comandos con el ID de otro usuario o iniciar una nueva shell con ese identificador. Si se pone ``su`` sin seguir de un usuario se interpretará que se está llamando al usuario root.
+El comando ``su`` permite abrir una sesión del intérprete de comandos con el ID de otro usuario (``su johndoe``) o iniciar una nueva shell con ese identificador. Si se pone ``su`` sin seguir de un usuario se interpretará que se está llamando al usuario root.
 
 +-------------------+----------------------+---------------------------------------------------------------------+
 | Tipo              | Archivos             | Descripción                                                         |
