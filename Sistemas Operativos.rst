@@ -12,7 +12,7 @@ Un ``sistema informático`` es un conjunto de elementos que están relacionados 
     Su función es leer instrucciones y ejecutarlas. Obtiene la primera instrucción de la memoria, la decodifica, la ejecuta y, en algunos casos, almacena el resultado. 
 
   * ``Memoria``
-    Almacena los programas en ejecución y los datos que necesitan. Se organiza en niveles: registros - caché - RAM y ROM - discos duros - memoria auxiliar. Cuanto más cercanos al procesador, más pequeños, rápidos y caros.
+    Almacena los programas en ejecución y los datos que necesitan. Se organiza en niveles: memoria principal (registros - caché - RAM), memoria secundaria (ROM - discos duros - CD) y memoria auxiliar (nube, hdds y cds de ayuda). Cuanto más cercanos al procesador, más pequeños, rápidos y caros.
 
   * ``Dispositivos E/S o periféricos``
     Tienen dos partes: dispositivo controlador y el dispositivo en sí. El controlador es un chip o un conjunto de chips que controlan físicamente el dispositivo. La comunicación entre el controlador y el sistema operativo se realiza mediante un software llamado driver.
