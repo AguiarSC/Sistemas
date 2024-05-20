@@ -107,13 +107,13 @@ Estados de procesos (STAT o S):
 +-------------------+-------------------------------------------------------------------------------------------+
 | ``Z``             | Zombie. Proceso muerto pero que su proceso padre no ha reconocido su muerte               |
 +-------------------+-------------------------------------------------------------------------------------------+
-| ``I``             | Inactivo en creación                                                                      |
+| ``I``             | Idle. Inactivo en creación                                                                |
 +-------------------+-------------------------------------------------------------------------------------------+
-| ``N``             | Idle. Con prioridad menor de lo normal                                                    |
+| ``N``             | Low-priority. Con prioridad menor de lo normal                                            |
 +-------------------+-------------------------------------------------------------------------------------------+
-| ``<``             | Low-priority. Con prioridad mayor de lo normal                                            |
+| ``<``             | High-priority. Con prioridad mayor de lo normal                                           |
 +-------------------+-------------------------------------------------------------------------------------------+
-| ``+``             | High-priority. Se encuentra en el grupo de procesos del primer plano                      |
+| ``+``             | Foreground. Se encuentra en el grupo de procesos del primer plano                         |
 +-------------------+-------------------------------------------------------------------------------------------+
 | ``s``             | Session-leader. Proceso líder en sesión                                                   |
 +-------------------+-------------------------------------------------------------------------------------------+
