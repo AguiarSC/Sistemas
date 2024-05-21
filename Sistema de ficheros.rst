@@ -123,7 +123,7 @@ Sistema de archivo de Windows.
 Implementación:
 --------------------
 
-El aspecto clave de la implementación del almacenamiento de archivos es el registro de los bloques asociados a cada archivo. Un bloque está compuesto por un determinado nº de sectores que se asocian a un único archivo.
+El aspecto clave de la implementación del almacenamiento de archivos es el registro de los bloques asociados a cada archivo. Un ``bloque`` está compuesto por un determinado nº de sectores que se asocian a un único archivo.
 
 Tecnicas de asignacion de bloques a archivos:
 ---------------------------------------------
