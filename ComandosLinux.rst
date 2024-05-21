@@ -145,7 +145,7 @@ Comandos (Linux):
 |                                    |                                                             |
 |                                    | ``-v`` Muestra el nombre del directorio creado              |
 |                                    |                                                             |
-|                                    | ``-m`` Permisos.                                            |
+|                                    | ``-m``  Define permisos.                                    |
 +------------------------------------+-------------------------------------------------------------+
 | ``rm [opciones] fichero``          | Borrar archivos (ficheros)/(directorios)                    |
 |                                    |                                                             |
