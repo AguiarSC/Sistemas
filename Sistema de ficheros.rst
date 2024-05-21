@@ -13,13 +13,13 @@ Archivos:
 Las reglas para nombrar los archivos varían dependiendo del sistema, algunos son case-sensitive, otros utilizan un n.º máximo de caracteres, etc.
 
 Atributos:
-    - S: atributo del sistema (uso del sistema operativo, uso interno)
+    - S: System. Atributo del sistema (uso del sistema operativo, uso interno)
 
-    - H: atributo de archivo oculto
+    - H: Hidden. Atributo de archivo oculto
 
-    - R: atributo de sólo lectura
+    - R: Read. Atributo de sólo lectura
 
-    - A: atributo de archivo, listo para archivar históricamente (se cambia cuand se modifica el archivo, es útil para determinar cuales se modificaron después de la última copia de seguridad).
+    - A: Atribute. Atributo de archivo, listo para archivar históricamente (se cambia cuand se modifica el archivo, es útil para determinar cuales se modificaron después de la última copia de seguridad).
 
     - Fecha, hora, tamaño.
 
