@@ -4,8 +4,8 @@ SISTEMAS DE ARCHIVOS
 ¿Qué es un sistema de archivos?
 -------------------------------
 
-Un sistema de archivos es un método de almacenamiento y organización por segmentación de ficheros para facilitar su búsqueda y acceso,los sistemas operativos tienen su propio sistema de archivos, los cuales suelen ser representados de forma textual o gráfica.
-En un sistema de archivos hay dos tipos fundamentales de objetos: los directorios(carpetas) y los archivos. 
+Un sistema de archivos es un ``método de almacenamiento y organización por segmentación de ficheros para facilitar su búsqueda y acceso``. Los sistemas operativos tienen su propio sistema de archivos, los cuales suelen ser representados de forma textual o gráfica.
+En un sistema de archivos hay dos tipos fundamentales de objetos: los ``directorios`` y los ``archivos``. 
 
 Archivos:
 ---------
@@ -13,26 +13,24 @@ Archivos:
 Las reglas para nombrar los archivos varían dependiendo del sistema, algunos son case-sensitive, otros utilizan un n.º máximo de caracteres, etc.
 
 Atributos:
-    - S: System. Atributo del sistema (uso del sistema operativo, uso interno)
+    - ``S``: System. Uso interno del SO.
 
-    - H: Hidden. Atributo de archivo oculto
+    - ``H``: Hidden. No visible en la exploración.
 
-    - R: Read. Atributo de sólo lectura
+    - ``R``: Read. El archivo solo puede leerse.
 
-    - A: Atribute. Atributo de archivo, listo para archivar históricamente (se cambia cuand se modifica el archivo, es útil para determinar cuales se modificaron después de la última copia de seguridad).
+    - ``A``: Atribute. Listo para ser archivado. Utilidad para ``backups`` al actualizarse al editarlo. 
 
-    - Fecha, hora, tamaño.
+    - ``Fecha``, ``hora``, ``tamaño``, ``pertenencia del archivo``, ``permisos del propietario``, ``tipo de archivo``, etc.
 
-
-En Linux se utilizan también atributos para indicar la pertenencia del archivo, permisos del propietario sobre el archivo, así como el tipo de archivo que es.
-Windows permite indicar si el archivo estará cifrado o comprimido.
+``Windows`` permite indicar si el archivo estará ``cifrado`` o ``comprimido``.
 
 Directorios:
 ------------
 
-Son una división lógica de almacenamiento de archivos u otros subdirectorios.
+Son una ``división lógica de almacenamiento de archivos u otros subdirectorios``.
 
-En todo sistema de archivos hay un directorio especial llamado raíz que es el directorio que contiene todos los demás directorios y archivos. Se le suele identificar con una barra inclinada.
+En todo sistema de archivos hay un directorio especial llamado ``raíz`` que es el directorio que contiene todos los demás directorios y archivos. Se le suele identificar con una barra inclinada.
 
 En Windows, las rutas de acceso se separan con el carácter ``\`` y en Linux con ``/``. 
 
@@ -42,7 +40,7 @@ Sistema de archivo de Linux.
 +-----------------------------------------+----------------------------+
 | Modificador                             | Significado                |
 +=========================================+============================+
-| ``/ : raíz``                            | Directorio principal.      |
+| ``/``                                   | Directorio principal.      |
 +-----------------------------------------+----------------------------+
 | ``/bin``                                | Son instrucciones          |
 |                                         | fundamentales que se       |
@@ -86,7 +84,7 @@ Sistema de archivo de Linux.
 |                                         | del sistema que se están   |
 |                                         | ejecutando.                |
 +-----------------------------------------+----------------------------+
-| ``/root``                               | Carpeta del superusuario.  |
+| ``/root``                               | Carpeta del usuario root.  |
 +-----------------------------------------+----------------------------+
 | ``/sbin``                               | Programas para configurar  |
 |                                         | el sistema.                |
@@ -120,30 +118,24 @@ Sistema de archivo de Windows.
 +-----------------------------------------+---------------------------------------------+
 
 
-Implementación:
---------------------
+Registro de Bloques
+-------------------
+El almacenamiento de archivos se basa en registrar los bloques de datos asociados a cada archivo. Un ``bloque`` es un conjunto de sectores del disco asignados a un solo archivo.
 
-El aspecto clave de la implementación del almacenamiento de archivos es el registro de los bloques asociados a cada archivo. Un ``bloque`` está compuesto por un determinado nº de sectores que se asocian a un único archivo.
+Tecnicas de asignación de bloques
+---------------------------------
 
-Tecnicas de asignacion de bloques a archivos:
----------------------------------------------
+- ``Asignación contigua``: se almacenan en bloques contiguos en el disco. Es fácil de implementar, pero se debe conocer de antemano el número de bloques que ocupará el archivo. Provoca fragmentación externa.
 
-- Asignación contigua o adyacente: Se almacenan los archivos mediante bloques adyacentes en el disco. Ventaja: fácil de implementar. Inconveniente: es necesario conocer a priori el número de bloques que ocupará el fichero y genera fragmentación, lo que produce, pérdida de espacio. 
+- ``Asignación en lista enlazada``: el directorio contiene la dirección del primer bloque y cada bloque la dirección del siguiente bloque. No requiere conocer el tamaño del archivo por adelantado, pero es más lento.
 
-- Asignación en forma de lista enlazada: El directorio contiene la dirección del primer bloque y cada bloque la dirección del siguiente bloque.
+- ``Asignación mediante lista enlazada e índice``: Se utiliza una tabla (FAT) con un registro para cada bloque del disco. Cada registro indica si el bloque está libre o la dirección del siguiente bloque. El directorio asocia el nombre del archivo con el número del bloque inicial. Eficiente en términos de espacio (si son pequeños o medianos). Ampliamente utilizado en sistemas FAT16 y FAT32. 
 
-- Asignación mediante una lista enlazada y un índice: Se crea una tabla con un registro por cada uno de los bloques del disco, en cada registro se indica si dicho bloque está libre o cuál es la dirección del siguiente bloque. Así, en el directorio se asocia con el nombre del archivo el número de bloque en el que comienza dicho archivo. Utilizada en FAT 16 y FAT 32.
-
-- Basado en inodos:se asocia a cada archivo una pequeña tabla, llamada inodo, quecontiene los atributos y direcciones en disco de los bloques del archivo(Linux). 
-
-        -Propiedades:
-            - id,nº de inodo,longitud, id de usuario y grupo,modo de acceso,nº de enlaces y marca de tiempo.
-
-            - Estructura de punteros, para direccionar hacia los bloques de datos del archivo.
+- ``Basado en inodos``: cada archivo tiene un inodo que contiene sus atributos y las direcciones en el disco de sus bloques de datos. Sus propiedades son: ``id``, ``longitud``, ``id de usuario`` y ``grupo``, ``modo de acceso``, ``n.º de enlaces`` y ``marca de tiempo``. Presenta una estructura de ``punteros`` (variable que apunta a una ubicación en la memoria donde esté el valor de otra variable), para direccionar hacia los bloques de datos del archivo.
     
             +-----------------------------------------+----------------------------------------------------+
-            | ``puntero indireccion simple``          | Apunta a un bloque de punteros, los cuales apuntan |
-            |                                         | a bloques de datos del archivo.                    |
+            | ``puntero indireccion simple``          | Apunta a un bloque de punteros, los cuales, cada   |
+            |                                         | uno, apuntan a bloques de datos del archivo.       |
             +-----------------------------------------+----------------------------------------------------+
             | ``puntero indireccion doble``           | Apunta a un bloque de punteros, los cuales apuntan |
             |                                         | a otros bloques de punteros, estos últimos apuntan |
@@ -158,126 +150,110 @@ Tecnicas de asignacion de bloques a archivos:
 Entorno gráfico (Linux):
 --------------------------
 
-Las GUIs en Linux se cargan gracias al X-Window System que define unos protocolos de comunicación y visualización de ventanas. Es propio de UNIX, libre y de código abierto. El servidor X controla los dispositivos periféricos como el teclado, el ratón, y la pantalla. Se puede iniciar mediante un comando aunque normalmente se ejecuta al arrancar el sistema. 
+Las ``GUI`` en Linux se cargan gracias al ``X-Window System`` que define unos protocolos de comunicación y visualización de ventanas.
 
-Escritorio:
-
-    - GNOME: Forma parte del proyecto GNU, tiene licencia GPL y es el escritorio por defecto de Ubuntu.
-    - KDE : Es un entorno para GNU/Linux y otros sistemas derivados de UNIX. La versión de Ubuntu que utiliza KDE se denomina Kubuntu. 
-
-Tipos de usuario y de permisos:
-
-    - Propietario (owner): creador del archivo
-
-    - Grupo (group): conjunto de usuarios
-
-    - Resto de usuarios (others): usuarios que no pertenecen a un grupo ni son propietarios
+- ``GNOME``: escritorio por defecto de Ubuntu.
+- ``KDE`` : entorno para GNU/Linux y otros sistemas derivados de UNIX. La versión de Ubuntu se denomina Kubuntu. 
 
 
-    - Lectura (r, read): ver e imprimir archivos; se pueden ver todos los elementos del directorio.
-
-    - Escritura (w, write): cambiar o eliminar archivos o directorios.
-
-    - Ejecución (x, execute): el fichero puede ser ejecutado. 
-
-Establecer y cambiar permisos:
+Tipos de usuario y de permisos
 ------------------------------
-En Linux cada archivo queda identificado por diez caracteres.
 
-El primer carácter empezando por la izquierda indica el tipo de archivo. 
+    - ``Propietario`` (owner): creador del archivo
 
-        - Normal (-), directorio (d), enlace simbólico (l), entrada y salida (c,b,s,p).
+    - ``Grupo`` (group): conjunto de usuarios
 
-Los nueve caracteres siguientes organizados en conjuntos de tres indican los permisos para cada categoría de usuarios. Las categorías de usuarios (empezando por la izquierda) son propietario, grupo y resto de usuarios. 
+    - ``Otros`` (others): usuarios que no pertenecen a un grupo ni son propietarios
 
-La asignación de permisos en esos 3 catacteres que indican la categoria de los usuarios podria ser de dos maneras:
-   
+
+    - ``Lectura`` (r, read): ver e imprimir archivos; se pueden ver todos los elementos del directorio.
+
+    - ``Escritura`` (w, write): cambiar o eliminar archivos o directorios.
+
+    - ``Ejecución`` (x, Xecute): el fichero puede ser ejecutado. 
+
+
+Establecer y cambiar permisos
+-----------------------------
+
+En Linux, ``cada archivo está identificado por 10 caracteres``.
+
+El ``1`` indica el ``tipo de archivo``: normal (`-`), directorio (`d`), enlace simbólico (`l`), entrada y salida (`c`, `b`, `s`, `p`).
+
+``2 - 10``, organizados en ``conjuntos de tres``, indican los ``permisos para cada categoría de usuarios``(propietario, grupo y otros).
+
+La ``asignación de permisos en esos tres caracteres`` que indican la categoría de los usuarios puede hacerse de ``dos maneras``:
+
 Por octal
-        
-        - El valor de cada uno de esos tres dígitos se calcula teniendo en cuenta el orden de permisos (rwx). Si se asigna permiso se utilizará un 1, si no se asigna se utilizará un 0. A continuación se hará la conversión de binario a octal.
+---------
 
-Por letras que indican:
+El ``valor de cada uno de esos tres dígitos`` se calcula teniendo en cuenta el orden de permisos (``rwx``). Si se asigna permiso se utilizará un ``1``, si no se asigna se utilizará un ``0``.
 
-        - quien: u (usuarios), g (grupo), o (otros), a (todos)
-        - operación: + (añadir) y - (eliminar), = (asignar).
-        - permisos: r (lectura), w (escritura), x (ejecución) 
+Por letras
+----------
 
-Permisos especiales 
--------------------
+  - quién: ``u`` (usuarios), ``g`` (grupo), ``o`` (otros), ``a`` (todos)
+  - operación: ``+`` (añadir), ``-`` (eliminar), ``=`` (asignar)
+  - permisos: ``r`` (lectura), ``w`` (escritura), ``x`` (ejecución)
 
-- Sticky bit(t)
+Permisos especiales
+===================
 
-    Significa que tan solo los respectivos dueños de los archivos que haya en el directorio y el superusuario pueden borrarlos.
-
-- SUID(s)
-
-    Cuando a un ejecutable binario se le asigna el atributo setuid, usuarios normales del sistema pueden ejecutar ese archivo y obtener privilegios del superusuario
-
-- SGID(s)
-
-    Es lo mismo que en el SUID, peroa nivel de grupo.Tiene privilegios de grupo en un directorio colaborativo.
-
-Si cualquiera de estos permisos salen escritos en mayúsculas significa que para que sea efectivo el permiso debe tener permisos de ejecución.
-
-Permisos de directorio:
------------------------
-
-• En un directorio con permiso de escritura se puede:
-
-    - Añadir y borrar archivos, aunque sobre estos no se tenga permiso de escritura.
-
-    - Añadir directorios y borrarlos si los permisos de estos lo permiten.
-
-    - Modificar archivos siempre que los permisos de estos lo permitan.
-
-• En un directorio sin permiso de escritura:
-
-    - No se puede añadir ni borrar archivos ni directorios.
-
-    - Se puede modificar el contenido de los archivos siempre que se tenga permiso de escritura sobre ellos.
-
-• En un directorio sin permiso de lectura:
-
-    - No se puede ver lo que hay dentro.
-
-• En un directorio sin permiso de ejecución
-
-    - No se puede hacer nada.
-
-Enlaces:
------------
-
-Simbólicos (o blandos) 
-----------------------
-
-- Usar rutas absolutas al especificar el origen.
-
-- Puede crearse un enlace simbólico aunque el archivo que representa no exista.
-
-- Si se borra el enlace no pasa nada, el archivo original sigue permanece intacto.
-
-- Si se borra el archivo original, el enlace no es accesible.
-
-- Cuando se utilizan más de dos argumentos, el último debe ser un directorio existente, en el que se crearán los enlaces simbólicos a los argumentos anteriores con el nombre básico de los mismos.
-
-- Si se copia un enlace, se copia el contenido del archivo, pero no el enlace en sí.
-
-- Los enlaces simbólicos, aparecerán en los listados con el carácter “l” en la columna de los permisos y con un puntero en la columna del nombre de fichero.
-
-- A los enlaces simbólicos se le asignan automáticamente todos los permisos. 
-
-Duros (o fuertes) 
+Sticky bit (``t``)
 -----------------
 
-- Los enlaces duros no pueden hacerse con directorios.
+Significa que tan solo los respectivos dueños de los archivos que hay en el directorio y el root pueden borrarlos.
 
-- Si se borra alguno de los enlaces, el archivo sigue existiendo mientras exista uno de los enlaces, ya que todos están apuntando al mismo bloque de datos,es decir, al mismo i-nodo.
+SUID (``s``)
+----------
 
-- Para saber si un archivo tiene enlaces físicos, se mira en la columna Links del comando ls en formato largo, para comprobar que el número que aparece es más grande que 1.
+Cuando a un ejecutable binario se le asigna el atributo ``setuid``, los usuarios normales del sistema pueden ejecutar ese archivo y obtener ``privilegios del root``.
 
-- Cuando se utilizan más de dos argumentos, el último debe ser un directorio existente, en el que se crearán los enlaces a los argumentos anteriores con el nombre básico de los mismos.
+SGID (``s``)
+----------
 
-- No aparecen marcados de ningún modo especial.
+Es lo mismo que el SUID, pero a nivel de grupo. Tiene ``privilegios de grupo`` en un directorio colaborativo.
+
+``Si cualquiera de estos permisos se escribe en mayúsculas, significa que para que el permiso sea efectivo, debe tener permisos de ejecución.``
+
+Permisos de directorio
+======================
+
+- ``Con permiso de escritura``
+  - Se pueden añadir y borrar archivos, aunque no se tenga permiso de escritura sobre ellos.
+  - Se pueden añadir y borrar directorios si los permisos lo permiten.
+  - Se pueden modificar archivos siempre que los permisos lo permitan.
+
+- ``Sin permiso de escritura``
+  - No se puede añadir ni borrar archivos ni directorios.
+  - Se puede modificar el contenido de los archivos si se tiene permiso de escritura sobre ellos.
+
+- ``Sin permiso de lectura``
+  - No se puede ver el contenido del directorio.
+
+- ``Sin permiso de ejecución``
+  - No se puede acceder al directorio ni realizar ninguna acción en él.
+
+
+Enlaces
+=======
+
+Enlaces Simbólicos (o blandos)
+--------------------------------
+
+- Se puede crear un enlace simbólico aunque el archivo que representa no exista.
+- Si se elimina el enlace, el archivo original permanece intacto.
+- Si se elimina el archivo original, el enlace se vuelve inaccesible.
+- Al copiar un enlace, se copia el contenido del archivo, no el enlace en sí.
+- Se asignan automáticamente todos los permisos a los enlaces simbólicos.
+
+Enlaces Duros (o fuertes)
+--------------------------
+
+- No se pueden crear enlaces duros con directorios.
+- Si se elimina uno de los enlaces, el archivo continúa existiendo mientras exista al menos un enlace, ya que todos apuntan al mismo bloque de datos (i-nodo).
+- Al utilizar más de dos argumentos, el último debe ser un directorio existente donde se crearán los enlaces con el nombre básico de los archivos anteriores.
+- Los enlaces duros no tienen ninguna marca especial en los listados.
 
 
 Listados:
