@@ -199,6 +199,12 @@ Por letras
   - operación: ``+`` (añadir), ``-`` (eliminar), ``=`` (asignar)
   - permisos: ``r`` (lectura), ``w`` (escritura), ``x`` (ejecución)
 
+.. code-block:: sh
+
+chmod u+x archivo1 añade permiso de ejecución al usuario propietario.
+chmod go-w archivo2 quita permiso de escritura al grupo y otros.
+chmod o=r archivo3 establece permisos de solo lectura para otros.
+
 Permisos especiales
 ===================
 
