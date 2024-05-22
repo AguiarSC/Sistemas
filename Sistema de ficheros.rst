@@ -189,6 +189,26 @@ Por octal
 
 El ``valor de cada uno de esos tres dígitos`` se calcula teniendo en cuenta el orden de permisos (``rwx``). Si se asigna permiso se utilizará un ``1``, si no se asigna se utilizará un ``0``.
 
+Para convertir los permisos ``rwxr-x--x`` a su representación en octal, primero debes ``dividir los permisos en grupos de tres``:
+
+El primer grupo corresponde a los permisos del propietario: ``rwx``.
+El segundo grupo corresponde a los permisos del grupo: ``r-x``.
+El tercer grupo corresponde a los permisos de otros usuarios: ``--x``.
+Luego, asigna un valor a cada uno de estos grupos según el siguiente esquema:
+
+``r`` (lectura) = ``4``
+``w`` (escritura) = ``2``
+``x`` (ejecución) = ``1``
+``-`` (sin permiso) = ``0``
+
+Por lo tanto, para el primer grupo, que es ``rwx``, sumamos los valores correspondientes: 4 (lectura) + 2 (escritura) + 1 (ejecución) = ``7``.
+
+Para el segundo grupo, que es ``r-x``, sumamos: 4 (lectura) + 0 (sin escritura) + 1 (ejecución) = ``5``.
+
+Para el tercer grupo, que es ``--x``, sumamos: 0 (sin lectura) + 0 (sin escritura) + 1 (ejecución) = ``1``.
+
+Entonces, la representación en octal sería ``751``.
+
 Por letras
 ----------
 
