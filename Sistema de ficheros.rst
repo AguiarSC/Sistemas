@@ -247,36 +247,11 @@ Permisos de directorio
 Enlaces
 =======
 
-    +-----------------------+-------------------------+
-    | Enlace Simbólico      |        Enlace Duro      |
-    +-----------------------+-------------------------+
-    | Puede apuntar a       | Solo puede referirse    |
-    | cualquier ubicación   | al mismo sistema de     |
-    | con rutas relativas   | archivos                |
-    | o absolutas           |                         |
-    +-----------------------+-------------------------+
+- ``Flexibilidad``: Los enlaces simbólicos pueden apuntar a cualquier ubicación con rutas relativas o absolutas, mientras que los enlaces duros solo pueden referirse al mismo sistema de archivos.
 
-.. table:: Compartición de Inodos:
+- ``Compartición de inodos``: Los enlaces duros comparten el mismo inodo y número de identificación de archivo (inode), lo que significa que cualquier modificación en uno de los enlaces afecta a todos, mientras que los enlaces simbólicos no comparten esta característica.
 
-    +----------------------+   +----------------------+
-    | Enlace Simbólico     |   | Enlace Duro          |
-    |                      |   |                      |
-    | No comparten inodos  |   | Comparten el mismo    |
-    | ni números de        |   | inodo y número de     |
-    | identificación de    |   | identificación de     |
-    | archivo (inode)      |   | archivo (inode)       |
-    +----------------------+   +----------------------+
-
-.. table:: Limitaciones de Sistemas de Archivos:
-
-    +----------------------+   +----------------------+
-    | Enlace Simbólico     |   | Enlace Duro          |
-    |                      |   |                      |
-    | Puede cruzar         |   | No puede cruzar      |
-    | sistemas de archivos |   | sistemas de archivos |
-    | o particiones        |   | o particiones        |
-    +----------------------+   +----------------------+
-
+- ``Limitación de sistemas de archivos``: Los enlaces duros no pueden cruzar sistemas de archivos o particiones, mientras que los enlaces simbólicos pueden hacerlo.
 
 Listados:
 ------------
