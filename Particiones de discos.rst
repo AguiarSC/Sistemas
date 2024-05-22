@@ -92,7 +92,7 @@ Son varios los flags que podemos encontrar, pero los más típicos son:
 
 * ``boot``: Flag para indicar que se trata de una partición de arranque porque tiene un sistema operativo
 
-* ``root``: La utilizan los sistemas operativos Linux para saber la partición en la que semonta el raíz del sistema de archivos (/)
+* ``root``: La utilizan los sistemas operativos Linux para saber la partición en la que se monta la raíz del sistema de archivos (/)
 
 * ``swap``: La utilizan los sistemas operativos Linux para saber la partición que se utiliza como swap
 
