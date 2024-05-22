@@ -209,20 +209,19 @@ Por letras
 Permisos especiales
 ===================
 
-Sticky bit (``t``)
-------------------
+``Sticky bit (t)``
 
-Significa que tan solo los respectivos dueños de los archivos que hay en el directorio y el root pueden borrarlos.
+Solo el ``propietario del archivo``, el ``propietario del directorio`` y el ``root`` pueden ``eliminar o mover archivos`` dentro de ese directorio. 
 
-SUID (``s``)
-------------
+
+``SUID (s)``
 
 Cuando a un ejecutable binario se le asigna el atributo ``setuid``, los usuarios normales del sistema pueden ejecutar ese archivo y obtener ``privilegios del root``.
 
-SGID (``s``)
-------------
 
-Es lo mismo que el SUID, pero a nivel de grupo. Tiene ``privilegios de grupo`` en un directorio colaborativo.
+``SGID (s)``
+
+Lo mismo que el SUID, pero a nivel de grupo. Tiene ``privilegios de grupo`` en un directorio colaborativo.
 
 ``Si cualquiera de estos permisos se escribe en mayúsculas, significa que para que el permiso sea efectivo, debe tener permisos de ejecución.``
 
