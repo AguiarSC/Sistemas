@@ -145,42 +145,18 @@ A través de la consola de comandos podemos crear un usuario nuevo con el siguie
 +===============================+===============================================================================+
 | ``*``                         | Genera un mensaje que pide la contraseña. La contraseña no se muestra al escribirla. |
 +-------------------------------+-------------------------------------------------------------------------------+
-| ``/domain``                   | Permite añadir el usuario al dominio.                                         |
-+-------------------------------+-------------------------------------------------------------------------------+
 | ``/active:{yes|no}``          | Activa o desactiva la cuenta de usuario                                       |
 +-------------------+-------------------------------------------------------------------------------------------+
 | ``/comment:"texto"``          | Añade un comentario a la cuenta del usuario                                   |
 +-------------------+-------------------------------------------------------------------------------------------+
 | ``/passwordchg:{yes|no}``     | Si los usuarios pueden cambiar su contraseña.                                 |
-+-------------------------------+-------------------------------------------------------------------------------+
-| ``/logonpasswordchg:{yes|no}``| Si el usuario debe cambiar la contraseña en el siguiente inicio.              |
 +-------------------+-------------------------------------------------------------------------------------------+
-| ``/expires:{fecha| NEVER}``   | Hace que la cuenta expire si se establece una fecha                           |
-+-------------------------------+-------------------------------------------------------------------------------+
-| ``/fullname:"nombre"``        | Especifica el nombre completo de usuario.                                     |
-+-------------------------------+-------------------------------------------------------------------------------+
 | ``/homedir:nombrederuta``     | Ruta del directorio principal del usuario.                                    |
 +-------------------+-------------------------------------------------------------------------------------------+
 | ``/profilepath[:ruta]``       | Establece una ruta para el perfil de inicio de sesión del usuario.            |
 +-------------------------------+-------------------------------------------------------------------------------+
 | ``net user [nombredeusuario]``| Eliminar un usuario                                                           |
 | ``[opciones] /delete``        |                                                                               |
-+-------------------------------+-------------------------------------------------------------------------------+
-| ``net localgroup``            | Ver los grupos predeterminados
-+-------------------------------+-------------------------------------------------------------------------------+
-|``net localgroup [nomdegrupo]``| Crear un grupo                                                                |
-| ``opciones /add``             |                                                                               |
-+-------------------+-------------------------------------------------------------------------------------------+
-| ``net localgroup nombregrupo``| Añadir un usuario al grupo                                                    | 
-| ``/add nombreusuario``        |                                                                               |
-+-------------------+-------------------------------------------------------------------------------------------+
-| ``net localgroup nombregrupo``| Comprobar que el usuario se ha agregado                                       |
-+-------------------------------+-------------------------------------------------------------------------------+
-|``net localgroup [nomdegrupo]``| Eliminar un grupo                                                             |
-| ``/delete``                   |                                                                               |
-+-------------------+-------------------------------------------------------------------------------------------+
-| `` net localgroup nomgrupo``  | Eliminar un usuario de un grupo                                              |
-| ``/delete nombreusuario``     |                                                                               |
 +-------------------------------+-------------------------------------------------------------------------------+
 
 Primer y segundo plano
