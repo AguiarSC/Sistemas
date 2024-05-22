@@ -250,19 +250,16 @@ Enlaces
 Enlaces Simbólicos (o blandos)
 --------------------------------
 
-- Se puede crear un enlace simbólico aunque el archivo que representa no exista.
-- Si se elimina el enlace, el archivo original permanece intacto.
-- Si se elimina el archivo original, el enlace se vuelve inaccesible.
-- Al copiar un enlace, se copia el contenido del archivo, no el enlace en sí.
-- Se asignan automáticamente todos los permisos a los enlaces simbólicos.
+- Son referencias a archivos o directorios.
+- Pueden apuntar a cualquier ubicación con rutas relativas o absolutas.
+- Pueden cruzar sistemas de archivos o particiones.
 
 Enlaces Duros (o fuertes)
 --------------------------
 
-- No se pueden crear enlaces duros con directorios.
-- Si se elimina uno de los enlaces, el archivo continúa existiendo mientras exista al menos un enlace, ya que todos apuntan al mismo bloque de datos (i-nodo).
-- Al utilizar más de dos argumentos, el último debe ser un directorio existente donde se crearán los enlaces con el nombre básico de los archivos anteriores.
-- Los enlaces duros no tienen ninguna marca especial en los listados.
+- Son referencias a archivos o directorios.
+- Pueden apuntar a cualquier ubicación con rutas relativas o absolutas.
+- Pueden cruzar sistemas de archivos o particiones.
 
 
 Listados:
