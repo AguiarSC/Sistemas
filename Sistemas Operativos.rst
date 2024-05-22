@@ -217,7 +217,7 @@ Gestión de entrada y salida
 
 * Métodos de gestión de E/S:
 
-  * ``E/S Programada``: El procesador ejecuta un programa para controlar las operaciones de E/S, lo que puede provocar tiempos de espera.
+  * ``E/S Programada``: El procesador ejecuta un programa para controlar las operaciones de E/S, lo que puede provocar tiempos de espera. Tiene el protagonismo al completo la CPU.
 
   * ``E/S Controlada por Interrupciones``: Las interrupciones indican al procesador que debe atender a un dispositivo, pero pueden generar conflictos.
 
