@@ -247,37 +247,37 @@ Permisos de directorio
 Enlaces
 =======
 
-+-------------------------------------------------+
-|                Flexibilidad:                    |
-+=================================================+
-| Enlace Simbólico      |        Enlace Duro      |
-+-----------------------+-------------------------+
-| Puede apuntar a       |   Solo puede referirse  |
-| cualquier ubicación   |   al mismo sistema de   |
-| con rutas relativas   |   archivos              |
-| o absolutas           |                         |
-+-----------------------+-------------------------+
+.. table:: Flexibilidad:
 
+    +-----------------------+-------------------------+
+    | Enlace Simbólico      |        Enlace Duro      |
+    +-----------------------+-------------------------+
+    | Puede apuntar a       |   Solo puede referirse  |
+    | cualquier ubicación   |   al mismo sistema de   |
+    | con rutas relativas   |   archivos              |
+    | o absolutas           |                         |
+    +-----------------------+-------------------------+
 
-Compartición de Inodos:
-+----------------------+   +----------------------+
-| Enlace Simbólico     |   | Enlace Duro          |
-|                      |   |                      |
-| No comparten inodos |   | Comparten el mismo    |
-| ni números de       |   | inodo y número de     |
-| identificación de   |   | identificación de     |
-| archivo (inode)     |   | archivo (inode)       |
-+----------------------+   +----------------------+
+.. table:: Compartición de Inodos:
 
-Limitaciones de Sistemas de Archivos:
-+----------------------+   +----------------------+
-| Enlace Simbólico     |   | Enlace Duro          |
-|                      |   |                      |
-| Puede cruzar         |   | No puede cruzar      |
-| sistemas de archivos|   | sistemas de archivos |
-| o particiones       |   | o particiones        |
-+----------------------+   +----------------------+
+    +----------------------+   +----------------------+
+    | Enlace Simbólico     |   | Enlace Duro          |
+    |                      |   |                      |
+    | No comparten inodos  |   | Comparten el mismo    |
+    | ni números de        |   | inodo y número de     |
+    | identificación de    |   | identificación de     |
+    | archivo (inode)      |   | archivo (inode)       |
+    +----------------------+   +----------------------+
 
+.. table:: Limitaciones de Sistemas de Archivos:
+
+    +----------------------+   +----------------------+
+    | Enlace Simbólico     |   | Enlace Duro          |
+    |                      |   |                      |
+    | Puede cruzar         |   | No puede cruzar      |
+    | sistemas de archivos |   | sistemas de archivos |
+    | o particiones        |   | o particiones        |
+    +----------------------+   +----------------------+
 
 
 Listados:
