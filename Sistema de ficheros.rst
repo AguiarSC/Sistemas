@@ -247,18 +247,14 @@ Permisos de directorio
 Enlaces
 =======
 
-.. table:: Flexibilidad:
-
     +-----------------------+-------------------------+
     | Enlace Simbólico      |        Enlace Duro      |
     +-----------------------+-------------------------+
-    | Puede apuntar a       |   Solo puede referirse  |
-    | cualquier ubicación   |   al mismo sistema de   |
-    | con rutas relativas   |   archivos              |
+    | Puede apuntar a       | Solo puede referirse    |
+    | cualquier ubicación   | al mismo sistema de     |
+    | con rutas relativas   | archivos                |
     | o absolutas           |                         |
     +-----------------------+-------------------------+
-
-..
 
 .. table:: Compartición de Inodos:
 
