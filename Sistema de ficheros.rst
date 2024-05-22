@@ -210,17 +210,17 @@ Permisos especiales
 ===================
 
 Sticky bit (``t``)
------------------
+------------------
 
 Significa que tan solo los respectivos dueños de los archivos que hay en el directorio y el root pueden borrarlos.
 
 SUID (``s``)
-----------
+------------
 
 Cuando a un ejecutable binario se le asigna el atributo ``setuid``, los usuarios normales del sistema pueden ejecutar ese archivo y obtener ``privilegios del root``.
 
 SGID (``s``)
-----------
+------------
 
 Es lo mismo que el SUID, pero a nivel de grupo. Tiene ``privilegios de grupo`` en un directorio colaborativo.
 
