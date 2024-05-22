@@ -212,7 +212,7 @@ Para modificar la prioridad de un proceso ya en ejecución:
 Envío de señales
 ~~~~~~~~~~~~~~~~
 
-Los procesos reciben señales para ser controlados desde el propio sistema operativo y desde el exterior. Un usuario también puede enviar señales a los procesos.
+Los procesos reciben señales para ser controlados desde el propio sistema operativo y desde el exterior. Un usuario también puede enviar señales a los procesos. Se puede obtener una lista completa de señales y sus números en tu sistema utilizando el comando ``kill -l`` en la terminal:
 
 .. code-block:: sh
 
