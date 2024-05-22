@@ -247,19 +247,35 @@ Permisos de directorio
 Enlaces
 =======
 
-Enlaces Simbólicos (o blandos)
---------------------------------
+Flexibilidad:
++----------------------+   +----------------------+
+| Enlace Simbólico     |   | Enlace Duro          |
+|                      |   |                      |
+| Puede apuntar a     |   | Solo puede referirse  |
+| cualquier ubicación |   | al mismo sistema de   |
+| con rutas relativas |   | archivos              |
+| o absolutas         |   |                      |
++----------------------+   +----------------------+
 
-- Son referencias a archivos o directorios.
-- Pueden apuntar a cualquier ubicación con rutas relativas o absolutas.
-- Pueden cruzar sistemas de archivos o particiones.
+Compartición de Inodos:
++----------------------+   +----------------------+
+| Enlace Simbólico     |   | Enlace Duro          |
+|                      |   |                      |
+| No comparten inodos |   | Comparten el mismo    |
+| ni números de       |   | inodo y número de     |
+| identificación de   |   | identificación de     |
+| archivo (inode)     |   | archivo (inode)       |
++----------------------+   +----------------------+
 
-Enlaces Duros (o fuertes)
---------------------------
+Limitaciones de Sistemas de Archivos:
++----------------------+   +----------------------+
+| Enlace Simbólico     |   | Enlace Duro          |
+|                      |   |                      |
+| Puede cruzar         |   | No puede cruzar      |
+| sistemas de archivos|   | sistemas de archivos |
+| o particiones       |   | o particiones        |
++----------------------+   +----------------------+
 
-- Son referencias a archivos o directorios.
-- Pueden apuntar a cualquier ubicación con rutas relativas o absolutas.
-- Pueden cruzar sistemas de archivos o particiones.
 
 
 Listados:
