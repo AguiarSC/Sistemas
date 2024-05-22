@@ -29,11 +29,13 @@ Comandos (Linux):
 | ``[-anmr]``                        | ``-a`` nombre sistema y ordenador                           |
 |                                    | ``-n`` nombre del ordenador                                 |
 +------------------------------------+-------------------------------------------------------------+
-| ``logname whoami``                 | Ususario actual                                             |
+| ``logname whoami``                 | Ususario con el que se inicio sesión originalmente          |
++------------------------------------+-------------------------------------------------------------+
+| ``whoami``                         | Ususario actual (incluso ``su`` y ``sudo``)                 |
 +------------------------------------+-------------------------------------------------------------+
 | ``lsb_release -a``                 | Distribución de Linux                                       |
 +------------------------------------+-------------------------------------------------------------+
-| ``pstree``                         | Mostrar la estructura arborescente de procesos             |
+| ``pstree``                         | Mostrar la estructura arborescente de procesos              |
 +------------------------------------+-------------------------------------------------------------+
 | ``who``                            | Datos de usuario                                            |
 +------------------------------------+-------------------------------------------------------------+
