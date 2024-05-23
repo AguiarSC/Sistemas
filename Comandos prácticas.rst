@@ -785,44 +785,22 @@ Muestra un calendario mensual. Su estructura básica es:
 
   cal
   cal -y 2024 -m 05 
+  El comando puede o no ir acompañado de los argumentos ``-y`` y ``-m``, 
+  siendo estos year (año) y month(mes), respectivamente.
+
+  cal -3
+  Mostrará el mes actual junto con los meses anterior y siguiente.
+
+  cal -j (--journal)
+  Esto muestra el número de día del año junto a cada día.
+
+  cal -m (--mode)
+  Esto mostrará un formato alternativo del calendario
+
+  cal -h (--help)
+  Esto mostrará la ayuda y una lista de todas las opciones.
 
 ..
-
-El comando puede o no ir acompañado de los argumentos ``-y`` y ``-m``, siendo estos year (año) y month(mes), respectivamente. Entre sus opciones más comunes, destacan:
-
-* ``-3``: muestra el mes actual junto con los meses anterior y siguiente.
-
-  .. code-block:: sh
-
-    cal -3
-
-  ..
-
-
-* ``-j``: muestra el número de día del año junto a cada día.
-
-  .. code-block:: sh
-
-    cal -j
-
-  ..
-
-
-* ``-m``: muestra un formato alternativo del calendario.
-
-  .. code-block:: sh
-
-    cal -m
-
-  ..
-
-* ``-h``: muestra la ayuda y una lista de todas las opciones.
-
-  .. code-block:: sh
-
-    cal -h
-
-  ..
 
 
 ``date``
