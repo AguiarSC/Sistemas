@@ -455,8 +455,78 @@ Se utiliza para cambiar los permisos de archivos y directorios. Sus opciones pri
   ..
 
 
+``touch``
+---------
 
+se utiliza principalmente para crear archivos vacíos o actualizar las marcas de tiempo de archivos existentes. Sus opciones principales son:
 
+* ``Crear un archivo vacío`` o ``Actualizar la marca de tiempo de un archivo``
+
+  .. code-block:: sh
+
+    touch archivo.txt
+
+    Esto creará un archivo vacío llamado archivo.txt en el directorio actual. Si archivo.txt ya existe,
+    touch actualiza su marca de tiempo a la hora actual sin cambiar su contenido.
+
+  ..
+
+* ``Crear múltiples archivos de una vez``
+
+  .. code-block:: sh
+
+    touch archivo1.txt archivo2.txt archivo3.txt
+
+  ..
+
+* ``Especificar una marca de tiempo personalizada`` o ``-t``
+
+  .. code-block:: sh
+
+    touch -t 202401011200 archivo.txt
+
+    Esto establece la marca de tiempo de archivo.txt al 1 de enero de 2024 a las 12:00 horas.
+
+  ..
+
+* ``Crear un archivo en un directorio específico``
+
+  .. code-block:: sh
+
+    touch /ruta/al/directorio/archivo.txt
+
+    Esto crea un archivo llamado archivo.txt en el directorio especificado (/ruta/al/directorio/).
+
+  ..
+
+* ``Crear archivos con permisos específicos`` o ``-m``
+
+  .. code-block:: sh
+
+    touch -m archivo.txt
+
+    Esto crea un archivo con permisos de lectura y escritura para el propietario, 
+    pero sin permisos para el grupo y otros usuarios.
+
+  ..
+
+* Ejemplos de las prácticas
+
+  .. code-block:: sh
+  
+    touch *?Hola\ caracola?*
+
+    Utilizará touch junto con un patrón para crear archivos que coincidan con ese patrón.
+    *: Este comodín coincide con cualquier cadena de caracteres de cualquier longitud.
+    ?: Este comodín coincide con un solo carácter.
+    \: Se utiliza para escapar el espacio en blanco en el patrón.
+    "Hola\ caracola": Es el texto que debe coincidir exactamente.
+    Por lo tanto, el comando creará archivos que contengan la cadena "Hola caracola" seguida 
+    de un solo carácter antes y después de esta cadena en el directorio actual. Por ejemplo, 
+    puede crear archivos como "xHola caracolay", "Hola caracolaZ", etc. Dependiendo de los 
+    archivos que ya existan en el directorio y coincidan con este patrón.
+  
+  ..
 
 
 
