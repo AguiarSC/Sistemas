@@ -69,7 +69,9 @@ Entre sus patrones más comunes y acciones comunes, destacan:
 Supongamos:
 
 ``Juan,25,Madrid
+
 Ana,30,Barcelona
+
 Luis,22,Valencia``
 
 .. code-block::
@@ -79,7 +81,9 @@ Luis,22,Valencia``
 ..
 
 ``Juan 25
+
 Ana 30
+
 Luis 22``
 
 
