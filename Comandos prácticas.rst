@@ -1702,6 +1702,301 @@ Se utiliza para cambiar los permisos de archivos y directorios. Sus opciones pri
   ..
 
 
+``chgrp``
+---------
+
+El comando `chgrp` se utiliza para cambiar el grupo propietario de un archivo o directorio en un sistema Unix o Linux. Presenta la siguiente estructura base:
+
+.. code-block:: sh
+
+  chgrp [opciones] grupo archivo...
+
+..
+
+El ``grupo`` es el nombre del nuevo grupo propietario al que se desea cambiar. Los ``archivo`` son los nombres de los archivos o directorios cuyo grupo propietario se desea cambiar. Entre sus opciones más comunes, destacan:
+
+* ``-R``: realiza el cambio de grupo de forma recursiva en los directorios y sus contenidos.
+
+  .. code-block:: sh
+
+    chgrp -R grupo /ruta/al/directorio
+
+  ..
+
+* ``--reference=archivo``: cambia el grupo propietario de los archivos especificados para que coincida con el del archivo de referencia.
+
+  .. code-block:: sh
+
+    chgrp --reference=referencia archivo...
+
+  ..
+
+Entre sus patrones de uso más comunes, destacan:
+
+* Cambiar el grupo propietario de un archivo.
+
+  .. code-block:: sh
+
+    chgrp grupo archivo
+
+  ..
+
+* Cambiar el grupo propietario de un directorio y sus archivos de forma recursiva.
+
+  .. code-block:: sh
+
+    chgrp -R grupo /ruta/al/directorio
+
+  ..
+
+* Cambiar el grupo propietario de varios archivos para que coincida con el del archivo de referencia.
+
+  .. code-block:: sh
+
+    chgrp --reference=referencia archivo...
+
+  ..
+
+
+``groupadd``
+------------
+
+El comando `groupadd` se utiliza para agregar nuevos grupos en un sistema Unix o Linux. Presenta la siguiente estructura base:
+
+.. code-block:: sh
+
+  groupadd [opciones] nombre_grupo
+
+..
+
+El ``nombre_grupo`` es el nombre del nuevo grupo que se desea crear. Entre sus opciones más comunes, destacan:
+
+* ``-g GID``: asigna un ID de grupo específico al nuevo grupo.
+
+  .. code-block:: sh
+
+    groupadd -g 1001 grupo_nuevo
+
+  ..
+
+* ``-r``: crea un grupo del sistema con un ID de grupo inferior a 1000.
+
+  .. code-block:: sh
+
+    groupadd -r grupo_del_sistema
+
+  ..
+
+Entre sus patrones de uso más comunes, destacan:
+
+* Agregar un nuevo grupo.
+
+  .. code-block:: sh
+
+    groupadd nuevo_grupo
+
+  ..
+
+* Agregar un nuevo grupo con un ID de grupo específico.
+
+  .. code-block:: sh
+
+    groupadd -g 1001 grupo_nuevo
+
+  ..
+
+* Agregar un nuevo grupo del sistema.
+
+  .. code-block:: sh
+
+    groupadd -r grupo_del_sistema
+
+  ..
+
+``groupdel``
+------------
+
+El comando `groupdel` se utiliza para eliminar grupos en un sistema Unix o Linux. Presenta la siguiente estructura base:
+
+.. code-block:: sh
+
+  groupdel [opciones] nombre_grupo
+
+..
+
+El ``nombre_grupo`` es el nombre del grupo que se desea eliminar. Entre sus opciones más comunes, no hay opciones adicionales. Sin embargo, se puede especificar el nombre del grupo que se desea eliminar. 
+
+Entre sus patrones de uso más comunes, destacan:
+
+* Eliminar un grupo.
+
+  .. code-block:: sh
+
+    groupdel grupo_a_eliminar
+
+  ..
+
+* Eliminar un grupo específico.
+
+  .. code-block:: sh
+
+    groupdel nombre_grupo
+
+  ..
+
+
+``usermod``
+-----------
+
+El comando `usermod` se utiliza para modificar las propiedades de un usuario en un sistema Unix o Linux. Presenta la siguiente estructura base:
+
+.. code-block:: sh
+
+  usermod [opciones] usuario
+
+..
+
+El ``usuario`` es el nombre del usuario cuyas propiedades se desean modificar. Entre sus opciones más comunes, destacan:
+
+* ``-c, --comment COMENTARIO``: establece un comentario asociado al usuario.
+
+  .. code-block:: sh
+
+    usermod -c "Nuevo comentario" usuario
+
+  ..
+
+* ``-d, --home DIRECTORIO``: cambia el directorio de inicio del usuario.
+
+  .. code-block:: sh
+
+    usermod -d /nuevo/directorio usuario
+
+  ..
+
+* ``-g, --gid GRUPO``: cambia el grupo primario del usuario.
+
+  .. code-block:: sh
+
+    usermod -g nuevo_grupo usuario
+
+  ..
+
+* ``-a, --append``: agrega al usuario a un grupo adicional.
+
+  .. code-block:: sh
+
+    usermod -a -G grupo_adicional usuario
+
+  ..
+
+Entre sus patrones de uso más comunes, destacan:
+
+* Cambiar el comentario asociado a un usuario.
+
+  .. code-block:: sh
+
+    usermod -c "Nuevo comentario" usuario
+
+  ..
+
+* Cambiar el directorio de inicio de un usuario.
+
+  .. code-block:: sh
+
+    usermod -d /nuevo/directorio usuario
+
+  ..
+
+* Cambiar el grupo primario de un usuario.
+
+  .. code-block:: sh
+
+    usermod -g nuevo_grupo usuario
+
+  ..
+
+* Agregar un usuario a un grupo adicional.
+
+  .. code-block:: sh
+
+    usermod -a -G grupo_adicional usuario
+
+  ..
+
+
+``useradd``
+-----------
+
+El comando `useradd` se utiliza para añadir un nuevo usuario en un sistema Unix o Linux. Presenta la siguiente estructura base:
+
+.. code-block:: sh
+
+  useradd [opciones] nombre_de_usuario
+
+..
+
+El ``nombre_de_usuario`` es el nombre que se le asignará al nuevo usuario. Entre sus opciones más comunes, destacan:
+
+* ``-c comentario``: proporciona un comentario descriptivo para la cuenta de usuario.
+
+  .. code-block:: sh
+
+    useradd -c "Usuario de prueba" nombre_de_usuario
+
+  ..
+
+* ``-d directorio``: especifica el directorio de inicio para el nuevo usuario.
+
+  .. code-block:: sh
+
+    useradd -d /home/nuevo_usuario nombre_de_usuario
+
+  ..
+
+* ``-m``: crea el directorio de inicio para el nuevo usuario si no existe.
+
+  .. code-block:: sh
+
+    useradd -m nombre_de_usuario
+
+  ..
+
+* ``-g grupo``: especifica el grupo primario para el nuevo usuario.
+
+  .. code-block:: sh
+
+    useradd -g grupo_primario nombre_de_usuario
+
+  ..
+
+Entre sus patrones de uso más comunes, destacan:
+
+* Añadir un nuevo usuario sin opciones adicionales.
+
+  .. code-block:: sh
+
+    useradd nuevo_usuario
+
+  ..
+
+* Añadir un nuevo usuario con un comentario descriptivo.
+
+  .. code-block:: sh
+
+    useradd -c "Usuario de prueba" nuevo_usuario
+
+  ..
+
+* Añadir un nuevo usuario con un directorio de inicio personalizado.
+
+  .. code-block:: sh
+
+    useradd -d /home/nuevo_usuario nuevo_usuario
+
+  ..
+
+
 ``ps``
 ------
 
@@ -1847,4 +2142,84 @@ Se utiliza para modificar los valores de configuración de las cuentas de usuari
     Con esta orden, la cuenta del usuario usuario4 tendrá una fecha de expiración de cuenta eliminada, 
     lo que significa que la cuenta ya no caducará por fecha
   
+  ..
+
+
+``systemctl``
+-------------
+
+El comando `systemctl` se utiliza para controlar el sistema de inicio de systemd en sistemas Linux. Presenta la siguiente estructura base:
+
+.. code-block:: sh
+
+  systemctl [opciones] [subcomando] [unidad...]
+
+..
+
+Los ``subcomandos`` son las acciones que se desean realizar, y las ``unidades`` son los servicios, sockets, dispositivos, etc., que se quieren controlar. Entre sus opciones más comunes, destacan:
+
+* ``start``: inicia una o varias unidades.
+
+  .. code-block:: sh
+
+    systemctl start nombre_servicio
+
+  ..
+
+* ``stop``: detiene una o varias unidades.
+
+  .. code-block:: sh
+
+    systemctl stop nombre_servicio
+
+  ..
+
+* ``restart``: reinicia una o varias unidades.
+
+  .. code-block:: sh
+
+    systemctl restart nombre_servicio
+
+  ..
+
+* ``enable``: habilita una o varias unidades para que se inicien automáticamente al arrancar el sistema.
+
+  .. code-block:: sh
+
+    systemctl enable nombre_servicio
+
+  ..
+
+Entre sus patrones de uso más comunes, destacan:
+
+* Iniciar un servicio específico.
+
+  .. code-block:: sh
+
+    systemctl start nombre_servicio
+
+  ..
+
+* Detener un servicio específico.
+
+  .. code-block:: sh
+
+    systemctl stop nombre_servicio
+
+  ..
+
+* Reiniciar un servicio específico.
+
+  .. code-block:: sh
+
+    systemctl restart nombre_servicio
+
+  ..
+
+* Habilitar un servicio específico para que se inicie automáticamente al arrancar el sistema.
+
+  .. code-block:: sh
+
+    systemctl enable nombre_servicio
+
   ..
