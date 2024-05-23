@@ -1,5 +1,5 @@
-COMANDOS DE LAS PRÁCTICAS
-=========================
+COMANDOS DE EDICIÓN, PROCESAMIENTO Y ESTADÍSTICAS DE ARCHIVOS, DIRECTORIOS O TEXTOS
+===================================================================================
 
 ``awk``
 -------
@@ -184,55 +184,6 @@ Entre sus opciones más comunes, destacan:
   ..
 
 
-``cal``
--------
-
-Muestra un calendario mensual. Su estructura básica es:
-
-.. code-block:: sh
-
-  cal
-  cal -y 2024 -m 05 
-
-..
-
-El comando puede o no ir acompañado de los argumentos ``-y`` y ``-m``, siendo estos year (año) y month(mes), respectivamente. Entre sus opciones más comunes, destacan:
-
-* ``-3``: muestra el mes actual junto con los meses anterior y siguiente.
-
-  .. code-block:: sh
-
-    cal -3
-
-  ..
-
-
-* ``-j``: muestra el número de día del año junto a cada día.
-
-  .. code-block:: sh
-
-    cal -j
-
-  ..
-
-
-* ``-m``: muestra un formato alternativo del calendario.
-
-  .. code-block:: sh
-
-    cal -m
-
-  ..
-
-* ``-h``: muestra la ayuda y una lista de todas las opciones.
-
-  .. code-block:: sh
-
-    cal -h
-
-  ..
-
-
 ``cut``
 -------
 
@@ -398,71 +349,6 @@ Se utiliza se utiliza para copiar archivos y directorios. Sus opciones principal
   ..
 
 
-``chmod``
----------
-
-Se utiliza para cambiar los permisos de archivos y directorios. Sus opciones principales son:
-
-* ``Por octal``. Véase conversión de permisos a octal en Gestión de ficheros.
-
-  .. code-block:: sh
-
-    chmod xyz archivo/directorio
-    chmod 755 archivo
-
-  ..
-
-* ``Simbólicamente``. Véase conversión de permisos a simbólico en Gestión de ficheros.
-
-  .. code-block:: sh
-
-    chmod [ugoa] [+-=] [rwx] archivo/directorio
-    chmod u+x archivo
-
-  ..
-
-* ``Por recursividad`` ``-R``. Se pueden modificar los permisos de manera recursiva en todos los archivos y directorios dentro del directorio especificado.
-
-  .. code-block:: sh
-
-    chmod -R 755 directorio
-
-    El modificador -R indica que los cambios de permisos se aplicarán de forma recursiva a todos 
-    los archivos y subdirectorios dentro del directorio directorio. Por lo tanto, todos los archivos
-    y directorios dentro de directorio también recibirán permisos 755, asegurando que todos sean 
-    accesibles y ejecutables según sea necesario.
-
-  ..
-
-* Ejemplos de las prácticas
-
-  .. code-block:: sh
-  
-    chmod g-r agenda
-
-    Quita el permiso de lectura (r) del grupo (g) para el archivo o directorio agenda.
-  
-  ..
-
-  .. code-block:: sh
-  
-    chmod g-wx,o+r agenda
-
-    Quita los permisos de escritura (w) y ejecución (x) del grupo (g) y agrega permiso 
-    de lectura (r) para otros usuarios (o) al archivo o directorio agenda.
-  
-  ..
-
-  .. code-block:: sh
-  
-    chmod u+x script.sh
-
-    Agrega permiso de ejecución (x) al propietario (u) del archivo script.sh. 
-    Esto permite al propietario ejecutar el script como un programa.
-  
-  ..
-
-
 ``touch``
 ---------
 
@@ -540,7 +426,7 @@ Se utiliza principalmente para crear archivos vacíos o actualizar las marcas de
 ``echo``
 --------
 
-Se utiliza para mostrar texto o variables en la salida estándar. Aquí están algunas de sus opciones principales con ejemplos. Sus opciones principales son:
+Se utiliza para mostrar texto o variables en la salida estándar. Sus opciones principales son:
 
 * ``Imprimir texto`` o ``imprimir variables``
 
@@ -584,6 +470,388 @@ Se utiliza para mostrar texto o variables en la salida estándar. Aquí están a
   ..
 
 
+``diff``
+--------
+
+Se utiliza para comparar el contenido de dos archivos línea por línea y mostrar las diferencias entre ellos. Sus opciones principales son:
+
+* ``Comparar dos archivos``
+
+  .. code-block:: sh
+
+    diff archivo1.txt archivo2.txt
+
+  ..
+
+* ``Mostrar solo las diferencias`` o ``-q`` de ``--quiet``
+
+  .. code-block:: sh
+
+    diff -q archivo1.txt archivo2.txt
+
+  ..
+
+* ``Mostrar diferencias con contexto`` o ``-c`` de ``--context``
+
+  .. code-block:: sh
+
+    diff -c archivo1.txt archivo2.txt
+
+    Esto mostrará las diferencias entre los archivos con contexto, mostrando 
+    líneas adicionales alrededor de las diferencias para mayor claridad.
+
+  ..
+
+* ``Mostrar diferencias de forma unificadar`` o ``-u`` de ``--unified``
+
+  .. code-block:: sh
+
+    diff -u archivo1.txt archivo2.txt
+
+    Esto mostrará las diferencias entre los archivos de forma unificada, que es más fácil de leer y entender.
+
+  ..
+
+* ``Ignorar los espacios en blanco`` o ``-b`` de ``--blank``
+
+  .. code-block:: sh
+
+    diff -b archivo1.txt archivo2.txt
+
+    Esto mostrará las diferencias entre los archivos de forma unificada, que es más fácil de leer y entender.
+
+  ..
+
+* ``Ignorar mayúsculas y minúsculas`` o ``i`` de ``--ignore-case``
+
+  .. code-block:: sh
+
+    diff -i archivo1.txt archivo2.txt
+
+  ..
+
+
+``nano``
+--------
+
+Es un editor de texto simple y fácil de usar en sistemas Unix y Linux. Sus opciones principales son:
+
+* ``Abrir un archivo``
+
+  .. code-block:: sh
+
+    nano archivo.txt
+
+  ..
+
+* ``Guardar un archivo``
+
+  .. code-block:: sh
+
+    Dentro del archivo: Ctrl + O
+
+  ..
+
+* ``Salir de nano``
+
+  .. code-block:: sh
+
+    Dentro del archivo: Ctrl + X
+
+  ..
+
+* ``Buscar y reemplazar``
+
+  .. code-block:: sh
+
+    Dentro del archivo: Ctrl + W
+
+  ..
+
+* ``Cortar, copiar y pegar``
+
+  .. code-block:: sh
+
+    Dentro del archivo: Ctrl + K para cortar texto, Ctrl + U para pegar texto y Ctrl + Shift + 6 para copiar texto.
+
+  ..
+
+* ``Numerar líneas``
+
+  .. code-block:: sh
+
+    Dentro del archivo: Alt + N
+
+  ..
+
+
+``mv``
+------
+
+Se utiliza para mover o renombrar archivos y directorios. Sus opciones principales son:
+
+* ``Mover archivo o directorio a un nuevo destino``
+
+  .. code-block:: sh
+
+    mv archivo.txt /ruta/a/destino/
+    mv archivo1.txt archivo2.txt /ruta/a/destino/
+
+  ..
+
+* ``Renombrar un archivo o directorio``
+
+  .. code-block:: sh
+
+    mv archivo_viejo.txt archivo_nuevo.txt
+    mv directorio_viejo directorio_nuevo
+
+
+  ..
+
+* ``Sobreescribir un archivo de destino existente`` o ``-f`` de ``--force``
+
+  .. code-block:: sh
+
+    mv -f archivo.txt /ruta/a/destino/
+
+    Esto moverá archivo.txt al directorio de destino y sobrescribirá cualquier archivo con el mismo nombre si ya existe.
+
+  ..
+
+* ``Solicitar confirmación antes de sobreescribir un archivo`` o ``-i`` de ``--interactive``
+
+  .. code-block:: sh
+
+    mv -i archivo.txt /ruta/a/destino/
+
+    Esto moverá archivo.txt al directorio de destino, pero pedirá confirmación si hay un archivo con el mismo nombre en el destino.
+
+  ..
+
+
+``tr``
+------
+
+Se utiliza para traducir o eliminar caracteres en un flujo de datos. Sus opciones principales son:
+
+* ``Traducir caracteres``
+
+  .. code-block:: sh
+
+    echo "hello" | tr 'l' 'L'
+
+    Esto cambiará todas las ocurrencias de 'l' por 'L', produciendo la salida "heLLo".
+
+  ..
+
+* ``Eliminar caracteres`` o ``-d`` de ``--delete``
+
+  .. code-block:: sh
+
+    echo "hello" | tr -d 'l'
+
+    Esto eliminará todas las ocurrencias de 'l' en la entrada, produciendo la salida "heo".
+
+  ..
+
+* ``Traducir un rango de caracteres``
+
+  .. code-block:: sh
+
+    echo "12345" | tr '0-9' 'a-j'
+
+    Esto cambiará cada dígito del 0 al 9 por una letra del alfabeto, produciendo la salida "abcdefghij".
+
+  ..
+
+* ``Sustituir un conjunto de caracteres por un único caracter``
+
+  .. code-block:: sh
+
+    echo "hola" | tr 'aeiou' '*'
+
+    Esto cambiará todas las vocales por un asterisco, produciendo la salida "h*la".
+
+  ..
+
+* ``Capitalizar el texto``
+
+  .. code-block:: sh
+
+    echo "Hello" | tr 'A-Z' 'a-z'
+
+    Esto convertirá todas las letras mayúsculas en minúsculas, produciendo la salida "hello".
+
+  ..
+
+* ``Eliminar caracteres no deseados utilizando conjuntos complementario``
+
+  .. code-block:: sh
+
+    echo "12345abcde" | tr -dc '0-9'
+
+    Esto eliminará todos los caracteres excepto los dígitos, produciendo la salida "12345".
+
+  ..
+
+* Ejemplos de las prácticas
+
+  .. code-block:: sh
+  
+    tr a z < /etc/passwd
+
+    Todas las 'a' en el archivo serán cambiadas por 'z', resultando en un efecto de cifrado simple.
+
+    tr -d ' ' < /etc/passwd
+
+    Los espacios en blanco serán eliminados, dejando solo los caracteres restantes
+
+    tr '[A-Z]' '[a-z]' < /etc/passwd
+
+    Todas las letras en mayúsculas serán convertidas a minúsculas, manteniendo el resto del contenido del archivo.
+  
+  ..
+
+
+``wc``
+------
+
+Se utiliza para contar palabras, líneas y caracteres en archivos o en la entrada estándar. Sus opciones principales son:
+
+* ``Contar líneas`` o ``-l`` de ``--lines``
+
+  .. code-block:: sh
+
+    wc -l archivo.txt
+
+  ..
+
+* ``Contar palabras`` o ``-w`` de ``--words``
+
+  .. code-block:: sh
+
+    wc -w archivo.txt
+
+  ..
+
+* ``Contar caracteres`` o ``-c`` de ``--characters``
+
+  .. code-block:: sh
+
+    wc -c archivo.txt
+
+  ..
+
+* ``Mostrar todas las estadísticas y conteos de un archivo``
+
+  .. code-block:: sh
+
+    wc archivo.txt
+
+  ..
+
+* ``Contar en la entrada estándar``
+
+  .. code-block:: sh
+
+    echo "Hola Mundo" | wc
+
+    Esto mostrará las líneas, palabras y caracteres en el texto "Hola Mundo" que se proporciona a través de la entrada estándar.
+
+  ..
+
+* ``Contar la línea más larga``
+
+  .. code-block:: sh
+
+    wc -L archivo.txt
+
+  ..
+
+
+
+COMANDOS RELACIONADOS CON EL TIEMPO
+===================================
+
+``cal``
+-------
+
+Muestra un calendario mensual. Su estructura básica es:
+
+.. code-block:: sh
+
+  cal
+  cal -y 2024 -m 05 
+
+..
+
+El comando puede o no ir acompañado de los argumentos ``-y`` y ``-m``, siendo estos year (año) y month(mes), respectivamente. Entre sus opciones más comunes, destacan:
+
+* ``-3``: muestra el mes actual junto con los meses anterior y siguiente.
+
+  .. code-block:: sh
+
+    cal -3
+
+  ..
+
+
+* ``-j``: muestra el número de día del año junto a cada día.
+
+  .. code-block:: sh
+
+    cal -j
+
+  ..
+
+
+* ``-m``: muestra un formato alternativo del calendario.
+
+  .. code-block:: sh
+
+    cal -m
+
+  ..
+
+* ``-h``: muestra la ayuda y una lista de todas las opciones.
+
+  .. code-block:: sh
+
+    cal -h
+
+  ..
+
+
+``date``
+--------
+
+Se utiliza para mostrar o establecer la fecha y la hora del sistema. Sus principales opciones son:
+
+.. code-block:: sh
+
+  date
+
+  Mostrará la fecha y la hora actual en el formato predefinido.
+
+  date "+%Y-%m-%d %H:%M:%S"
+
+  Mostrará la fecha y la hora actual en el formato establecido: año-mes-día hora:minuto:segundo.
+
+  (sudo) date MMDDhhmmAA
+
+  Esto establecerá la fecha y la hora del sistema. Por ejemplo, sudo date 052923002021 
+  establecerá la fecha al 29 de mayo de 2021 a las 23:00.
+
+  date -u
+
+  Esto mostrará la fecha y la hora actuales en formato UTC (Tiempo Universal Coordinado).
+
+  date "+%A, %B %d, %Y"
+
+  Esto mostrará la fecha en un formato legible, por ejemplo, "Saturday, May 29, 2021".
+
+..
 
 
 
@@ -591,3 +859,74 @@ Se utiliza para mostrar texto o variables en la salida estándar. Aquí están a
 
 
 
+
+
+
+
+
+COMANDOS RELACIONADOS CON LOS PERMISOS, SISTEMA O USUARIOS Y GRUPOS
+===================================================================
+
+``chmod``
+---------
+
+Se utiliza para cambiar los permisos de archivos y directorios. Sus opciones principales son:
+
+* ``Por octal``. Véase conversión de permisos a octal en Gestión de ficheros.
+
+  .. code-block:: sh
+
+    chmod xyz archivo/directorio
+    chmod 755 archivo
+
+  ..
+
+* ``Simbólicamente``. Véase conversión de permisos a simbólico en Gestión de ficheros.
+
+  .. code-block:: sh
+
+    chmod [ugoa] [+-=] [rwx] archivo/directorio
+    chmod u+x archivo
+
+  ..
+
+* ``Por recursividad`` ``-R``. Se pueden modificar los permisos de manera recursiva en todos los archivos y directorios dentro del directorio especificado.
+
+  .. code-block:: sh
+
+    chmod -R 755 directorio
+
+    El modificador -R indica que los cambios de permisos se aplicarán de forma recursiva a todos 
+    los archivos y subdirectorios dentro del directorio directorio. Por lo tanto, todos los archivos
+    y directorios dentro de directorio también recibirán permisos 755, asegurando que todos sean 
+    accesibles y ejecutables según sea necesario.
+
+  ..
+
+* Ejemplos de las prácticas
+
+  .. code-block:: sh
+  
+    chmod g-r agenda
+
+    Quita el permiso de lectura (r) del grupo (g) para el archivo o directorio agenda.
+  
+  ..
+
+  .. code-block:: sh
+  
+    chmod g-wx,o+r agenda
+
+    Quita los permisos de escritura (w) y ejecución (x) del grupo (g) y agrega permiso 
+    de lectura (r) para otros usuarios (o) al archivo o directorio agenda.
+  
+  ..
+
+  .. code-block:: sh
+  
+    chmod u+x script.sh
+
+    Agrega permiso de ejecución (x) al propietario (u) del archivo script.sh. 
+    Esto permite al propietario ejecutar el script como un programa.
+  
+  ..
