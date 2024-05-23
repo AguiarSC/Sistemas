@@ -758,7 +758,8 @@ Se utiliza para contar palabras, líneas y caracteres en archivos o en la entrad
 
     echo "Hola Mundo" | wc
 
-    Esto mostrará las líneas, palabras y caracteres en el texto "Hola Mundo" que se proporciona a través de la entrada estándar.
+    Esto mostrará las líneas, palabras y caracteres en el texto "Hola Mundo" 
+    que se proporciona a través de la entrada estándar.
 
   ..
 
