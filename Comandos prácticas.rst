@@ -184,26 +184,25 @@ Entre sus opciones más comunes, destacan:
   ..
 
 
-``awk``
+``cal``
 -------
 
-Es una herramienta de procesamiento de textos. Se utiliza principalmente para la manipulación y análisis de datos en formato de texto. Permite realizar operaciones de filtrado, formateo, y transformación de datos de manera eficiente. Presenta la siguiente estructura base:
+Muestra un calendario mensual. Su estructura básica es:
 
 .. code-block:: sh
 
-  awk 'patrón {acción}' archivo
+  cal (sin argumentos opcionales)
+  cal -y valor -m valor 
 
 ..
 
-El ``patrón`` especifica cuándo debe ejecutarse la acción y puede ser una expresión regular o una condición lógica; ``la acción`` define qué operación se realizará en las líneas que coincidan con el patrón y están delimitadas por llaves {}.
+El comando puede o no ir acompañado de los argumentos ``-y`` y ``-m``, siendo estos year (año) y month(mes), respectivamente. Entre sus opciones más comunes, destacan:
 
-Entre sus opciones más comunes, destacan:
-
-* ``-F`` (field-separator): para definir el delimitador de campos. Por defecto, considera que están separados por espacios en blanco.
+* ``-3``: muestra el mes actual junto con los meses anterior y siguiente.
 
   .. code-block:: sh
 
-    awk -F ',' '{print $1}' archivo.csv 
+    cal -3
 
   ..
 
@@ -215,37 +214,28 @@ Entre sus opciones más comunes, destacan:
 
   ..
 
-* ``-f``: para especificar un archivo que contiene el script awk a ejecutar.
+* ``-j``: muestra el número de día del año junto a cada día.
 
   .. code-block:: sh
 
-    awk -f script.awk archiv
+    cal -j
 
   ..
 
-Entre sus patrones más comunes y acciones comunes, destacan:
 
-* ``%n``: hace referencia al n-ésimo campo de la línea actual.
+* ``-m``: muestra un formato alternativo del calendario.
 
   .. code-block:: sh
 
-    awk '{print $1, $3}' archivo
+    cal -m
 
   ..
 
-* ``NR``: hace referencia al número de línea.
+* ``-h``: muestra la ayuda y una lista de todas las opciones.
 
   .. code-block:: sh
 
-    awk 'NR == 5' archivo
-
-  ..
-
-* ``$0``: hace referencia a la línea actual. Equivalente a ``cat archivo``
-
-  .. code-block:: sh
-
-    awk 'NR == 5' archivo
+    cal -h
 
   ..
 
