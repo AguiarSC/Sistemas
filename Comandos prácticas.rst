@@ -188,6 +188,406 @@ Entre sus acciones más comunes, destacan:
   ..
 
 
+``head``
+--------
+
+El comando `head` se utiliza para mostrar las primeras líneas de un archivo de texto. Presenta la siguiente estructura base:
+
+.. code-block:: sh
+
+  head [opciones] [archivo...]
+
+..
+
+El ``archivo`` es el archivo del que se desea mostrar las primeras líneas. Entre sus opciones más comunes, destacan:
+
+* ``-n NUM``: para especificar el número de líneas a mostrar.
+
+  .. code-block:: sh
+
+    head -n 10 archivo.txt
+
+  ..
+
+* ``-c NUM``: para especificar el número de bytes a mostrar.
+
+  .. code-block:: sh
+
+    head -c 100 archivo.txt
+
+  ..
+
+* ``-q``: para suprimir la información de encabezado cuando se muestran múltiples archivos.
+
+  .. code-block:: sh
+
+    head -q archivo1.txt archivo2.txt
+
+  ..
+
+Entre sus patrones de búsqueda más comunes, destacan:
+
+* Mostrar las primeras N líneas de un archivo.
+
+  .. code-block:: sh
+
+    head -n 5 archivo.txt
+
+  ..
+
+* Mostrar los primeros N bytes de un archivo.
+
+  .. code-block:: sh
+
+    head -c 50 archivo.txt
+
+  ..
+
+* Mostrar las primeras líneas de varios archivos.
+
+  .. code-block:: sh
+
+    head archivo1.txt archivo2.txt
+
+  ..
+
+
+``tail``
+--------
+
+El comando `tail` se utiliza para mostrar las últimas líneas de un archivo de texto. Presenta la siguiente estructura base:
+
+.. code-block:: sh
+
+  tail [opciones] [archivo...]
+
+..
+
+El ``archivo`` es el archivo del que se desea mostrar las últimas líneas. Entre sus opciones más comunes, destacan:
+
+* ``-n NUM``: para especificar el número de líneas a mostrar.
+
+  .. code-block:: sh
+
+    tail -n 10 archivo.txt
+
+  ..
+
+* ``-c NUM``: para especificar el número de bytes a mostrar.
+
+  .. code-block:: sh
+
+    tail -c 100 archivo.txt
+
+  ..
+
+* ``-f``: para seguir en tiempo real las adiciones al archivo (utilizado comúnmente para monitorear logs).
+
+  .. code-block:: sh
+
+    tail -f archivo.log
+
+  ..
+
+Entre sus patrones de búsqueda más comunes, destacan:
+
+* Mostrar las últimas N líneas de un archivo.
+
+  .. code-block:: sh
+
+    tail -n 5 archivo.txt
+
+  ..
+
+* Mostrar los últimos N bytes de un archivo.
+
+  .. code-block:: sh
+
+    tail -c 50 archivo.txt
+
+  ..
+
+* Seguir en tiempo real las adiciones al final de un archivo.
+
+  .. code-block:: sh
+
+    tail -f archivo.log
+
+  ..
+
+
+``ls``
+------
+
+El comando `ls` se utiliza para listar archivos y directorios en un sistema de archivos Unix o Linux. Presenta la siguiente estructura base:
+
+.. code-block:: sh
+
+  ls [opciones] [archivos/directorios...]
+
+..
+
+Los ``archivos/directorios`` son los nombres de los archivos o directorios que se desean listar. Entre sus opciones más comunes, destacan:
+
+* ``-l``: para mostrar el listado en formato largo, que incluye detalles como permisos, propietario, grupo, tamaño y fecha de modificación.
+
+  .. code-block:: sh
+
+    ls -l
+
+  ..
+
+* ``-a``: para mostrar todos los archivos, incluyendo los ocultos que empiezan con ``.``.
+
+  .. code-block:: sh
+
+    ls -a
+
+  ..
+
+* ``-h``: para mostrar tamaños de archivos en un formato legible para humanos.
+
+  .. code-block:: sh
+
+    ls -lh
+
+  ..
+
+* ``-t``: para ordenar los archivos por fecha de modificación, mostrando primero los más recientes.
+
+  .. code-block:: sh
+
+    ls -lt
+
+  ..
+
+* ``-r``: para ordenar los archivos en orden inverso.
+
+  .. code-block:: sh
+
+    ls -lr
+
+  ..
+
+* ``-S``: para ordenar los archivos por tamaño.
+
+  .. code-block:: sh
+
+    ls -lS
+
+  ..
+
+Entre sus patrones de búsqueda más comunes, destacan:
+
+* Listar todos los archivos en un directorio.
+
+  .. code-block:: sh
+
+    ls
+
+  ..
+
+* Listar todos los archivos en un directorio, incluyendo los ocultos.
+
+  .. code-block:: sh
+
+    ls -a
+
+  ..
+
+* Listar todos los archivos en un directorio en formato largo.
+
+  .. code-block:: sh
+
+    ls -l
+
+  ..
+
+* Listar archivos que comienzan con "me" en el directorio /bin/.
+
+  .. code-block:: sh
+
+    ls /bin/*me
+
+  ..
+
+* Listar archivos que comienzan con "j" en el directorio /usr/bin/.
+
+  .. code-block:: sh
+
+    ls /usr/bin/j*
+
+  ..
+
+* Listar archivos que tienen "l", seguido de un caracter, seguido de "a" en el directorio /usr/bin/.
+
+  .. code-block:: sh
+
+    ls /usr/bin/l?a*
+
+  ..
+
+* Listar todos los archivos y directorios en formato largo, incluyendo los ocultos, con tamaños humanos y ordenados por fecha.
+
+  .. code-block:: sh
+
+    ls -lah
+
+  ..
+
+* Listar todos los archivos y directorios, mostrando uno por página.
+
+  .. code-block:: sh
+
+    ls | more
+
+  ..
+
+* Contar el número de archivos y directorios en el directorio /usr/.
+
+  .. code-block:: sh
+
+    ls /usr | wc -l
+
+  ..
+
+* Listar archivos del directorio /bin/, mostrando tamaños humanos, ordenados por tamaño en orden inverso, mostrando información detallada y propietario/grupo en formato largo.
+
+  .. code-block:: sh
+
+    ls -Sshr /bin
+
+  ..
+
+* Listar archivos del directorio /etc/, mostrando tamaños humanos y ordenados por tamaño.
+
+  .. code-block:: sh
+
+    ls -Slh /etc
+
+  ..
+
+
+``cd``
+------
+
+El comando `cd` se utiliza para cambiar el directorio de trabajo actual en un sistema Unix o Linux. Presenta la siguiente estructura base:
+
+.. code-block:: sh
+
+  cd [directorio]
+
+..
+
+El ``directorio`` es el nombre del directorio al que se desea cambiar. Entre sus opciones más comunes, destacan:
+
+* Cambiar al directorio especificado.
+
+  .. code-block:: sh
+
+    cd /ruta/al/directorio
+
+  ..
+
+* Cambiar al directorio padre.
+
+  .. code-block:: sh
+
+    cd ..
+
+  ..
+
+* Cambiar al directorio de inicio del usuario.
+
+  .. code-block:: sh
+
+    cd ~
+
+  ..
+
+Entre sus patrones de uso más comunes, destacan:
+
+* Cambiar al directorio de inicio del usuario actual.
+
+  .. code-block:: sh
+
+    cd
+
+  ..
+
+* Cambiar al directorio anterior.
+
+  .. code-block:: sh
+
+    cd -
+
+  ..
+
+* Cambiar al directorio de trabajo especificado y mostrar el nuevo directorio.
+
+  .. code-block:: sh
+
+    cd /ruta/al/directorio && pwd
+
+  ..
+
+
+``rmdir``
+---------
+
+El comando `rmdir` se utiliza para eliminar directorios vacíos en un sistema Unix o Linux. Presenta la siguiente estructura base:
+
+.. code-block:: sh
+
+  rmdir [opciones] [directorio...]
+
+..
+
+Los ``directorio`` son los nombres de los directorios que se desean eliminar. Entre sus opciones más comunes, destacan:
+
+* ``-p``: elimina directorios padres también si están vacíos.
+
+  .. code-block:: sh
+
+    rmdir -p /ruta/al/directorio
+
+  ..
+
+* ``-v``: muestra un mensaje para cada directorio eliminado.
+
+  .. code-block:: sh
+
+    rmdir -v /ruta/al/directorio
+
+  ..
+
+Entre sus patrones de uso más comunes, destacan:
+
+* Eliminar un directorio vacío.
+
+  .. code-block:: sh
+
+    rmdir /ruta/al/directorio
+
+  ..
+
+* Eliminar un directorio y su directorio padre si está vacío.
+
+  .. code-block:: sh
+
+    rmdir -p /ruta/al/directorio
+
+  ..
+
+* Eliminar un directorio y mostrar un mensaje para cada uno.
+
+  .. code-block:: sh
+
+    rmdir -v /ruta/al/directorio
+
+  ..
+
+
 ``grep``
 --------
 
@@ -310,6 +710,142 @@ El ``patrón`` especifica el texto que se desea buscar, y los ``archivos`` son l
   .. code-block:: sh
 
     grep ",$" Pirata.txt
+
+  ..
+
+
+``tar``
+-------
+
+El comando `tar` se utiliza para crear, manipular o extraer archivos comprimidos en un sistema Unix o Linux. Presenta la siguiente estructura base:
+
+.. code-block:: sh
+
+  tar [opciones] [archivo.tar] [archivos...]
+
+..
+
+Los ``archivos`` son los nombres de los archivos que se desean comprimir o descomprimir. Entre sus opciones más comunes, destacan:
+
+* ``-c``: crea un nuevo archivo tar.
+
+  .. code-block:: sh
+
+    tar -cf archivo.tar archivo1 archivo2
+
+  ..
+
+* ``-x``: extrae archivos de un archivo tar.
+
+  .. code-block:: sh
+
+    tar -xf archivo.tar
+
+  ..
+
+* ``-v``: muestra detalles sobre las operaciones realizadas.
+
+  .. code-block:: sh
+
+    tar -cvf archivo.tar archivo1 archivo2
+
+  ..
+
+* ``-z``: utiliza compresión gzip.
+
+  .. code-block:: sh
+
+    tar -czf archivo.tar.gz archivo1 archivo2
+
+  ..
+
+Entre sus patrones de uso más comunes, destacan:
+
+* Crear un archivo tar de varios archivos.
+
+  .. code-block:: sh
+
+    tar -cf archivo.tar archivo1 archivo2
+
+  ..
+
+* Extraer archivos de un archivo tar.
+
+  .. code-block:: sh
+
+    tar -xf archivo.tar
+
+  ..
+
+* Crear un archivo tar comprimido con gzip.
+
+  .. code-block:: sh
+
+    tar -czf archivo.tar.gz archivo1 archivo2
+
+  ..
+
+
+``sed``
+-------
+
+El comando `sed` (Stream Editor) se utiliza para realizar transformaciones de texto en un flujo de entrada (archivo o entrada estándar). Presenta la siguiente estructura base:
+
+.. code-block:: sh
+
+  sed [opciones] 'comando' archivo
+
+..
+
+El ``comando`` especifica la operación que se realizará en el texto y puede ser una expresión regular o una instrucción de edición de sed. Entre sus opciones más comunes, destacan:
+
+* ``-e script``: utiliza el script proporcionado para realizar las operaciones de edición.
+
+  .. code-block:: sh
+
+    sed -e 's/patrón/sustitución/' archivo
+
+  ..
+
+* ``-i``: modifica el archivo de entrada directamente.
+
+  .. code-block:: sh
+
+    sed -i 's/patrón/sustitución/' archivo
+
+  ..
+
+* ``-n``: suprime la salida automática del texto procesado.
+
+  .. code-block:: sh
+
+    sed -n 's/patrón/sustitución/p' archivo
+
+  ..
+
+Entre sus patrones más comunes y acciones comunes, destacan:
+
+* ``s/patrón/sustitución/``: sustituye el texto que coincide con el patrón por el texto de sustitución.
+
+  .. code-block:: sh
+
+    sed 's/old/new/' archivo
+
+  ..
+
+* ``d``: elimina líneas del texto que coincidan con el patrón.
+
+  .. code-block:: sh
+
+    sed '/patrón/d' archivo
+
+  ..
+
+* ``p``: imprime líneas que coincidan con el patrón.
+
+  .. code-block:: sh
+
+    sed -n '/patrón/p' archivo
 
   ..
 
@@ -1098,8 +1634,8 @@ Se utiliza para hacer que el proceso actual espere durante un período de tiempo
 
 
 
-COMANDOS RELACIONADOS CON LOS PERMISOS, SISTEMA O USUARIOS Y GRUPOS
-===================================================================
+COMANDOS RELACIONADOS CON LOS PERMISOS, PROCESOS, SISTEMA O USUARIOS Y GRUPOS
+=============================================================================
 
 ``chmod``
 ---------
@@ -1164,6 +1700,79 @@ Se utiliza para cambiar los permisos de archivos y directorios. Sus opciones pri
     Esto permite al propietario ejecutar el script como un programa.
   
   ..
+
+
+``ps``
+------
+
+El comando `ps` se utiliza para mostrar información sobre los procesos en ejecución en un sistema Unix o Linux. Presenta la siguiente estructura base:
+
+.. code-block:: sh
+
+  ps [opciones]
+
+..
+
+Entre sus opciones más comunes, destacan:
+
+* ``-e``: muestra todos los procesos del sistema, no solo los del usuario actual.
+
+  .. code-block:: sh
+
+    ps -e
+
+  ..
+
+* ``-f``: muestra una salida detallada con información adicional sobre los procesos.
+
+  .. code-block:: sh
+
+    ps -f
+
+  ..
+
+* ``-u usuario``: muestra los procesos pertenecientes al usuario especificado.
+
+  .. code-block:: sh
+
+    ps -u usuario
+
+  ..
+
+* ``-aux``: muestra una lista completa de todos los procesos en ejecución, incluso aquellos sin terminal asociado.
+
+  .. code-block:: sh
+
+    ps -aux
+
+  ..
+
+Entre sus patrones de uso más comunes, destacan:
+
+* Mostrar todos los procesos en ejecución.
+
+  .. code-block:: sh
+
+    ps
+
+  ..
+
+* Mostrar una lista detallada de todos los procesos en ejecución.
+
+  .. code-block:: sh
+
+    ps -ef
+
+  ..
+
+* Mostrar los procesos del usuario actual.
+
+  .. code-block:: sh
+
+    ps -u $USER
+
+  ..
+
 
 ``chage``
 ---------
