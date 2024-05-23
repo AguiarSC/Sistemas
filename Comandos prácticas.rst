@@ -330,6 +330,14 @@ Se utiliza se utiliza para copiar archivos y directorios. Sus opciones principal
 
   ..
 
+* ``-p`` o ``--preserve``: conservar los atributos de los archivos copiados, incluyendo permisos de archivo, propietario, grupo, y las marcas de tiempo de acceso y modificación.
+
+  .. code-block:: sh
+
+    cp -p archivo_original destino
+
+  ..
+
 * ``-i`` o ``--interactive``: solicitar confirmación antes de sobrescribir un archivo existente.
 
   .. code-block:: sh
