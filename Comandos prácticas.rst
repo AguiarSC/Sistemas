@@ -20,7 +20,7 @@ Entre sus opciones más comunes, destacan:
 
   .. code-block::
 
-    awk -F ',' '{print $1}' archivo.csv  # Imprime el primer campo de cada línea de un archivo CSV
+    awk -F ',' '{print $1}' archivo.csv 
 
   ..
 
@@ -67,7 +67,93 @@ Entre sus patrones más comunes y acciones comunes, destacan:
   ..
 
 
+``cat``
+-------
 
+Se utiliza principalmente para concatenar y mostrar el contenido de archivos. Es una de las herramientas básicas y más usadas en la línea de comandos. Es muy útil y versátil, no solo para mostrar archivos sino también para combinarlos, crear nuevos archivos y más, mediante su uso combinado con redirección y pipes ``|``.
+
+Entre sus opciones más comunes, destacan:
+
+* ``cat archivo``: muestra el contenido de uno o más archivos en la salida estándar.
+
+  .. code-block::
+
+    cat archivo.txt
+
+  ..
+
+* ``cat archivo1 archivo2 ...``: concatenar y muestra el contenido de varios archivos en la salida estándar.
+
+  .. code-block::
+
+    cat archivo1.txt archivo2.txt
+
+  ..
+
+* ``cat > archivo``: crea un nuevo archivo o sobrescribe uno existente con la entrada que se proporcione desde el teclado hasta que se use ``Ctrl+D`` para indicar el fin de la entrada.
+
+  .. code-block::
+
+    cat > nuevo_archivo.tx
+
+  ..
+
+
+* ``cat >> archivo``: añade la entrada proporcionada al final de un archivo existente.
+
+  .. code-block::
+
+    cat >> existente.txt
+
+  ..
+
+* ``cat -n archivo``: numera todas las líneas de los archivos proporcionados.
+
+  .. code-block::
+
+    cat -n archivo.tx
+
+  ..
+
+* ``cat -b archivo``: numera solo las líneas no vacías.
+
+  .. code-block::
+
+    cat -b archivo.txt
+
+  ..
+
+* ``cat -s archivo``: numera solo las líneas no vacías.
+
+  .. code-block::
+
+    cat -s archivo.txt
+
+  ..
+
+* ``cat -v archivo``: muestra los caracteres no imprimibles, excepto las tabulaciones y saltos de línea, en un formato visible.
+
+  .. code-block::
+
+    cat -v archivo.txt
+
+  ..
+
+* ``cat -e archivo``: equivalente a usar ``-vE``. Muestra los caracteres no imprimibles y marca el final de cada línea con un ``$``.
+
+  .. code-block::
+
+    cat -e archivo.txt
+
+  ..
+
+* ``cat -t archivo``: equivalente a usar ``-vT``. Muestra los caracteres no imprimibles y reemplaza las tabulaciones con ``^I``.
+
+  .. code-block::
+
+    cat -t archivo.txt
+
+  ..
 
 
 
