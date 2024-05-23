@@ -18,7 +18,7 @@ Entre sus opciones más comunes, destacan:
 
 * ``-F`` (field-separator): para definir el delimitador de campos. Por defecto, considera que están separados por espacios en blanco.
 
-  .. code-block::
+  .. code-block:: sh
 
     awk -F ',' '{print $1}' archivo.csv 
 
@@ -26,7 +26,7 @@ Entre sus opciones más comunes, destacan:
 
 * ``-v``: para definir variables.
 
-  .. code-block::
+  .. code-block:: sh
 
     awk -v var=valor 'patrón {acción}' archivo
 
@@ -34,7 +34,7 @@ Entre sus opciones más comunes, destacan:
 
 * ``-f``: para especificar un archivo que contiene el script awk a ejecutar.
 
-  .. code-block::
+  .. code-block:: sh
 
     awk -f script.awk archiv
 
@@ -44,7 +44,7 @@ Entre sus patrones más comunes y acciones comunes, destacan:
 
 * ``%n``: hace referencia al n-ésimo campo de la línea actual.
 
-  .. code-block::
+  .. code-block:: sh
 
     awk '{print $1, $3}' archivo
 
@@ -52,7 +52,7 @@ Entre sus patrones más comunes y acciones comunes, destacan:
 
 * ``NR``: hace referencia al número de línea.
 
-  .. code-block::
+  .. code-block:: sh
 
     awk 'NR == 5' archivo
 
@@ -60,7 +60,7 @@ Entre sus patrones más comunes y acciones comunes, destacan:
 
 * ``$0``: hace referencia a la línea actual. Equivalente a ``cat archivo``
 
-  .. code-block::
+  .. code-block:: sh
 
     awk 'NR == 5' archivo
 
@@ -68,7 +68,7 @@ Entre sus patrones más comunes y acciones comunes, destacan:
 
 * Ejemplos de las prácticas
 
-  .. code-block::
+  .. code-block:: sh
   
     awk '/Linux/{count++} END{print count}' datos.txt
 
@@ -88,7 +88,7 @@ Entre sus opciones más comunes, destacan:
 
 * ``cat archivo``: muestra el contenido de uno o más archivos en la salida estándar.
 
-  .. code-block::
+  .. code-block:: sh
 
     cat archivo.txt
 
@@ -96,7 +96,7 @@ Entre sus opciones más comunes, destacan:
 
 * ``cat archivo1 archivo2 ...``: concatenar y muestra el contenido de varios archivos en la salida estándar.
 
-  .. code-block::
+  .. code-block:: sh
 
     cat archivo1.txt archivo2.txt
 
@@ -104,7 +104,7 @@ Entre sus opciones más comunes, destacan:
 
 * ``cat > archivo``: crea un nuevo archivo o sobrescribe uno existente con la entrada que se proporcione desde el teclado hasta que se use ``Ctrl+D`` para indicar el fin de la entrada.
 
-  .. code-block::
+  .. code-block:: sh
 
     cat > nuevo_archivo.tx
 
@@ -113,7 +113,7 @@ Entre sus opciones más comunes, destacan:
 
 * ``cat >> archivo``: añade la entrada proporcionada al final de un archivo existente.
 
-  .. code-block::
+  .. code-block:: sh
 
     cat >> existente.txt
 
@@ -121,7 +121,7 @@ Entre sus opciones más comunes, destacan:
 
 * ``cat -n archivo``: numera todas las líneas de los archivos proporcionados.
 
-  .. code-block::
+  .. code-block:: sh
 
     cat -n archivo.tx
 
@@ -129,7 +129,7 @@ Entre sus opciones más comunes, destacan:
 
 * ``cat -b archivo``: numera solo las líneas no vacías.
 
-  .. code-block::
+  .. code-block:: sh
 
     cat -b archivo.txt
 
@@ -137,7 +137,7 @@ Entre sus opciones más comunes, destacan:
 
 * ``cat -s archivo``: numera solo las líneas no vacías.
 
-  .. code-block::
+  .. code-block:: sh
 
     cat -s archivo.txt
 
@@ -145,7 +145,7 @@ Entre sus opciones más comunes, destacan:
 
 * ``cat -v archivo``: muestra los caracteres no imprimibles, excepto las tabulaciones y saltos de línea, en un formato visible.
 
-  .. code-block::
+  .. code-block:: sh
 
     cat -v archivo.txt
 
@@ -153,7 +153,7 @@ Entre sus opciones más comunes, destacan:
 
 * ``cat -e archivo``: equivalente a usar ``-vE``. Muestra los caracteres no imprimibles y marca el final de cada línea con un ``$``.
 
-  .. code-block::
+  .. code-block:: sh
 
     cat -e archivo.txt
 
@@ -161,7 +161,7 @@ Entre sus opciones más comunes, destacan:
 
 * ``cat -t archivo``: equivalente a usar ``-vT``. Muestra los caracteres no imprimibles y reemplaza las tabulaciones con ``^I``.
 
-  .. code-block::
+  .. code-block:: sh
 
     cat -t archivo.txt
 
@@ -173,7 +173,7 @@ Entre sus opciones más comunes, destacan:
 
 Es una herramienta de procesamiento de textos. Se utiliza principalmente para la manipulación y análisis de datos en formato de texto. Permite realizar operaciones de filtrado, formateo, y transformación de datos de manera eficiente. Presenta la siguiente estructura base:
 
-.. code-block::
+.. code-block:: sh
 
   awk 'patrón {acción}' archivo
 
@@ -185,7 +185,7 @@ Entre sus opciones más comunes, destacan:
 
 * ``-F`` (field-separator): para definir el delimitador de campos. Por defecto, considera que están separados por espacios en blanco.
 
-  .. code-block::
+  .. code-block:: sh
 
     awk -F ',' '{print $1}' archivo.csv 
 
@@ -193,7 +193,7 @@ Entre sus opciones más comunes, destacan:
 
 * ``-v``: para definir variables.
 
-  .. code-block::
+  .. code-block:: sh
 
     awk -v var=valor 'patrón {acción}' archivo
 
@@ -201,7 +201,7 @@ Entre sus opciones más comunes, destacan:
 
 * ``-f``: para especificar un archivo que contiene el script awk a ejecutar.
 
-  .. code-block::
+  .. code-block:: sh
 
     awk -f script.awk archiv
 
@@ -211,7 +211,7 @@ Entre sus patrones más comunes y acciones comunes, destacan:
 
 * ``%n``: hace referencia al n-ésimo campo de la línea actual.
 
-  .. code-block::
+  .. code-block:: sh
 
     awk '{print $1, $3}' archivo
 
@@ -219,7 +219,7 @@ Entre sus patrones más comunes y acciones comunes, destacan:
 
 * ``NR``: hace referencia al número de línea.
 
-  .. code-block::
+  .. code-block:: sh
 
     awk 'NR == 5' archivo
 
@@ -227,7 +227,7 @@ Entre sus patrones más comunes y acciones comunes, destacan:
 
 * ``$0``: hace referencia a la línea actual. Equivalente a ``cat archivo``
 
-  .. code-block::
+  .. code-block:: sh
 
     awk 'NR == 5' archivo
 
