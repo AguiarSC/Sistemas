@@ -851,6 +851,32 @@ Se utiliza para mostrar o establecer la fecha y la hora del sistema. Sus princip
 ..
 
 
+``sleep``
+---------
+
+Se utiliza para hacer que el proceso actual espere durante un período de tiempo específico antes de continuar. Sus principales opciones son:
+
+.. code-block:: sh
+
+  sleep 5
+  Esto hará que el proceso espere durante 5 segundos antes de continuar
+
+  sleep 3m
+  Esto hará que el proceso espere durante 3 minutos antes de continuar.
+
+  sleep 1h
+  Esto hará que el proceso espere durante 1 hora antes de continuar.
+
+  sleep 1h30m15s
+  Esto hará que el proceso espere durante 1 hora, 30 minutos y 15 segundos antes de continuar.
+
+  sleep 0.5
+  Esto hará que el proceso espere durante 0.5 segundos antes de continuar.
+
+  Ctrl + C
+  Esto interrumpirá el proceso de espera presionando en el terminal donde se ejecuta el comando.
+
+..
 
 
 
