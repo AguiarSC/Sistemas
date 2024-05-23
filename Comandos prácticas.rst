@@ -191,8 +191,8 @@ Muestra un calendario mensual. Su estructura básica es:
 
 .. code-block:: sh
 
-  cal (sin argumentos opcionales)
-  cal -y valor -m valor 
+  cal
+  cal -y 2024 -m 05 
 
 ..
 
@@ -206,13 +206,6 @@ El comando puede o no ir acompañado de los argumentos ``-y`` y ``-m``, siendo e
 
   ..
 
-* ``-v``: para definir variables.
-
-  .. code-block:: sh
-
-    awk -v var=valor 'patrón {acción}' archivo
-
-  ..
 
 * ``-j``: muestra el número de día del año junto a cada día.
 
