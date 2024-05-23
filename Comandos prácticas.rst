@@ -390,7 +390,69 @@ Se utiliza se utiliza para copiar archivos y directorios. Sus opciones principal
   ..
 
 
+``chmod``
+------
 
+Se utiliza para cambiar los permisos de archivos y directorios. Sus opciones principales son:
+
+* ``Por octal``. Véase conversión de permisos a octal en Gestión de ficheros.
+
+  .. code-block:: sh
+
+    chmod xyz archivo/directorio
+    chmod 755 archivo
+
+  ..
+
+* ``Simbólicamente``. Véase conversión de permisos a simbólico en Gestión de ficheros.
+
+  .. code-block:: sh
+
+    chmod [ugoa] [+-=] [rwx] archivo/directorio
+    chmod u+x archivo
+
+  ..
+
+* ``Por recursividad`` ``-R``. Se pueden modificar los permisos de manera recursiva en todos los archivos y directorios dentro del directorio especificado.
+
+  .. code-block:: sh
+
+    chmod -R 755 directorio
+
+    El modificador -R indica que los cambios de permisos se aplicarán de forma recursiva a todos 
+    los archivos y subdirectorios dentro del directorio directorio. Por lo tanto, todos los archivos
+    y directorios dentro de directorio también recibirán permisos 755, asegurando que todos sean 
+    accesibles y ejecutables según sea necesario.
+
+  ..
+
+* Ejemplos de las prácticas
+
+  .. code-block:: sh
+  
+    chmod g-r agenda
+
+    Quita el permiso de lectura (r) del grupo (g) para el archivo o directorio agenda.
+  
+  ..
+
+  .. code-block:: sh
+  
+    chmod g-wx,o+r agenda
+
+    Quita los permisos de escritura (w) y ejecución (x) del grupo (g) y agrega permiso 
+    de lectura (r) para otros usuarios (o) al archivo o directorio agenda.
+  
+  ..
+
+  .. code-block:: sh
+  
+    chmod u+x script.sh
+
+    Agrega permiso de ejecución (x) al propietario (u) del archivo script.sh. 
+    Esto permite al propietario ejecutar el script como un programa.
+  
+  ..
 
 
 
