@@ -233,6 +233,88 @@ El comando puede o no ir acompañado de los argumentos ``-y`` y ``-m``, siendo e
   ..
 
 
+``cut``
+-------
+
+Se utiliza para extraer secciones específicas de archivos de texto. Sus opciones principales son:
+
+* ``-c`` o ``--characters``: especifica los caracteres que se desean extraer.
+
+  .. code-block:: sh
+
+    cut -c1-5
+
+  ..
+
+* ``-d`` o ``--delimiter``: define el delimitador para separar los campos.
+
+  .. code-block:: sh
+
+     cut -d"," -f2
+
+  ..
+
+* ``-f`` o ``fields``: especifica los campos que se desean extraer.
+
+  .. code-block:: sh
+
+    cut -d"," -f1,3
+
+  ..
+
+
+* ``--complement``: complementa la selección; muestra lo que no se selecciona.
+
+  .. code-block:: sh
+
+    cut -d"," --complement -f2
+
+  ..
+
+* ``-b`` o ``--bytes``: especifica los bytes que se desean extraer.
+
+  .. code-block:: sh
+
+    cut -b1-5
+
+  ..
+
+* ``-n``: no dividir líneas; útil con -b para seleccionar bytes exactos sin dividir líneas.
+
+  .. code-block:: sh
+
+    cut -b1-5 -n
+
+  ..
+
+* ``--output-delimiter``: define el delimitador para la salida.
+
+  .. code-block:: sh
+
+    cut -d"," -f1,3 --output-delimiter="|"
+
+  ..
+
+
+* Ejemplos de las prácticas
+
+  .. code-block:: sh
+  
+    cut -f1,2 -d, /tmp/users.csv > /tmp/users2.csv
+
+    toma el archivo /tmp/users.csv, delimitado por comas, y extrae los campos 
+    1 y 2, guardando los resultados en /tmp/users2.csv.
+  
+  ..
+
+  .. code-block:: sh
+  
+    cut -f3 -d, users.txt | tail +2 | sort | uniq
+
+    toma el archivo users.txt, delimitado por comas, extrae el tercer campo, ignora la primera 
+    línea, ordena los resultados y muestra solo las líneas únicas a partir de la segunda.
+  
+  ..
 
 
 
