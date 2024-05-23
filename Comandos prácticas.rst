@@ -317,6 +317,77 @@ Se utiliza para extraer secciones específicas de archivos de texto. Sus opcione
   ..
 
 
+``cp``
+------
+
+Se utiliza se utiliza para copiar archivos y directorios. Sus opciones principales son:
+
+* ``-r`` o ``--recursive``: copiar directorios de forma recursiva
+
+  .. code-block:: sh
+
+    cp -r directorio_origen directorio_destino
+
+  ..
+
+* ``-i`` o ``--interactive``: solicitar confirmación antes de sobrescribir un archivo existente.
+
+  .. code-block:: sh
+
+     cp -i archivo_origen archivo_destino
+
+  ..
+
+* ``-f`` o ``--force``: sobrescribir el archivo de destino sin solicitar confirmación, útil para automatizar tareas.
+
+  .. code-block:: sh
+
+    cp -f archivo_origen archivo_destino
+
+  ..
+
+
+* ``-u`` o ``--update``: copiar solo si el archivo de origen es más nuevo que el archivo de destino o si el archivo de destino no existe.
+
+  .. code-block:: sh
+
+    cp -u archivo_origen archivo_destino
+
+  ..
+
+* ``-v`` o ``--verbose``: mostrar detalles de la operación de copia.
+
+  .. code-block:: sh
+
+    cp -v archivo_origen archivo_destino
+
+  ..
+
+* ``-a`` o ``--archive``: copiar archivos y directorios de forma recursiva preservando permisos, propiedades y enlaces simbólicos.
+
+  .. code-block:: sh
+
+    cp -a directorio_origen directorio_destino
+
+  ..
+
+* Ejemplos de las prácticas
+
+  .. code-block:: sh
+  
+    cp ./Ejercicio1/Texto1.txt ./Ejercicio1/Texto2.txt
+
+    Duplica Texto1.txt con el nombre Texto2.txt dentro del mismo directorio.
+  
+  ..
+
+  .. code-block:: sh
+  
+    cp ../Ejercicio1/Texto1.txt ./Tema1/Texto1.txt
+
+    Copia Texto1.txt desde un directorio anterior a ./Tema1/Texto1.txt.
+  
+  ..
 
 
 
