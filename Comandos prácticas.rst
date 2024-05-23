@@ -625,7 +625,8 @@ Se utiliza para mover o renombrar archivos y directorios. Sus opciones principal
 
     mv -i archivo.txt /ruta/a/destino/
 
-    Esto moverá archivo.txt al directorio de destino, pero pedirá confirmación si hay un archivo con el mismo nombre en el destino.
+    Esto moverá archivo.txt al directorio de destino, pero pedirá confirmación 
+    si hay un archivo con el mismo nombre en el destino.
 
   ..
 
