@@ -175,11 +175,11 @@ Entre sus opciones más comunes, destacan:
 
   .. code-block:: sh
   
-    awk '/Linux/{count++} END{print count}' datos.txt
+    cat practicas/uno.texto > practicas/copiauno.texto
 
-    Recorre cada línea del archivo datos.txt. Cada vez que encuentra una línea que contiene la palabra "Linux", 
-    incrementa un contador (count). Al final del procesamiento de todas las líneas, imprime el valor del contador, 
-    que representa el número total de líneas que contienen la palabra "Linux".
+    Concatena el contenido del archivo "uno.texto" ubicado en el directorio "practicas".Toma ese contenido y lo 
+    redirige hacia un nuevo archivo llamado "copiauno.texto", que también se encuentra en el directorio "practicas".
+    Si el archivo "copiauno.texto" ya existe, se sobrescribirá con el nuevo contenido del archivo "uno.texto"
   
   ..
 
