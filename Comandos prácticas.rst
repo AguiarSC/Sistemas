@@ -74,7 +74,9 @@ Entre sus patrones más comunes y acciones comunes, destacan:
 
     Recorre cada línea del archivo datos.txt. Cada vez que encuentra una línea que contiene la palabra "Linux", 
     incrementa un contador (count). Al final del procesamiento de todas las líneas, imprime el valor del contador, 
-    que representa el número total de líneas que contienen la palabra "Linux".
+    que representa el número total de líneas que contienen la palabra "Linux".Las comillas simples aseguran que la 
+    expresión awk se pase como un solo argumento al comando awk. Además, protegen cualquier carácter especial dentro 
+    del programa awk de ser interpretado por el shell antes de que awk tenga la oportunidad de procesarlo.
   
   ..
 
@@ -102,7 +104,7 @@ Entre sus opciones más comunes, destacan:
 
   ..
 
-* ``cat > archivo``: crea un nuevo archivo o sobrescribe uno existente con la entrada que se proporcione desde el teclado hasta que se use ``Ctrl+D`` para indicar el fin de la entrada.
+* ``cat > archivo``: crea un nuevo archivo o sobrescribe uno existente con la entrada que se proporcione desde el teclado hasta que se use ``Ctrl+D`` para indicar el fin de la entrada. A diferencia de ``cat < archivo`` que toma el contenido del archivo, sin crear ni sobreescribir, por lo que si no existe no har'a nada.
 
   .. code-block:: sh
 
@@ -111,7 +113,7 @@ Entre sus opciones más comunes, destacan:
   ..
 
 
-* ``cat >> archivo``: añade la entrada proporcionada al final de un archivo existente.
+* ``cat >> archivo``: redirige la salida estándar del comando cat hacia un archivo llamado "archivo.txt" pero, en este caso, en lugar de sobrescribir el archivo, añade el contenido al final del archivo existente. Si el archivo no existe, se crea. A diferencia de ``cat << archivo`` que inicia una construcción "here document", donde el texto introducido después de << (en este caso, "archivo.txt") se toma como el delimitador de fin de entrada. Esto permite al usuario escribir un bloque de texto directamente en la línea de comando o en un script de shell sin necesidad de un archivo de texto separado.
 
   .. code-block:: sh
 
@@ -165,6 +167,18 @@ Entre sus opciones más comunes, destacan:
 
     cat -t archivo.txt
 
+  ..
+
+* Ejemplos de las prácticas
+
+  .. code-block:: sh
+  
+    awk '/Linux/{count++} END{print count}' datos.txt
+
+    Recorre cada línea del archivo datos.txt. Cada vez que encuentra una línea que contiene la palabra "Linux", 
+    incrementa un contador (count). Al final del procesamiento de todas las líneas, imprime el valor del contador, 
+    que representa el número total de líneas que contienen la palabra "Linux".
+  
   ..
 
 
