@@ -727,6 +727,22 @@ El comando `tar` se utiliza para crear, manipular o extraer archivos comprimidos
 
 Los ``archivos`` son los nombres de los archivos que se desean comprimir o descomprimir. Entre sus opciones más comunes, destacan:
 
+* ``-f nombre_archivo``: especifica el nombre del archivo de almacenamiento que se está creando.
+
+  .. code-block:: sh
+
+    tar -cf archivo.tar archivo1 archivo2
+
+  ..
+
+* ``-j``: indica a tar que utilice el algoritmo de compresión bzip2.
+
+  .. code-block:: sh
+
+    tar -cf archivo.tar archivo1 archivo2
+
+  ..
+
 * ``-c``: crea un nuevo archivo tar.
 
   .. code-block:: sh
