@@ -458,9 +458,9 @@ Se utiliza para cambiar los permisos de archivos y directorios. Sus opciones pri
 ``touch``
 ---------
 
-se utiliza principalmente para crear archivos vacíos o actualizar las marcas de tiempo de archivos existentes. Sus opciones principales son:
+Se utiliza principalmente para crear archivos vacíos o actualizar las marcas de tiempo de archivos existentes. Sus opciones principales son:
 
-* ``Crear un archivo vacío`` o ``Actualizar la marca de tiempo de un archivo``
+* ``Crear un archivo vacío`` o ``actualizar la marca de tiempo de un archivo``
 
   .. code-block:: sh
 
@@ -527,6 +527,54 @@ se utiliza principalmente para crear archivos vacíos o actualizar las marcas de
     archivos que ya existan en el directorio y coincidan con este patrón.
   
   ..
+
+
+``echo``
+--------
+
+Se utiliza para mostrar texto o variables en la salida estándar. Aquí están algunas de sus opciones principales con ejemplos. Sus opciones principales son:
+
+* ``Imprimir texto`` o ``imprimir variables``
+
+  .. code-block:: sh
+
+    echo "Hola, mundo!"
+
+    nombre="Juan"
+    echo "Hola, $nombre"
+
+  ..
+
+* ``Suprimir el salto de línea final`` o ``-n``
+
+  .. code-block:: sh
+
+    echo -n "Hola, mundo"
+    Esto imprimirá "Hola, mundo" sin un salto de línea al final
+
+  ..
+
+* ``Imprimir texto con interpretación de escape de caracteres``
+
+  .. code-block:: sh
+
+    echo "Este es un texto con una nueva línea\nY esta es otra línea"
+
+    Esto imprimirá "Este es un texto con una nueva línea\nY esta es otra línea" literalmente, 
+    sin interpretar el carácter de nueva línea.
+
+  ..
+
+* ``Imprimir texto en color``
+
+  .. code-block:: sh
+
+    echo -e "\e[1;31m¡Error!\e[0m El archivo no se encontró."
+
+    Esto imprimirá "¡Error!" en rojo, seguido de "El archivo no se encontró." en el color predeterminado del terminal.
+
+  ..
+
 
 
 
