@@ -391,7 +391,7 @@ Se utiliza se utiliza para copiar archivos y directorios. Sus opciones principal
 
 
 ``chmod``
-------
+---------
 
 Se utiliza para cambiar los permisos de archivos y directorios. Sus opciones principales son:
 
