@@ -109,7 +109,7 @@ Entre sus opciones más comunes, destacan:
   .. code-block:: sh
 
     cat > nuevo_archivo.txt
-    cat < nuevo_archivo.txt
+    cat < END
 
   ..
 
@@ -119,7 +119,7 @@ Entre sus opciones más comunes, destacan:
   .. code-block:: sh
 
     cat >> existente.txt
-    cat << existente.txt
+    cat << END
 
   ..
 
