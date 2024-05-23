@@ -66,17 +66,15 @@ Entre sus patrones más comunes y acciones comunes, destacan:
 
   ..
 
-Ejemplos de las prácticas
--------------------------
+* Ejemplos de las prácticas
 
   .. code-block::
-
+  
     awk '/Linux/{count++} END{print count}' datos.txt
-
+  
   ..
 
-
-Recorre cada línea del archivo datos.txt. Cada vez que encuentra una línea que contiene la palabra "Linux", incrementa un contador (count). Al final del procesamiento de todas las líneas, imprime el valor del contador, que representa el número total de líneas que contienen la palabra "Linux".
+  Recorre cada línea del archivo datos.txt. Cada vez que encuentra una línea que contiene la palabra "Linux", incrementa un contador (count). Al final del procesamiento de todas las líneas, imprime el valor del contador, que representa el número total de líneas que contienen la palabra "Linux".
 
 
 ``cat``
