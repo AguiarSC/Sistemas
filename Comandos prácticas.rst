@@ -833,24 +833,19 @@ Se utiliza para mostrar o establecer la fecha y la hora del sistema. Sus princip
 .. code-block:: sh
 
   date
-
   Mostrará la fecha y la hora actual en el formato predefinido.
 
   date "+%Y-%m-%d %H:%M:%S"
-
   Mostrará la fecha y la hora actual en el formato establecido: año-mes-día hora:minuto:segundo.
 
-  (sudo) date MMDDhhmmAA
-
+  date MMDDhhmmAA
   Esto establecerá la fecha y la hora del sistema. Por ejemplo, sudo date 052923002021 
   establecerá la fecha al 29 de mayo de 2021 a las 23:00.
 
   date -u
-
   Esto mostrará la fecha y la hora actuales en formato UTC (Tiempo Universal Coordinado).
 
   date "+%A, %B %d, %Y"
-
   Esto mostrará la fecha en un formato legible, por ejemplo, "Saturday, May 29, 2021".
 
 ..
