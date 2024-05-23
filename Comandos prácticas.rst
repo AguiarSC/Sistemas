@@ -81,7 +81,7 @@ Entre sus patrones más comunes y acciones comunes, destacan:
   ..
 
 ``find``
--------
+--------
 
 El comando `find` se utiliza para buscar archivos y directorios en un sistema de archivos Unix o Linux. Puede buscar archivos por nombre, tipo, tamaño, fecha de modificación, y más. Presenta la siguiente estructura base:
 
@@ -127,6 +127,14 @@ Entre sus opciones más comunes, destacan:
 
   ..
 
+* ``-atime``: para buscar archivos por fecha de acceso.
+
+  .. code-block:: sh
+
+    find /ruta -atime -7
+
+  ..
+
 Entre sus patrones de búsqueda más comunes, destacan:
 
 * ``-iname``: para buscar archivos por nombre, ignorando mayúsculas y minúsculas.
@@ -168,6 +176,14 @@ Entre sus acciones más comunes, destacan:
   .. code-block:: sh
 
     find /ruta -name "archivo.txt" -exec ln -s {} /ruta/destino/ \;
+
+  ..
+
+* Eliminar cada archivo encontrado.
+
+  .. code-block:: sh
+
+    find /ruta -name "archivo.txt" -delete
 
   ..
 
