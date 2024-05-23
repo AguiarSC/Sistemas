@@ -188,6 +188,132 @@ Entre sus acciones más comunes, destacan:
   ..
 
 
+``grep``
+--------
+
+El comando `grep` se utiliza para buscar patrones de texto dentro de archivos o en la salida de otros comandos. Presenta la siguiente estructura base:
+
+.. code-block:: sh
+
+  grep [opciones] patrón [archivo...]
+
+..
+
+El ``patrón`` especifica el texto que se desea buscar, y los ``archivos`` son los archivos en los que se realizará la búsqueda. Entre sus opciones más comunes, destacan:
+
+* ``-i``: para realizar una búsqueda insensible a mayúsculas y minúsculas.
+
+  .. code-block:: sh
+
+    grep -i "patrón" archivo.txt
+
+  ..
+
+* ``-r``: para buscar de forma recursiva en directorios.
+
+  .. code-block:: sh
+
+    grep -r "patrón" directorio/
+
+  ..
+
+* ``-v``: para invertir la búsqueda y mostrar líneas que no coincidan con el patrón.
+
+  .. code-block:: sh
+
+    grep -v "patrón" archivo.txt
+
+  ..
+
+* ``-w``: para buscar palabras completas que coincidan con el patrón.
+
+  .. code-block:: sh
+
+    grep -w "patrón" archivo.txt
+
+  ..
+
+* ``-n``: para mostrar el número de línea junto con las líneas que coinciden con el patrón.
+
+  .. code-block:: sh
+
+    grep -n "patrón" archivo.txt
+
+  ..
+
+* ``-c``: para contar el número de líneas que coinciden con un patrón.
+
+  .. code-block:: sh
+
+    grep -c "patrón" archivo.txt
+
+  ..
+
+* ``-l``: para mostrar solo los nombres de los archivos que contienen el patrón.
+
+  .. code-block:: sh
+
+    grep -l "patrón" archivo.txt
+
+  ..
+
+* ``-E``: para utilizar expresiones regulares extendidas.
+
+  .. code-block:: sh
+
+    grep -E "^patrón" archivo.txt
+
+  ..
+
+* ``-x``: para buscar líneas que coincidan exactamente con el patrón.
+
+  .. code-block:: sh
+
+    grep -x "patrón" archivo.txt
+
+  ..
+
+* ``-m``: para limitar el número de líneas de salida.
+
+  .. code-block:: sh
+
+    grep -m 3 "patrón" archivo.txt
+
+  ..
+
+* ``^``: para buscar líneas que comiencen con el patrón.
+
+  .. code-block:: sh
+
+    grep "^patrón" archivo.txt
+
+  ..
+
+* ``$``: para buscar líneas que terminen con el patrón.
+
+  .. code-block:: sh
+
+    grep "patrón$" archivo.txt
+
+  ..
+
+* ``,``: para buscar líneas que contengan el patrón seguido de una coma.
+
+  .. code-block:: sh
+
+    grep "^C.*,$" Pirata.txt
+
+  ..
+
+* ``,``: para buscar líneas que terminen con una coma seguida del patrón.
+
+  .. code-block:: sh
+
+    grep ",$" Pirata.txt
+
+  ..
+
+
 ``cat``
 -------
 
