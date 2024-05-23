@@ -66,24 +66,6 @@ Entre sus patrones más comunes y acciones comunes, destacan:
 
   ..
 
-Supongamos:
-
-Juan,25,Madrid
-Ana,30,Barcelona
-Luis,22,Valencia
-
-.. code-block::
-
-  awk -F ',' '{print $1, $2}' datos.txt
-
-..
-
-Imprimirá:
-
-Juan 25
-Ana 30
-Luis 22
-
 
 
 
