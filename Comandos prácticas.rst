@@ -62,7 +62,7 @@ Entre sus patrones más comunes y acciones comunes, destacan:
 
   .. code-block:: sh
 
-    awk 'NR == 5' archivo
+    awk '{print $0}' datos.txt
 
   ..
 
