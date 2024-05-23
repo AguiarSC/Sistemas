@@ -66,6 +66,18 @@ Entre sus patrones más comunes y acciones comunes, destacan:
 
   ..
 
+Ejemplos de las prácticas
+-------------------------
+
+  .. code-block::
+
+    awk '/Linux/{count++} END{print count}' datos.txt
+
+  ..
+
+
+Recorre cada línea del archivo datos.txt. Cada vez que encuentra una línea que contiene la palabra "Linux", incrementa un contador (count). Al final del procesamiento de todas las líneas, imprime el valor del contador, que representa el número total de líneas que contienen la palabra "Linux".
+
 
 ``cat``
 -------
@@ -156,7 +168,70 @@ Entre sus opciones más comunes, destacan:
   ..
 
 
+``awk``
+-------
 
+Es una herramienta de procesamiento de textos. Se utiliza principalmente para la manipulación y análisis de datos en formato de texto. Permite realizar operaciones de filtrado, formateo, y transformación de datos de manera eficiente. Presenta la siguiente estructura base:
+
+.. code-block::
+
+  awk 'patrón {acción}' archivo
+
+..
+
+El ``patrón`` especifica cuándo debe ejecutarse la acción y puede ser una expresión regular o una condición lógica; ``la acción`` define qué operación se realizará en las líneas que coincidan con el patrón y están delimitadas por llaves {}.
+
+Entre sus opciones más comunes, destacan:
+
+* ``-F`` (field-separator): para definir el delimitador de campos. Por defecto, considera que están separados por espacios en blanco.
+
+  .. code-block::
+
+    awk -F ',' '{print $1}' archivo.csv 
+
+  ..
+
+* ``-v``: para definir variables.
+
+  .. code-block::
+
+    awk -v var=valor 'patrón {acción}' archivo
+
+  ..
+
+* ``-f``: para especificar un archivo que contiene el script awk a ejecutar.
+
+  .. code-block::
+
+    awk -f script.awk archiv
+
+  ..
+
+Entre sus patrones más comunes y acciones comunes, destacan:
+
+* ``%n``: hace referencia al n-ésimo campo de la línea actual.
+
+  .. code-block::
+
+    awk '{print $1, $3}' archivo
+
+  ..
+
+* ``NR``: hace referencia al número de línea.
+
+  .. code-block::
+
+    awk 'NR == 5' archivo
+
+  ..
+
+* ``$0``: hace referencia a la línea actual. Equivalente a ``cat archivo``
+
+  .. code-block::
+
+    awk 'NR == 5' archivo
+
+  ..
 
 
 
