@@ -80,6 +80,97 @@ Entre sus patrones más comunes y acciones comunes, destacan:
   
   ..
 
+``find``
+-------
+
+El comando `find` se utiliza para buscar archivos y directorios en un sistema de archivos Unix o Linux. Puede buscar archivos por nombre, tipo, tamaño, fecha de modificación, y más. Presenta la siguiente estructura base:
+
+.. code-block:: sh
+
+  find directorio [opciones] [patrón de búsqueda] [acción]
+
+..
+
+El ``directorio`` especifica el directorio base desde donde se realizará la búsqueda. Las opciones pueden incluir criterios de búsqueda adicionales, como `-name`, `-type`, `-size`, `-mtime`, entre otros. El ``patrón de búsqueda`` especifica los criterios de búsqueda, y la ``acción`` define qué se debe hacer con los archivos encontrados.
+
+Entre sus opciones más comunes, destacan:
+
+* ``-name``: para buscar archivos por nombre.
+
+  .. code-block:: sh
+
+    find /ruta -name "archivo.txt"
+
+  ..
+
+* ``-type``: para buscar archivos por tipo.
+
+  .. code-block:: sh
+
+    find /ruta -type f
+
+  ..
+
+* ``-size``: para buscar archivos por tamaño.
+
+  .. code-block:: sh
+
+    find /ruta -size +1M
+
+  ..
+
+* ``-mtime``: para buscar archivos por fecha de modificación.
+
+  .. code-block:: sh
+
+    find /ruta -mtime -7
+
+  ..
+
+Entre sus patrones de búsqueda más comunes, destacan:
+
+* ``-iname``: para buscar archivos por nombre, ignorando mayúsculas y minúsculas.
+
+  .. code-block:: sh
+
+    find /ruta -iname "archivo.txt"
+
+  ..
+
+* ``-maxdepth``: para limitar la profundidad de búsqueda.
+
+  .. code-block:: sh
+
+    find /ruta -maxdepth 2 -name "archivo.txt"
+
+  ..
+
+Entre sus acciones más comunes, destacan:
+
+* Ejecutar un comando en cada archivo encontrado.
+
+  .. code-block:: sh
+
+    find /ruta -name "archivo.txt" -exec rm {} \;
+
+  ..
+
+* Imprimir la ruta de los archivos encontrados.
+
+  .. code-block:: sh
+
+    find /ruta -name "archivo.txt" -print
+
+  ..
+
+* Crear un enlace simbólico a cada archivo encontrado.
+
+  .. code-block:: sh
+
+    find /ruta -name "archivo.txt" -exec ln -s {} /ruta/destino/ \;
+
+  ..
+
 
 ``cat``
 -------
@@ -929,5 +1020,80 @@ Se utiliza para cambiar los permisos de archivos y directorios. Sus opciones pri
 
     Agrega permiso de ejecución (x) al propietario (u) del archivo script.sh. 
     Esto permite al propietario ejecutar el script como un programa.
+  
+  ..
+
+``chage``
+---------
+
+Se utiliza para modificar los valores de configuración de las cuentas de usuario almacenadas en el archivo /etc/shadow, que contiene información de seguridad como contraseñas cifradas y políticas de contraseña. Sus opciones principales son:
+
+* ``Eliminar la contraseña del usuario`` o ``-d`` de ``--delete``
+
+  .. code-block:: sh
+
+    sudo chage -d 0 nombre_usuario
+
+  ..
+
+* ``Establecer caducidad de cuenta`` o ``-E`` de ``--Expire``
+
+  .. code-block:: sh
+
+    sudo chage -E YYYY-MM-DD nombre_usuario
+
+  ..
+
+* ``Establecer número de días de inactividad para el bloqueo de la cuenta`` o ``-i`` de ``--inactivity``
+
+  .. code-block:: sh
+
+    sudo chage -i días nombre_usuario
+
+  ..
+
+* ``Mostrar información de caducidad de contraseña`` o ``-l`` de ``--legacy``
+
+  .. code-block:: sh
+
+    sudo chage -l nombre_usuario
+
+  ..
+
+* ``Establecer número mínimo de días para el cambio de contraseña`` o ``-m`` de ``--minimum``
+
+  .. code-block:: sh
+
+    sudo chage -m días nombre_usuario
+
+  ..
+
+* ``Establecer número máximo de días de contraseña válida`` o ``-M`` de ``--Maximum``
+
+  .. code-block:: sh
+
+    sudo chage -M días nombre_usuario
+
+  ..
+
+* ``Establecer el número de días de advertencia previos a la caducidad de la contraseña`` o ``-W`` de ``--Warning``
+
+  .. code-block:: sh
+
+    sudo chage -W días nombre_usuario
+
+  ..
+
+* Ejemplos de las prácticas
+
+  .. code-block:: sh
+  
+    sudo chage -m 10 -M 20 usuario2
+    Con este comando, el usuario usuario2 estará obligado a cambiar su contraseña al menos cada 10 días,
+    y la contraseña será válida por un máximo de 20 días.
+  
+    sudo chage -E -1 usuario4
+    Con esta orden, la cuenta del usuario usuario4 tendrá una fecha de expiración de cuenta eliminada, 
+    lo que significa que la cuenta ya no caducará por fecha
   
   ..
