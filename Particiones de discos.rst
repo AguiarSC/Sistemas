@@ -30,13 +30,15 @@ Por lo tanto, para Linux un dispositivo es un fichero especial (localizado en el
 
 Cada unidad de almacenamiento del ordenador y cada posible partición de esta unidad es considerada como un dispositivo:
 
-- ``/dev/hda``, ``/dev/hdb``: Unidades IDE maestro y esclavo del primer canal (controladora principal).
-- ``/dev/hdc``, ``/dev/hdd``: Unidades IDE maestro y esclavo del segundo canal (controladora secundaria).
-- ``/dev/sda``, ``/dev/sdb``, …, ``/dev/sdh``: Interfaz para discos SCSI, SATA y unidades de conexión USB (unidades FLASH o discos duros externos).
-- ``/dev/hda1``, ``/dev/hda2``, … ``/dev/sda1``, ``/dev/sda2``: Particiones dentro de la unidad correspondiente.
-- ``/dev/fd*``: Disqueteras.
-- ``/dev/scd*`` (también conocida como ``/dev/sr*``): CD-ROM SCSI o DVD
-- ``/dev/tty*``: consolas o terminales físicos.
+- ``/dev/hda``, ``/dev/hdb``: representan las unidades IDE en el primer canal (generalmente el disco duro principal y secundario).
+- ``/dev/hdc``, ``/dev/hdd``: representan las unidades IDE en el segundo canal.
+- ``/dev/sda``, ``/dev/sdb``, etc., son utilizadas para discos SCSI, SATA y dispositivos de almacenamiento USB.
+
+Dentro de estas unidades, las particiones se designan con números, como "/dev/hda1", "/dev/hda2", "/dev/sda1", etc.
+
+- ``/dev/fd*``: se refiere a las disqueteras.
+- ``/dev/scd*`` son utilizadas para CD-ROM o unidades de DVD.
+- ``/dev/tty*``: se refiere a consolas o terminales físicos.
 
 ``Con la llegada de SATA, en la actualidad se utiliza mayormente ``sda`` en lugar de ``hda`` para referirse a discos duros. Donde ``sd`` quiere decir serial drive.``
 ``Por lo menos una partición será asignada al directorio raíz, y el resto de las particiones y unidades se montarán sobre este sistema de ficheros.``
