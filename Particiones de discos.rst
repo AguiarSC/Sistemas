@@ -146,7 +146,7 @@ Funciona como un intérprete de comandos, en modo interactivo, en el que los sub
 
 * ``w (write)``: escribir los cambios y salir.
 
-Para crear una nueva partición en Linux, primero usamos ``fdisk`` para asignar un nombre a la partición con ``fdisk -n nombre_partición``. Luego, utilizamos ``mkfs`` junto con la opción ``-t`` para especificar el tipo de sistema de archivos que queremos crear. En Linux, hay diferentes programas mkfs para cada tipo de sistema de archivos, como mkfs.ext2, mkfs.ext3, mkfs.ext4 para sistemas de archivos ext, mkfs.ntfs para NTFS, mkfs.xfs para XFS, y más.
+Para crear una nueva partición en Linux, primero usamos ``fdisk`` para asignar un nombre a la partición con ``fdisk`` y luego se pulsa ``n``. Luego, utilizamos ``mkfs`` junto con la opción ``-t`` para especificar el tipo de sistema de archivos que queremos crear. En Linux, hay diferentes programas mkfs para cada tipo de sistema de archivos, como mkfs.ext2, mkfs.ext3, mkfs.ext4 para sistemas de archivos ext, mkfs.ntfs para NTFS, mkfs.xfs para XFS, y más.
 Es ``importante destacar que la partición debe estar desmontada antes de formatearla``.
 
 También se podrían indicar otras opciones; como etiquetas, formato rápido, tamaño del clúster, etc. Estas opciones varían según el constructor, al que llama mkfs (ver man para mayor detalle).
