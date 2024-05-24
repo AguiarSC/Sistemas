@@ -198,9 +198,9 @@ El sistema mantiene una lista actualizada de sistemas de archivos montados a tra
 Las particiones montadas con ``mount`` no se conservan después de reiniciar el sistema. Para montar una partición de forma permanente, se debe agregar una entrada en el archivo ``/etc/fstab``. Durante el arranque, se leen las entradas de este archivo y se montan automáticamente para que estén accesibles a los usuarios.
 
 
-===============================
+================================
 CONFIGURACIÓN DEL ARCHIVO FSTAB
-===============================
+================================
 
 El archivo fstab es un componente clave en la configuración del sistema operativo Linux, ubicado en el directorio /etc. Contiene información sobre los discos y particiones disponibles, especificando cómo deben montarse y con qué configuración. Para editarlo, se requieren permisos administrativos. La estructura de cada línea consta de seis columnas que definen distintos aspectos:
 
