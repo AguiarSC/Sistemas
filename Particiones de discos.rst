@@ -198,7 +198,6 @@ El sistema mantiene una lista actualizada de sistemas de archivos montados a tra
 Las particiones montadas con ``mount`` no se conservan después de reiniciar el sistema. Para montar una partición de forma permanente, se debe agregar una entrada en el archivo ``/etc/fstab``. Durante el arranque, se leen las entradas de este archivo y se montan automáticamente para que estén accesibles a los usuarios.
 
 
--------------------------------
 CONFIGURACIÓN DEL ARCHIVO FSTAB
 -------------------------------
 
@@ -217,7 +216,6 @@ El archivo fstab es un componente clave en la configuración del sistema operati
 * ``pass``: Define el orden en el que se verifica el sistema de archivos durante el arranque. Se utiliza principalmente para la herramienta fsck. El valor 0 significa que no se verifica en el arranque, 1 se reserva para el sistema raíz (/), y así sucesivamente.
 
 
--------------------
 ALMACENAMIENTO RAID
 -------------------
 
@@ -233,13 +231,12 @@ RAID (Redundant Array Of Independent Disks) es un término que se refiere a un `
 
 A nivel de RAID ``la información se organiza en porciones de tamaño fijo llamadas bandas o stripes``. El tamaño de estas bandas típicamente es de de ``64 Kb`` o ``128 Kb``. Hay distintos tipos de RAID, cada uno con sus características que priman alguno de los aspectos mencionados antes, y que cambian en la forma en la que usan los discos que los forman. 
 
-------------------------------------------------
 ¿CÓMO SE MEJORA CON RAID LA TOLERANCIA A FALLOS?
 ------------------------------------------------
 
 Algunas configuraciones RAID replican los datos en varios discos para evitar la pérdida de datos en caso de fallo de un disco. Los sistemas RAID alertan sobre fallos de disco y permiten su reemplazo, replicando los datos en el nuevo disco. ``La tolerancia a fallos está garantizada si no fallan más de un disco a la vez y si se reemplaza y replica un disco antes de que falle otro``. Sin embargo, la replicación reduce el espacio de almacenamiento total del RAID respecto a la suma de las capacidades de los discos. Los sistemas RAID mejoran el rendimiento distribuyendo datos entre discos y acelerando la lectura y escritura. Los discos SSD son preferibles a los discos mecánicos, y la fragmentación puede afectar negativamente al rendimiento.
 
-----------------------------
+
 CONFIGURACIONES RAID BÁSICAS
 ----------------------------
 
