@@ -146,16 +146,8 @@ Funciona como un intérprete de comandos, en modo interactivo, en el que los sub
 
 * ``w (write)``: escribir los cambios y salir.
 
-Para crear una nueva partición se elige la letra "n".
-Se le da formato a la partición con el comando ``mkfs (make filesystem)``. Actualmente, en GNU/Linux existe un programa separado por cada tipo de sistema de ficheros: ``mkfs.ext2, mkfs.ext3, mkfs.ext4, mkfs.ntfs, mkfs.xfs, mkfs.msdos, mkfs.fat, mkfs.vfat`` (es un alias de mkfs.fat), etc. De esta forma mkfs es solamente un front-end que ejecuta el programa apropiado dependiendo del tipo de sistema de ficheros especificado; lo cual haremos con la opción ``-t`` de mkfs.
-
-El comando más básico para la creación de un sistema de archivos FAT es ``mkfs.fat``. Con la opción ``-F`` podemos seleccionar el tamaño de la FAT (File Allocation Table), entre ``12``, ``16`` o ``32``, es decir, entre ``FAT12``, ``FAT16`` o ``FAT32``. Si no se especifica, mkfs.fat seleccionará la opción apropiada según el tamaño del sistema de archivos (consultar man mkfs.fat)
-
-``sudo mkfs.fat -F 32 /dev/sda1``
-
-Por lo tanto, será necesario indicar el tipo de sistema de ficheros y la partición que se quiere formatear. Para formatear una partición el dispositivo ha de estar desmontado.
-
-``mkfs -t ext4 /dev/sdXY o haciendo mkfs.ext4 /dev/sdXY``
+Para crear una nueva partición en Linux, primero usamos ``fdisk`` para asignar un nombre a la partición con ``fdisk -n nombre_partición``. Luego, utilizamos ``mkfs`` junto con la opción ``-t`` para especificar el tipo de sistema de archivos que queremos crear. En Linux, hay diferentes programas mkfs para cada tipo de sistema de archivos, como mkfs.ext2, mkfs.ext3, mkfs.ext4 para sistemas de archivos ext, mkfs.ntfs para NTFS, mkfs.xfs para XFS, y más.
+Es ``importante destacar que la partición debe estar desmontada antes de formatearla``.
 
 También se podrían indicar otras opciones; como etiquetas, formato rápido, tamaño del clúster, etc. Estas opciones varían según el constructor, al que llama mkfs (ver man para mayor detalle).
 
