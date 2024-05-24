@@ -73,18 +73,6 @@ Una vez seleccionado el tipo, en la creación de una partición debemos indicar:
 .. _Sistema de archivos:
 
 
-SISTEMAS DE ARCHIVOS
--------------------
-
-El sistema de archivos permite al sistema operativo controlar cómo se lee y escribe la información en los dispositivos de almacenamiento (discos duros, pendrive, tarjetas sd, ...).
-
-Cada sistema operativo trabaja preferiblemente con unos sistemas de archivos determinados. Linux soporta un gran número de sistemas de ficheros de otros sistemas operativos, gracias al ``Sistema de Ficheros Virtual`` (SVF).
-
-.. _Ejemplo de particionado:
-
-.. _Flags de una partición:
-
-
 FLAGS DE UNA PARTICIÓN
 ----------------------
 
