@@ -198,9 +198,9 @@ El sistema mantiene una lista actualizada de sistemas de archivos montados a tra
 Las particiones montadas con ``mount`` no se conservan después de reiniciar el sistema. Para montar una partición de forma permanente, se debe agregar una entrada en el archivo ``/etc/fstab``. Durante el arranque, se leen las entradas de este archivo y se montan automáticamente para que estén accesibles a los usuarios.
 
 
-================================
+-------------------------------
 CONFIGURACIÓN DEL ARCHIVO FSTAB
-================================
+-------------------------------
 
 El archivo fstab es un componente clave en la configuración del sistema operativo Linux, ubicado en el directorio /etc. Contiene información sobre los discos y particiones disponibles, especificando cómo deben montarse y con qué configuración. Para editarlo, se requieren permisos administrativos. La estructura de cada línea consta de seis columnas que definen distintos aspectos:
 
@@ -217,9 +217,9 @@ El archivo fstab es un componente clave en la configuración del sistema operati
 * ``pass``: Define el orden en el que se verifica el sistema de archivos durante el arranque. Se utiliza principalmente para la herramienta fsck. El valor 0 significa que no se verifica en el arranque, 1 se reserva para el sistema raíz (/), y así sucesivamente.
 
 
-===================
+-------------------
 ALMACENAMIENTO RAID
-===================
+-------------------
 
 RAID (Redundant Array Of Independent Disks) es un término que se refiere a un ``conjunto de discos que se pueden combinar de forma que trabajamos con estos como si fueran un único disco``. Las configuraciones de almacenamiento RAID son más típicas de entornos de servidor, aunque cada vez son más comunes en equipos de escritorio. Dependiendo del modelo de RAID que apliquemos podemos obtener ventajas como:
 
@@ -305,9 +305,9 @@ Otra forma de montar un RAID con disco de reserva en modalidad Hot Spare pero si
 utilizada por ejemplo en ``RAID 5E`` y ``RAID 6E``, que reservan este espacio de spare al final de los discos paridad. 
 
 
-======================
+----------------------
 ADMINISTRACIÓN DE RAID
-======================
+----------------------
 
 La administración de RAID en Linux se realiza con el paquete **mdadm** (Multiple Device Administrator), que se instala con ``sudo apt-get install mdadm``. Antes de iniciar, se puede verificar la existencia de dispositivos RAID en el sistema con ``/proc/mdstat``. La creación de RAID puede realizarse en dispositivos o particiones, no necesariamente del mismo tamaño. En caso de diferencias de tamaño, mdadm advertirá y utilizará el tamaño más pequeño. Los comandos comunes para gestionar RAID en Linux incluyen la creación, establecimiento de dispositivos defectuosos, eliminación, adición, y verificación del estado.
 
