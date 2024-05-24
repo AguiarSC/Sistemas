@@ -239,28 +239,27 @@ Algunas configuraciones RAID replican los datos en varios discos para evitar la 
 
 CONFIGURACIONES RAID BÁSICAS
 ----------------------------
+Aunque sea mejor y con mayor rendimiento hacerlo por hardware, si implementamos RAID por software tenemos varias opciones:
 
-Para establecer esta configuración, se puede realiza ``mediante software`` (propio o no del sistema operativo) o ``mediante hardware`` específico para el control del RAID (tarjeta de expansión controladora o chipset de la placa base). ``Esta última es la opción más óptima en cuanto a rendimiento``, y con estas podremos utilizar un RAID para la instalación de un sistema operativo, algo que no es posible con las soluciones RAID por software. Si implementamos RAID por software tenemos varias opciones:
+En Windows
 
-* Herramientas RAID en Windows
+* Administración de discos
 
-   * Administración de discos
+* Diskpart
 
-   * Diskpart
+* Espacios de almacenamiento
 
-   * Espacios de almacenamiento
+* Grupos de almacenamiento en Windows Server
 
-   * Grupos de almacenamiento en Windows Server
+En Linux
 
-* Herramientas RAID en Linux
+* LVM (Logical Volume manager)
 
-   * LVM (Logical Volume manager)
-
-   * MDADM (Multi Device Administrator)
+* MDADM (Multi Device Administrator)
 
 La forma de realizar un nivel RAID es distribuyendo o redundando los datos entre varios discos de diferentes maneras. Es frecuente emplear el término ``JBOD`` (Just a Bunch of Disks) o ``RAID lineal`` al método de combinar diferentes discos físicos en un solo lógico. JBOD, por tanto, no presenta redundancia ni mejora el rendimiento del conjunto, sin embargo, el tamaño global es la suma de todos ellos.
 
--------------
+
 TIPOS DE RAID
 -------------
 * ``RAID 0`` (Data Stripping)
@@ -276,7 +275,7 @@ TIPOS DE RAID
 * ``RAID 6`` (Stripping con paridad distribuida y duplicada)
    Es como el RAID 5 pero añadiendo un disco adicional para mantener la duplicado. En este caso requiere un mínimo de cuatro discos, siendo así el espacio útil la suma de todos los discos menos dos. Como ventaja tiene la recuperación de datos y como desventaja es que es más lento que el RAID 5 al tener que escribir doble paridad.
 
--------------------------------------------------
+
 COMBINACIONES RAID: RAID 1+0, RAID 0+1 Y RAID 5+0
 -------------------------------------------------
 
@@ -302,7 +301,7 @@ Otra forma de montar un RAID con disco de reserva en modalidad Hot Spare pero si
 utilizada por ejemplo en ``RAID 5E`` y ``RAID 6E``, que reservan este espacio de spare al final de los discos paridad. 
 
 
-----------------------
+
 ADMINISTRACIÓN DE RAID
 ----------------------
 
