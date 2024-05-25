@@ -1,5 +1,20 @@
-SCRIPTS EXAMEN
+SCRIPTS REPASO
 ==============
+
+Tener en cuenta
+===============
+
+''Es importante fijarse en el uso de los espacios. Ningun espacio (o su falta) está puesto al azar.``
+
+* ``#!/bin/bash`` debe de ir al inicio de cada script para que se pueda ejecutar.
+* ``$variable`` significa ``valor de la variable``.
+* La variable se declara así ``nombre_variable=valor_variable``.
+* En el comando ``echo`` se debe utilizar ``" "`` para mostrar el valor de la variable.
+* Una ``expresión`` se formaliza así ``((expresión))``.
+* Una ``expresión lógica`` (verdadero o falso, por ejemplo) se formaliza así ``[[ expresión ]]``.
+* Las expresiones lógicas presentan: ``!expresión`` ``=`` ``!=`` ``<`` ``<=`` ``>`` ``>=`` ``&&`` y ``||``.
+* Importancia extrema de entender el control de flujo: https://github.com/AguiarSC/sistemas/blob/main/Scripts.rst#control-de-flujo
+ 
 
 Bucle contador
 --------------
