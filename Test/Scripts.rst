@@ -4,7 +4,7 @@ SCRIPTS REPASO
 Tener en cuenta
 ===============
 
-''Es importante fijarse en el uso de los espacios. Ningun espacio (o su falta) está puesto al azar.``
+``Es importante fijarse en el uso de los espacios. Ningun espacio (o su falta) está puesto al azar.``
 
 * ``#!/bin/bash`` debe de ir al inicio de cada script para que se pueda ejecutar.
 
