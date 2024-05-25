@@ -21,20 +21,6 @@ Condicionales
 .. code-block:: sh
 
   #!/bin/bash
-  # Este script compara un número ingresado por el usuario con 100.
-  echo "Dame un número:" # Solicita al usuario que ingrese un número.
-  read n1 # Lee el número ingresado por el usuario.
-  if [ "$n1" -lt 100 ]; then # Comprueba si el número es menor que 100.
-      echo "El número $n1 es menor que 100."
-  else
-      echo "El número $n1 es mayor o igual que 100."
-  fi
-
-..
-
-.. code-block:: sh
-
-  #!/bin/bash
   # Este script compara un número ingresado por el usuario con 100 y muestra un mensaje en consecuencia.
   echo "Dame un número:" # Solicita al usuario que ingrese un número.
   read n1 # Lee el número ingresado por el usuario.
