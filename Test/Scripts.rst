@@ -140,3 +140,62 @@ Copia de seguridad
   # El script se detiene con la ejecución. 
 
 ..
+
+
+Contador archivos
+-----------------
+
+.. code-block:: sh
+
+  #!/bin/bash
+
+  inicio() {
+    echo "Especifica un directorio y contaré sus archivos"
+    read directorio
+    contador
+  }
+
+  contador() {
+    if [ -d $directorio ]; then
+      variable_contadora=$(find "$directorio" -type f | wc -l)
+      echo "El número de archivos de $directorio es $variable_contadora"
+    else
+      echo "El directorio $directorio no existe"
+      inicio
+    fi
+  }
+..
+
+
+Archivo por extensión
+---------------------
+
+.. code-block:: sh
+
+  #!/bin/bash
+
+  echo "Ingresa la extensión de archivo que deseas encontrar en el directorio actual:"
+  read extfile
+  echo "Se han encontrado:"
+  find . -type f -name "*.$extension"
+
+..
+
+
+Renombrar archivos
+------------------
+
+.. code-block:: sh
+
+  #!/bin/bash
+
+  echo "Ingresa un prefijo con el que quieras que renombre a todos los archivos de tu directorio"
+  read prefix
+
+  echo "Renombramiento completado. He aquí la lista:"
+  for archivo in *; do
+      mv "$archivo" "$prefix$archivo"
+  done
+  ls -l
+
+..
