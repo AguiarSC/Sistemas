@@ -51,8 +51,8 @@ Condicionales
 ..
 
 
-Bucle while
------------
+Bucle while. Se mantiene el bucle mientras la condición sea verdadera.
+----------------------------------------------------------------------
 
 .. code-block:: sh
 
@@ -67,8 +67,8 @@ Bucle while
 ..
 
 
-Bucle until
------------
+Bucle until. Se mantiene el bucle mientras la condición sea falsa.
+------------------------------------------------------------------
 
 .. code-block:: sh
 
