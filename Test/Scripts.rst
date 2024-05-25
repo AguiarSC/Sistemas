@@ -134,6 +134,11 @@ Copia de seguridad
   }
   inicio
 
+  # En este script, si se utilizan alternativas como: 
+  # echo "El contenido de /home es el siguiente:
+  # echo `ls /home` o exec ls /home
+  # El script se detiene con la ejecución. 
+
 ..
 
 
