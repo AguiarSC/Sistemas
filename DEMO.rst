@@ -247,3 +247,123 @@ Extrae la información del usuario del token y autentica al usuario en el contex
        }
 
 ..
+
+
+La clase ``LoginController`` se encarga de gestionar el proceso de autenticación de usuarios en tu aplicación. Proporciona un punto de acceso (endpoint) que permite a los usuarios autenticarse y recibir un token JWT (JSON Web Token) para futuras peticiones. 
+
+Autentica a los usuarios que intentan iniciar sesión con su email y contraseña.
+
+Si la autenticación es exitosa, genera y devuelve un token JWT.
+
+``tokenList``: Almacena temporalmente los tokens JWT emitidos para los usuarios.
+
+``@Tag``: Proporciona metadata para la documentación de Swagger.
+
+``@RestController`` y ``@RequestMapping``: Indican que esta clase es un controlador de Spring que maneja peticiones HTTP en la ruta /login.
+
+``(@PostMapping) loginUser``:
+
+   * Recibe el email y la contraseña del usuario como parámetros.
+   
+   * Autentica al usuario mediante authenticationManager.
+   
+   * Carga los detalles del usuario con userDetailsService.
+   
+   * Si la autenticación es exitosa, verifica si ya existe un token JWT válido para el usuario.
+   
+   * Si no existe un token válido, genera uno nuevo y lo almacena en tokenList.
+   
+   * Devuelve una respuesta con el token JWT y los detalles del usuario (nombre de usuario, roles).
+
+``isTokenExpired``:
+
+   * Verifica si un token JWT ha expirado.
+
+   * Intenta parsear el token para comprobar su validez; si el token ha expirado o es inválido, devuelve true.
+
+``createJwt``:
+
+   * Crea un nuevo token JWT con una validez de 10 horas.
+   
+   * Establece el nombre de usuario como sujeto y firma el token con la clave de firma proporcionada por jwtService.
+
+
+.. code-block:: java
+
+   @Tag(name = "login", description = "Endpoint to authenticate as an existing user")
+   @RestController
+   @RequestMapping("/login")
+   public class LoginController {
+   
+       private final UserDetailsService userDetailsService;
+       private final JwtService jwtService;
+       private final AuthenticationManager authenticationManager;
+       private final Map<String, String> tokenList = new ConcurrentHashMap<>();
+   
+       public LoginController(
+               AuthenticationManager authenticationManager,
+               UserApiServiceImpl userApiService,
+               JwtService jwtService) {
+           this.authenticationManager = authenticationManager;
+           this.userDetailsService = userApiService;
+           this.jwtService = jwtService;
+       }
+   
+       @PostMapping
+       public ResponseEntity<LoginResponseDTO> loginUser(String email, String password) {
+           Authentication authentication =
+                   authenticationManager.authenticate(
+                           new UsernamePasswordAuthenticationToken(email, password));
+           UserDetails user = userDetailsService.loadUserByUsername(email);
+   
+           if (authentication.isAuthenticated()) {
+               String token = tokenList.get(email);
+               if (token == null || isTokenExpired(token)) {
+                   token = createJwt(email);
+                   tokenList.put(email, token);
+               }
+               return ResponseEntity.ok(
+                       LoginResponseDTO.builder()
+                               .jwt(token)
+                               .username(user.getUsername())
+                               .roles(user.getAuthorities())
+                               .build());
+           }
+   
+           return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+       }
+   
+       private boolean isTokenExpired(String token) {
+           try {
+               Jwts.parser().verifyWith(jwtService.getSigningKey()).build().parseSignedClaims(token);
+               return false;
+           } catch (ExpiredJwtException | IllegalArgumentException e) {
+               return true;
+           }
+       }
+   
+       public String createJwt(String username) {
+           return Jwts.builder()
+                   .subject(username)
+                   .issuedAt(new Date())
+                   .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10)) // 10 hours
+                   .signWith(jwtService.getSigningKey())
+                   .compact();
+       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
