@@ -101,6 +101,26 @@ Establece los filtros de autenticación y define las políticas de manejo de ses
 
 ``JwtService`` maneja la generación y validación de tokens JWT, que se utilizan para autenticar a los usuarios.
 
+``securityFilterChain`` configura la cadena de filtros de seguridad:
+
+   * Desactiva CSRF: La protección CSRF está desactivada porque se utiliza una política de sesión sin estado.
+
+   * Autorización de Peticiones: Permite el acceso a ciertas rutas sin autenticación (como /h2-console/**, /v3/api-docs/**, /swagger-ui/**, /login/**, y /register/**). Todas las demás peticiones requieren autenticación.
+
+   * Desactiva Frame Options: Permite que el contenido se cargue en iframes, necesario para la consola H2.
+
+   * Filtro de Autenticación JWT: Añade un filtro de autenticación JWT antes del filtro de autenticación estándar.
+
+   * Gestión de Sesiones: Configura las sesiones como sin estado (no se mantienen entre peticiones).
+
+   * Cache de Peticiones: Utiliza una política de caché que no almacena las peticiones.
+
+   * authenticationProvider: Define el proveedor de autenticación:
+
+DaoAuthenticationProvider: Utiliza el servicio de detalles de usuario y el encriptador de contraseñas configurados.
+authenticationManager: Configura el gestor de autenticación, que maneja el proceso de autenticación basado en la configuración proporcionada.
+
+
 .. code-block:: java
 
    @Configuration
@@ -161,3 +181,4 @@ Establece los filtros de autenticación y define las políticas de manejo de ses
    }
 
 ..
+
