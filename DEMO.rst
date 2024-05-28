@@ -57,6 +57,12 @@ La clase ``SwaggerConfig`` es parte de la configuración de tu aplicación y se 
 
 La clase ``configura Swagger para que reconozca y utilice un esquema de seguridad basado en tokens JWT`` (JSON Web Tokens). Esto significa que ``para acceder a las funciones de la API``, los usuarios deben proporcionar un token válido, que autentica sus peticiones.
 
+``createAPIKeyScheme`` define el ``tipo de esquema de seguridad`` que la API utilizará. En este caso, se especifica que se usará un esquema de tipo ``bearer`` con formato JWT.
+
+``openAPI`` ``añade los requisitos de seguridad y los esquemas definidos`` anteriormente para que Swagger los utilice.
+
+La clase usa la anotación ``@Configuration``, lo que indica que es una ``clase de configuración en Spring``.
+
 
 .. code-block:: java
 
@@ -81,3 +87,5 @@ La clase ``configura Swagger para que reconozca y utilice un esquema de segurida
    }
 
 ..
+
+
