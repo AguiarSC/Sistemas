@@ -105,7 +105,7 @@ Establece los filtros de autenticación y define las políticas de manejo de ses
 
    * ``csrf disabled``  porque se utiliza una política de sesión sin estado. El servidor no almacena información sobre las sesiones de los usuarios. La información necesaria para autenticar y autorizar al usuario se envía con cada petición.
 
-   * ``authorizeHttpRequests`` permite el acceso a ciertas rutas sin autenticación (como /h2-console/**, /v3/api-docs/**, /swagger-ui/**, /login/**, y /register/**). Todas las demás peticiones requieren autenticación.
+   * ``authorizeHttpRequests`` permite el acceso a ciertas rutas sin autenticación. Todas las demás peticiones requieren autenticación.
 
    * ``frameOptions.disable()`` permite que el contenido se cargue en iframes, necesario para la consola H2.
 
@@ -115,11 +115,11 @@ Establece los filtros de autenticación y define las políticas de manejo de ses
 
    * ``cache.requestCache`` utiliza una política de caché que no almacena las peticiones.
 
-   * ``authenticationProvider`` define el proveedor de autenticación:
+``authenticationProvider`` define el proveedor de autenticación:
 
-   * ``DaoAuthenticationProvider`` es un servicio de detalles de usuario y encriptador de contraseñas.
+``DaoAuthenticationProvider`` es un servicio de detalles de usuario y encriptador de contraseñas.
    
-   * ``authenticationManager`` configura el gestor de autenticación, que maneja el proceso de autenticación.
+``authenticationManager`` configura el gestor de autenticación, que maneja el proceso de autenticación.
 
 
 .. code-block:: java
