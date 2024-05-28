@@ -1,20 +1,18 @@
-::
+PRESENTACIÓN ORAL
+-----------------
 
-  PRESENTACIÓN ORAL
-  -----------------
-  
-  ``Buenos días``. Hoy os vamos a presentar las funcionalidades y mejoras implementadas durante este último sprint. En esencia, el equipo se ha centrado en la implementación de la seguridad y en la gestión de usuarios, compras, facturación y transacciones.
-  
-  Comenzaré por mostrar todo lo relacionado con la seguridad. Hemos implementado autenticación mediante credenciales y autorización mediante roles. Se han establecido tres grupos principales de usuarios: administrador, trabajador y cliente, cada uno con sus permisos asignados. [MOSTRAR LOS PREPARADOS EN LA BD]. Además, se ha añadido la encriptación de contraseñas para garantizar la privacidad y seguridad.
-  
-  Ahora, vayamos al Swagger. Como podéis ver, Swagger muestra todas las opciones y métodos disponibles, aunque estos son inaccesibles hasta que se complete el proceso de autenticación del usuario. Una vez autenticado, se harán accesibles los métodos dedicados a cada rol de usuario.
-  
-  Hemos implementado un registro mediante el cual podemos añadir nuevos usuarios. [DEMOSTRACIÓN]. Una vez registrado, el usuario podrá acceder al método de login, donde, añadiendo sus credenciales (email y contraseña), recibirá un token. Con este token, el usuario se dirigirá a la parte superior del Swagger, donde se encuentra el botón de Authenticate. Aquí añadirá el token recibido por el login, autenticándose en el servicio. [DEMOSTRACIÓN CON CADA ROL UN MÉTODO AL QUE PUEDE ACCEDER Y UNO AL QUE NO]. 
-  
-  Finalmente, el usuario, al terminar sus gestiones, podrá hacer logout mediante nuestro método personalizado. Además, el token tiene un tiempo de caducidad para forzar el cierre de sesión automáticamente. Como podéis ver, para hacer logout no es necesario aportar ninguna credencial, ya que este método solo funciona si el usuario se ha autenticado previamente.
-  
-  [¿DEBEMOS DE MENCIONAR ESTO?]
-  Cabe mencionar que estamos trabajando en brindar al usuario la posibilidad de cambiar su contraseña una vez establecida, pero no os lo podemos mostrar en esta demo.
+Buenos días. Hoy os vamos a presentar las funcionalidades y mejoras implementadas durante este último sprint. En esencia, el equipo se ha centrado en la implementación de la seguridad y en la gestión de usuarios, compras, facturación y transacciones.
+
+Comenzaré por mostrar todo lo relacionado con la seguridad. Hemos implementado autenticación mediante credenciales y autorización mediante roles. Se han establecido tres grupos principales de usuarios: administrador, trabajador y cliente, cada uno con sus permisos asignados. [MOSTRAR LOS PREPARADOS EN LA BD]. Además, se ha añadido la encriptación de contraseñas para garantizar la privacidad y seguridad.
+
+Ahora, vayamos al Swagger. Como podéis ver, Swagger muestra todas las opciones y métodos disponibles, aunque estos son inaccesibles hasta que se complete el proceso de autenticación del usuario. Una vez autenticado, se harán accesibles los métodos dedicados a cada rol de usuario.
+
+Hemos implementado un registro mediante el cual podemos añadir nuevos usuarios. [DEMOSTRACIÓN]. Una vez registrado, el usuario podrá acceder al método de login, donde, añadiendo sus credenciales (email y contraseña), recibirá un token. Con este token, el usuario se dirigirá a la parte superior del Swagger, donde se encuentra el botón de Authenticate. Aquí añadirá el token recibido por el login, autenticándose en el servicio. [DEMOSTRACIÓN CON CADA ROL UN MÉTODO AL QUE PUEDE ACCEDER Y UNO AL QUE NO]. 
+
+Finalmente, el usuario, al terminar sus gestiones, podrá hacer logout mediante nuestro método personalizado. Además, el token tiene un tiempo de caducidad para forzar el cierre de sesión automáticamente. Como podéis ver, para hacer logout no es necesario aportar ninguna credencial, ya que este método solo funciona si el usuario se ha autenticado previamente.
+
+[¿DEBEMOS DE MENCIONAR ESTO?]
+Cabe mencionar que estamos trabajando en brindar al usuario la posibilidad de cambiar su contraseña una vez establecida, pero no os lo podemos mostrar en esta demo.
    
 
 
