@@ -89,3 +89,75 @@ La clase usa la anotación ``@Configuration``, lo que indica que es una clase de
 ..
 
 
+La clase ``SecurityConfig`` es parte de la configuración de seguridad de tu aplicación. Esta clase se asegura de que solo los usuarios autenticados puedan acceder a ciertas partes de la aplicación y define cómo deben manejarse las peticiones y sesiones.
+
+Configura cómo se deben proteger las rutas y recursos de tu aplicación.
+
+Establece los filtros de autenticación y define las políticas de manejo de sesiones.
+
+``PasswordEncoder`` se utiliza para encriptar las contraseñas de los usuarios.
+
+``UserDetailsService`` carga los detalles del usuario (como nombre de usuario y contraseña) desde una fuente de datos.
+
+``JwtService`` maneja la generación y validación de tokens JWT, que se utilizan para autenticar a los usuarios.
+
+.. code-block:: java
+
+   @Configuration
+   public class SecurityConfig {
+   
+       private final PasswordEncoder passwordEncoder;
+       private final UserDetailsService userDetailsService;
+       private final JwtService jwtService;
+   
+       public SecurityConfig(
+               PasswordEncoder passwordEncoder,
+               JwtService jwtService,
+               UserApiServiceImpl userDetailsService) {
+           this.passwordEncoder = passwordEncoder;
+           this.userDetailsService = userDetailsService;
+           this.jwtService = jwtService;
+       }
+   
+       @Bean
+       public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+           http.csrf(AbstractHttpConfigurer::disable)
+                   .authorizeHttpRequests(
+                           auth -> {
+                               auth.requestMatchers(new AntPathRequestMatcher("/h2-console/**"))
+                                       .permitAll();
+                               auth.requestMatchers(
+                                               "/v3/api-docs/**",
+                                               "/swagger-ui/**",
+                                               "/login/**",
+                                               "/register/**")
+                                       .permitAll();
+                               auth.anyRequest().authenticated();
+                           })
+                   .headers(headers -> headers.frameOptions(frameOptions -> frameOptions.disable()))
+                   .addFilterBefore(
+                           new JWTAuthenticationFilter(userDetailsService, jwtService),
+                           UsernamePasswordAuthenticationFilter.class)
+                   .sessionManagement(
+                           session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                   .requestCache(cache -> cache.requestCache(new NullRequestCache()));
+   
+           return http.build();
+       }
+   
+       @Bean
+       public AuthenticationProvider authenticationProvider() {
+           DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
+           authenticationProvider.setUserDetailsService(userDetailsService);
+           authenticationProvider.setPasswordEncoder(passwordEncoder);
+           return authenticationProvider;
+       }
+   
+       @Bean
+       public AuthenticationManager authenticationManager(AuthenticationConfiguration config)
+               throws Exception {
+           return config.getAuthenticationManager();
+       }
+   }
+
+..
