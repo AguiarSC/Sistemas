@@ -183,3 +183,22 @@ Establece los filtros de autenticación y define las políticas de manejo de ses
 
 ..
 
+
+La clase ``JWTAuthenticationFilter`` es un filtro que se ejecuta una vez por cada solicitud HTTP en tu aplicación. Este filtro se encarga de la autenticación de los usuarios mediante tokens JWT.
+
+Verifica si las peticiones HTTP contienen un token JWT válido.
+
+Extrae la información del usuario del token y autentica al usuario en el contexto de seguridad de Spring.
+
+``UserDetailsService``: Este servicio carga los detalles del usuario (nombre de usuario, contraseñas, roles, etc.) desde una fuente de datos.
+
+``JwtService``: Este servicio maneja la creación, extracción y validación de los tokens JWT.
+
+``doFilterInternal``:
+
+   * Extracción del Token: Obtiene el encabezado de autorización (Authorization) de la petición HTTP. Divide el encabezado para obtener el token si está presente y comienza con la palabra "Bearer".
+   * Validación del Token: Si el token está presente y es válido, extrae el nombre de usuario del token usando jwtService. Carga los detalles del usuario (roles, permisos, etc.) desde userDetailsService.
+   * Autenticación del Usuario: Si el token es válido y los detalles del usuario son correctos, se crea un objeto de autenticación (UsernamePasswordAuthenticationToken) y se establece en el contexto de seguridad de Spring (SecurityContextHolder).
+   * Continúa la Cadena de Filtros: Finalmente, la petición continúa a través de la cadena de filtros (filterChain), permitiendo que otros filtros de seguridad y lógica de negocio se ejecuten.
+
+
