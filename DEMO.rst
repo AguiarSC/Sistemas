@@ -55,8 +55,9 @@ SECURITY
 
 ::
 
-La clase SwaggerConfig es parte de la configuración de tu aplicación y se encarga de establecer cómo se maneja la seguridad en la documentación interactiva de tu API. Vamos a desglosar lo que hace y sus principales características.
-La clase configura Swagger para que reconozca y utilice un esquema de seguridad basado en tokens JWT (JSON Web Tokens). Esto significa que para acceder a las funciones de la API, los usuarios deben proporcionar un token válido, que autentica sus peticiones.
+   La clase SwaggerConfig es parte de la configuración de tu aplicación y se encarga de establecer cómo se maneja la seguridad en la documentación interactiva de tu API. Vamos a desglosar lo que hace y sus principales características.
+   La clase configura Swagger para que reconozca y utilice un esquema de seguridad basado en tokens JWT (JSON Web Tokens). Esto significa que para acceder a las funciones de la API, los usuarios deben proporcionar un token válido, que autentica sus peticiones.
+
 
 .. code-block:: java
 
