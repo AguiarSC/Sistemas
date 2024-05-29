@@ -1,7 +1,7 @@
 PRESENTACIÓN ORAL
 -----------------
 
-Buenos días. Hoy os vamos a presentar las funcionalidades y mejoras implementadas durante este último sprint. En esencia, el equipo se ha centrado en la implementación de la seguridad y en la gestión de usuarios, compras, facturación y transacciones.
+Buenos días. Hoy os vamos a presentar las funcionalidades y mejoras implementadas durante este último sprint. En esencia, el equipo se ha centrado en la implementación de la seguridad y en la mejora de la gestión de usuarios, compras, facturación y transacciones.
 
 Comenzaré por mostrar todo lo relacionado con la seguridad. Hemos implementado autenticación mediante credenciales y autorización mediante roles. Se han establecido tres grupos principales de usuarios: administrador, trabajador y cliente, cada uno con sus permisos asignados. [MOSTRAR LOS PREPARADOS EN LA BD]. Además, se ha añadido la encriptación de contraseñas para garantizar la privacidad y seguridad.
 
