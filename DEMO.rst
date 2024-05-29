@@ -27,6 +27,7 @@ SHOPPINGCART:
     • Añadir posibilidad de tener 3 carritos.
     • Poder realizar varias compras.
     • Controlar los cambios de stock en las compras.
+    • El carrito se elimina al vaciar sus productos.
       
 INVOICE:
     • Corrección datos de la factura.
