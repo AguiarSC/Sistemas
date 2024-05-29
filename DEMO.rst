@@ -21,17 +21,17 @@ Cabe mencionar que estamos trabajando en brindar al usuario la posibilidad de ca
 
 
 USER:
-    • Añadir método modificar datos de tu usuario.
+    • Añadir método modificar datos de tu usuario. Se controlan las posibilidades de introduccion de datos correctos  (dni, currency...)
        
 SHOPPINGCART:
     • Añadir posibilidad de tener 3 carritos.
     • Poder realizar varias compras.
     • Controlar los cambios de stock en las compras.
-    • El carrito se elimina al vaciar sus productos.
       
 INVOICE:
     • Corrección datos de la factura.
     • Posibilidad de descargar la factura.
+    • Añadir diferentes idiomas para los correos y las facturas.
     • Mostrar todas las facturas de un usuario.
 
 PRODUCT SUPPLIER TRANSACTIONS
@@ -40,11 +40,11 @@ PRODUCT SUPPLIER TRANSACTIONS
 
 SUPPLIER:
     • Devuelve el historial de compras y devoluciones de un supplier específico.
+
 TRANSACTIONS:
     • Añadir calculo ingresos, gastos y beneficios por fechas.
 
 TODO EN GENERAL:
     • Controlar todas las respuestas de todos los métodos.
-
 
 
