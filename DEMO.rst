@@ -31,7 +31,7 @@ SHOPPINGCART:
 INVOICE:
     • Corrección datos de la factura.
     • Posibilidad de descargar la factura.
-    • Añadir diferentes idiomas para los correos y las facturas.
+    • Añadir diferentes idiomas para los correos con las facturas.
     • Mostrar todas las facturas de un usuario.
 
 PRODUCT SUPPLIER TRANSACTIONS
