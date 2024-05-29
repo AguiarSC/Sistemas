@@ -38,6 +38,8 @@ PRODUCT SUPPLIER TRANSACTIONS
     • Incorporar facturas de un proveedor (comprar y devolver)
     • (SUPPLIER) ver historial de compras a un proveedor.
 
+SUPPLIER:
+    • Devuelve el historial de compras y devoluciones de un supplier específico.
 TRANSACTIONS:
     • Añadir calculo ingresos, gastos y beneficios por fechas.
 
