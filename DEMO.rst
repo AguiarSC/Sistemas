@@ -33,12 +33,12 @@ INVOICE:
     • Posibilidad de descargar la factura.
     • Mostrar todas las facturas de un usuario.
 
-TRANSACTIONS:
-    • Añadir calculo ingresos, gastos y beneficios por fechas.
-
 PRODUCT SUPPLIER TRANSACTIONS
     • Incorporar facturas de un proveedor (comprar y devolver)
     • (SUPPLIER) ver historial de compras a un proveedor.
+
+TRANSACTIONS:
+    • Añadir calculo ingresos, gastos y beneficios por fechas.
 
 TODO EN GENERAL:
     • Controlar todas las respuestas de todos los métodos.
